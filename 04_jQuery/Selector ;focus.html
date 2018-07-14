@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery :focus Selector</h2>
+<pre>
+
+</pre>
+
+<h2>Definition and Usage</h2>
+<pre>
+The :focus selector selects the element that currently has focus.
+Tip: This selector is often used with a tag name or another selector, if not, this selector will be the same as ("*:focus").
+Syntax
+	$(":focus")
+</pre>
+<hr/>
+
+<pre>
+Example
+Select the element that currently has focus:
+	$(":focus")
+</pre>
+
+<script>
+$(document).ready(function(){
+    $("input").focus();
+    $(":focus").css("background-color", "yellow");
+});
+</script>
+
+<input type="text" />
+<hr/>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Break and Continue</h2>
+<pre>
+The break statement "jumps out" of a loop.
+The continue statement "jumps over" one iteration in the loop.
+</pre>
+<hr/>
+
+<h2>The Break Statement</h2>
+<pre>
+A loop with a break.
+	for (i = 0; i < 10; i++) {
+	    if (i === 3) { break; }
+	    text += "The number is " + i + "&lt;br/&gt;";
+	}
+</pre>
+<p id="demo"></p>
+<hr/>
+
+<h2>The Continue Statement</h2>
+<pre>
+The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+	for (i = 0; i < 10; i++) {
+	    if (i === 3) { continue; }
+	    text += "The number is " + i + "&lt;br/&gt;";
+	}
+</pre>
+<p id="demo1"></p>
+<hr/>
+
+<h2>JavaScript Labels</h2>
+<pre>
+To label JavaScript statements you precede the statements with a label name and a colon:
+	label:
+	statements
+The break and the continue statements are the only JavaScript statements that can "jump out of" a code block.
+	Syntax:
+		break labelname;
+		continue labelname;
+The continue statement (with or without a label reference) can only be used to <b>skip one loop iteration.</b>
+The break statement, without a label reference, can only be used to <b>jump out of a loop or a switch.</b>
+With a label reference, the break statement can be used to <b>jump out of any code block:</b>
+A code block is a block of code between { and }.
+	var cars = ["BMW", "Volvo", "Saab", "Ford"];
+	var text = "";
+
+	list: {
+	    text += cars[0] + "&lt;br/&gt;";
+	    text += cars[1] + "&lt;br/&gt;";
+	    text += cars[2] + "&lt;br/&gt;";
+	    break list;
+	    text += cars[3] + "&lt;br/&gt;";
+	    text += cars[4] + "&lt;br/&gt;";
+	    text += cars[5] + "&lt;br/&gt;";
+	}
+</pre>
+<p id="demo2"></p>
+<hr/>
+
+<script>
+var text = "";
+var i;
+for (i = 0; i < 10; i++) {
+    if (i === 3) { break; }
+    text += "The number is " + i + "<br/>";
+}
+document.getElementById("demo").innerHTML = text;
+
+var text = "";
+var i;
+for (i = 0; i < 10; i++) {
+    if (i === 3) { continue; }
+    text += "The number is " + i + "<br>";
+}
+document.getElementById("demo1").innerHTML = text;
+
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var text = "";
+
+list: {
+    text += cars[0] + "<br>";
+    text += cars[1] + "<br>";
+    text += cars[2] + "<br>";
+    break list;
+    text += cars[3] + "<br>";
+    text += cars[4] + "<br>";
+    text += cars[5] + "<br>";
+}
+
+document.getElementById("demo2").innerHTML = text;
+</script>
+
+</body>
+</html>

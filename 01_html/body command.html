@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function msg_alert(msg){ alert(msg); }
+		</script>
+	</head>
+	<body>
+	<!--
+	html 5에 추가
+
+	command : 사용자가 실행할 수 있는 명령
+		페이지 어디에서나 사용될 수 있으며, 키보드의 숏컷으로 정의할 수 있음
+
+	속성
+		type : 명령의 종류를 지정합니다. 다음 세걔의 키워드와 상태를 가짐
+			command : 연합된 액션을 갖는 일반적인 명령을 나타냄
+			checkbox : 토글이 되는 옵션이나 상태를 나타냄
+			radio : 목록중에서 하나의 아이템의 선택을 나타냄
+		label  : 커맨드의 이름을 주어 사용자에게 보여줍니다. 이 속성은 반드시 명시되어야 합니다.
+		icon : 커맨드를 나타낼 그림을 지정
+		disabled : 불리언 속성으로 커맨드가 현재상태에서 사용할 수 없음을 나타냄
+		checked : 불리언 속성으로 커맨드가 선택되었음을 나타냅니다.
+			type속성이 checkbox, radio상태가 아니면 생략되어야만 합니다.
+		radiogroup : 커맨드 자신이 토글되었을 때 토글된 커맨드 그룹에 이름이 주어집니다.
+			type속성이 radio일 때만 사용할 수 있습니다.
+
+	 -->
+		<menu type="toolbar">
+		    <command type="radio" radiogroup="alignment" checked="checked"
+		    	label="Left" icon="../res/images/alL.png" onclick="msg_alert('left')">Left
+		    </command>
+		    <command type="radio" radiogroup="alignment"
+		   		label="Center" icon="../res/images/alC.png" onclick="msg_alert('center')" >
+		   		Center
+		   	</command>
+		    <command type="radio" radiogroup="alignment"
+		    	label="Right" icon="../res/images/alR.png" onclick="msg_alert('right')">
+		    	Right
+		    </command>
+		    <hr>
+		    <command type="command" disabled
+		    	label="Publish" icon="../res/images/pub.png" onclick="msg_alert('publish')">
+		    	Publish
+		    </command>
+		</menu>
+
+	</body>
+</html>

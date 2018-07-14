@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+    <title>jQuery Method | .parent()</title>
+    <script src = "http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+	$( document ).ready( function(){
+		$( 'p.ef' ).parent( 'div.cd' ).css( 'color', 'red' );
+	} );
+	</script>
+    </head>
+    
+    <body>
+    <div class="ab">
+    <p> Hello </p>
+    <div class="cd">
+    <p class="ef">
+    How are you?
+    </p>
+    </div>
+    </div>
+    </body>
+</html>

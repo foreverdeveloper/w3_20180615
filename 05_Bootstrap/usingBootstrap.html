@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 사용 언어와 반응형 웹을 위한 정보 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap의 CSS (압축 해제 위치와 HTML 문서의 위치에 따라 경로는 변경) -->
+	<!-- bootstrap.min.css 이용하는 것이 일반적이나 실습을 위해 bootstrap.css를 사용 --> 
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+
+    <title>부트스트랩</title>
+  </head>
+  <body>
+	<!-- Bootstrap 제공 CSS,JavaScript 사용(정의된 기능 사용) -->
+	<!-- Bootstrap 사이트 기본 내비게이션 바 예제(http://getbootstrap.com/docs/4.1/components/navbar/)-->
+    <header>
+		<!-- bootstrap.css에서 각 클래스에 대한 스타일 속성 값이 설정되어 있음 -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Navbar</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+				  <li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  Dropdown
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#">Action</a>
+					  <a class="dropdown-item" href="#">Another action</a>
+					  <div class="dropdown-divider"></div>
+					  <a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link disabled" href="#">Disabled</a>
+				  </li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+				  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</div>
+		</nav>
+	</header>
+	
+    <!-- Bootstrap에서 사용하는 JavaScript(jQuery)의 CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<!-- Bootstrap의 기능을 제공하는 JavaScript(압축 해제 위치와 HTML 문서의 위치에 따라 경로는 변경) -->
+    <script src="bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>

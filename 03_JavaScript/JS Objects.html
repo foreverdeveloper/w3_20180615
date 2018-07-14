@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+<pre>
+JavaScript objects are containers for named values called properties or methods.
+You define (and create) a JavaScript object with an object literal
+Spaces and line breaks are not important. An object definition can span multiple lines.
+
+Object Properties
+	The name:values pairs in JavaScript objects are called properties:
+
+Object Methods
+	Methods are stored in properties as function definitions.
+
+	var person = {
+	    firstName: "John",
+	    lastName : "Doe",
+	    id       : 5566,
+	    fullName : function() {
+	        return this.firstName + " " + this.lastName;
+	    }
+	};
+
+	The this Keyword
+		In a function definition, this refers to the "owner" of the function.
+		In the example above, this is the person object that "owns" the fullName function.
+		In other words, this.firstName means the firstName property of this object.
+
+Accessing Object Properties
+	1. objectName.propertyName
+	2. objectName["propertyName"]
+
+Accessing Object Methods
+	objectName.methodName()
+	예) name = person.fullName();
+			name = person.fullName; // ()가 없으면 함수 정의를 리턴함.
+
+Do Not Declare Strings, Numbers, and Booleans as Objects!
+	When a JavaScript variable is declared with the keyword "new", the variable is created as an object:
+
+	var x = new String();        // Declares x as a String object
+	var y = new Number();        // Declares y as a Number object
+	var z = new Boolean();       // Declares z as a Boolean object
+
+</pre>
+<p id="demo"></p>
+<hr/>
+
+<script>
+// Create an object:
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName : function() {
+       return this.firstName + " " + this["lastName"];
+    }
+};
+
+// Display some data from the object:
+document.getElementById("demo").innerHTML =
+	person.fullName();
+
+</script>
+
+</body>
+</html>

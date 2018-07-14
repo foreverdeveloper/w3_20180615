@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+<style>
+
+
+p{
+	color:blue;
+	text-align:center;
+	}
+	
+	
+.style_div p
+{
+	color:black;
+	}
+	
+
+.style_div
+{
+	background-color:green;
+	}
+	
+.style_div *{
+	color:white;
+	}
+	
+</style>

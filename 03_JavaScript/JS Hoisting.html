@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Hoisting</h2>
+<pre>
+Hoisting is JavaScript's default behavior of moving declarations to the top.
+
+JavaScript Declarations are Hoisted
+In JavaScript, a variable can be declared after it has been used.
+
+In other words; a variable can be used before it has been declared.
+
+To understand this, you have to understand the term "hoisting".
+
+Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
+
+	x = 5; // Assign 5 to x
+
+	elem = document.getElementById("demo"); // Find an element
+	elem.innerHTML = x;                     // Display x in the element
+
+	var x; // Declare x
+</pre>
+<p id="demo"></p>
+<hr/>
+
+<h2>JavaScript Initializations are Not Hoisted</h2>
+<pre>
+JavaScript only hoists declarations, not initializations.
+	var x1 = 5;  // Initialize x
+
+	elem = document.getElementById("demo");            // Find an element
+	elem.innerHTML = "x1 is " + x1 + " and y1 is " + y1;    // Display x and y
+
+	var y1 = 7;  // Initialize y
+
+This is because only the declaration (var y), not the initialization (=7) is hoisted to the top.
+Because of hoisting, y has been declared before it is used, but because initializations are not hoisted, the value of y is undefined.
+</pre>
+<p id="demo1"></p>
+<hr/>
+
+<h2>Declare Your Variables At the Top !</h2>
+<pre>
+Hoisting is (to many developers) an unknown or overlooked behavior of JavaScript.
+If a developer doesn't understand hoisting, programs may contain bugs (errors).
+To avoid bugs, always declare all variables at the beginning of every scope.
+Since this is how JavaScript interprets the code, it is always a good rule.
+JavaScript in strict mode does not allow variables to be used if they are not declared.
+</pre>
+
+
+<script>
+x = 5; // Assign 5 to x
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x;                     // Display x in the element
+var x; // Declare x
+
+var x1 = 5;  // Initialize x
+elem = document.getElementById("demo1");            // Find an element
+elem.innerHTML = "x1 is " + x1 + " and y1 is " + y1;    // Display x and y
+var y1 = 7;  // Initialize y
+</script>
+
+</body>
+</html>

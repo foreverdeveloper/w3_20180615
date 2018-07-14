@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+<!--
+/*  이곳에 스타일을 정의 */
+/*
+
+background-attachment: scroll|fixed|local|initial|inherit;
+	속성
+		scroll	: The background image will scroll with the page. This is default
+		fixed	: The background image will not scroll with the page
+		local	: The background image will scroll with the element's contents
+		initial	: Sets this property to its default value. Read about initial
+		inherit	 : Inherits this property from its parent element. Read about inherit
+
+*/
+.fixed-bg {
+    background-image: url("../res/images/sparrow.gif");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+//-->
+</style>
+</head>
+
+<body>
+
+<p>
+In this example, we have created a fixed background image that will disappear slowly on scroll. Scroll the page to see the effect.
+<strong>Note:</strong>
+Try to remove the background-attachment property to really understand this example.
+</p>
+
+<div class="fixed-bg"></div>
+
+<div style="height:800px;background-color:yellow;">
+This div is only here to enable scrolling (height = 800 pixels).</div>
+
+</body>
+</html>

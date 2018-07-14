@@ -1,0 +1,50 @@
+﻿<!document html>
+
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>탭 메뉴 활용</title>
+		<!-- jQuery CDN 사용 -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<style>
+			img{
+				width : 400;
+				height : 300;
+			}
+		</style>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+			$( function() {
+				$( "#tabs" ).tabs();
+
+			} );
+		</script>
+	</head>
+	<body>
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">꽃1</a></li>
+				<li><a href="#tabs-2">꽃2</a></li>
+				<li><a href="#tabs-3">꽃3</a></li>
+				<li><a href="#tabs-4">꽃4</a></li>
+			</ul>
+			<div id="tabs-1">
+				<img src="images/image1.jpg">
+				<p>첫번째 탭에서 보여지는 꽃 이미지 설명</p>
+			</div>
+			<div id="tabs-2">
+				<img src="images/image2.jpg">
+				<p>두번째 탭에서 보여지는 꽃 이미지 설명 </p>
+			</div>
+			<div id="tabs-3">
+				<img src="images/image3.jpg">
+				<p>세번째 탭에서 보여지는 꽃 이미지 설명 </p>
+			</div>
+			<div id="tabs-4">
+				<img src="images/image4.jpg">
+				<p>네번째 탭에서 보여지는 꽃 이미지 설명 </p>
+			</div>
+		</div>
+	</body>
+</html>

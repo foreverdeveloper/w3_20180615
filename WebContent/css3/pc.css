@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	color:#00F;/* 글자 색상을 파랑색 */	
+}
+#smart_view{
+	display:none; /*smart 영역을 화면에서 생략 */	
+}

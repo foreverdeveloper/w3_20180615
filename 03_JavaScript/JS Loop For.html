@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript For Loop</h2>
+<pre>
+Loops can execute a block of code a number of times.
+<h3>The For Loop</h3>
+	for (statement 1; statement 2; statement 3) {
+	    code block to be executed
+	}
+	Statement 1 is executed (one time) before the execution of the code block.
+		Normally you will use statement 1 to initialize the variable used in the loop (i = 0).
+		This is not always the case, JavaScript doesn't care. Statement 1 is optional.
+		You can initiate many values in statement 1 (separated by comma):
+	Statement 2 defines the condition for executing the code block.
+		Often statement 2 is used to evaluate the condition of the initial variable.
+		This is not always the case, JavaScript doesn't care. Statement 2 is also optional.
+		If statement 2 returns true, the loop will start over again, if it returns false, the loop will end.
+		<b>If you omit statement 2, you must provide a break inside the loop.
+		Otherwise the loop will never end. This will crash your browser.</b>
+	Statement 3 is executed (every time) after the code block has been executed.
+		Often statement 3 increments the value of the initial variable.
+		This is not always the case, JavaScript doesn't care, and statement 3 is optional.
+		Statement 3 can do anything like negative increment (i--), positive increment (i = i + 15), or anything else.
+		Statement 3 can also be omitted (like when you increment your values inside the loop):
+</pre>
+<p id="demo"></p>
+<hr/>
+
+<h2>The For/In Loop</h2>
+<pre>
+The JavaScript for/in statement loops through the properties of an object:
+	var person = {fname:"John", lname:"Doe", age:25};
+
+	var text = "";
+	var x;
+	for (x in person) {
+	    text += person[x];
+	}
+</pre>
+<p id="demo1"></p>
+<hr/>
+
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var i, len, text;
+for (i = 0, len = cars.length, text = ""; i < len; i++) {
+    text += cars[i] + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+
+var txt = "";
+var person = {fname:"John", lname:"Doe", age:25};
+var x;
+for (x in person) {
+    txt += person[x] + " ";
+}
+document.getElementById("demo1").innerHTML = txt;
+
+</script>
+
+</body>
+</html>

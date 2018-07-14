@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript JSON</h2>
+<pre>
+JSON is a format for storing and transporting data.
+JSON is often used when data is sent from a server to a web page.
+<h3>What is JSON?</h3>
+	JSON stands for <b>J</b>ava<b>S</b>cript <b>O</b>bject <b>N</b>otation
+	JSON is lightweight data interchange format
+	JSON is language independent *
+	JSON is "self-describing" and easy to understand
+* The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only. Code for reading and generating JSON data can be written in any programming language.
+</pre>
+<hr/>
+
+<h2>JSON Example</h2>
+<pre>
+This JSON syntax defines an employees object: an array of 3 employee records (objects):
+	{
+	"employees":[
+	    {"firstName":"John", "lastName":"Doe"},
+	    {"firstName":"Anna", "lastName":"Smith"},
+	    {"firstName":"Peter", "lastName":"Jones"}
+	]
+	}
+</pre>
+<hr/>
+
+<h2>The JSON Format Evaluates to JavaScript Objects</h2>
+<pre>
+The JSON format is syntactically identical to the code for creating JavaScript objects.
+Because of this similarity, a JavaScript program can easily convert JSON data into native JavaScript objects.
+</pre>
+<hr/>
+
+<h2>JSON Syntax Rules</h2>
+<pre>
+	Data is in name/value pairs
+	Data is separated by commas
+	Curly braces hold objects
+	Square brackets hold arrays
+</pre>
+<hr/>
+
+<h2>JSON Data - A Name and a Value</h2>
+<pre>
+JSON data is written as name/value pairs, just like JavaScript object properties.
+A name/value pair consists of a field name (in double quotes), followed by a colon, followed by a value:
+<b>JSON names require double quotes. JavaScript names do not.</b>
+	"firstName":"John"
+</pre>
+<hr/>
+
+<h2>JSON Objects</h2>
+<pre>
+JSON objects are written inside curly braces.
+Just like in JavaScript, objects can contain multiple name/value pairs:
+	{"firstName":"John", "lastName":"Doe"}
+</pre>
+<hr/>
+
+<b>JSON Arrays</b>
+<pre>
+JSON arrays are written inside square brackets.
+Just like in JavaScript, an array can contain objects:
+	"employees":[
+	    {"firstName":"John", "lastName":"Doe"},
+	    {"firstName":"Anna", "lastName":"Smith"},
+	    {"firstName":"Peter", "lastName":"Jones"}
+	]
+In the example above, the object "employees" is an array. It contains three objects.
+Each object is a record of a person (with a first name and a last name).
+</pre>
+<hr/>
+
+<h2>Converting a JSON Text to a JavaScript Object</h2>
+<pre>
+A common use of JSON is to read data from a web server, and display the data in a web page.
+For simplicity, this can be demonstrated using a string as input.
+First, create a JavaScript string containing JSON syntax:
+	var text = '{ "employees" : [' +
+	'{ "firstName":"John" , "lastName":"Doe" },' +
+	'{ "firstName":"Anna" , "lastName":"Smith" },' +
+	'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+Then, use the JavaScript built-in function JSON.parse() to convert the string into a JavaScript object:
+	var obj = JSON.parse(text);
+</pre>
+<h2>Create Object from JSON String</h2>
+<p id="demo"></p>
+
+<script>
+var text = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName;
+</script>
+
+</body>
+</html>

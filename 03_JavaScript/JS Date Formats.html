@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Date Formats</h2>
+<pre>
+JavaScript Date Input
+	There are generally 3 types of JavaScript date input formats:
+	The ISO format follows a strict standard in JavaScript.
+	The other formats are not so well defined and might be browser specific.
+		Type		Example
+		ISO Date	"2015-03-25" (The International Standard)
+		Short Date	"03/25/2015"
+		Long Date	"Mar 25 2015" or "25 Mar 2015"
+</pre>
+<hr/>
+
+<h2>JavaScript ISO Dates</h2>
+<pre>
+The computed date will be relative to your time zone.
+Depending on your time zone, the result above will vary between March 24 and March 25.
+	ISO dates can be written without specifying the day (YYYY-MM):
+		var d = new Date("2015-03");
+	ISO dates can be written without month and day (YYYY):
+		var d = new Date("2015");
+	ISO dates can be written with added hours, minutes, and seconds (YYYY-MM-DDTHH:MM:SSZ):
+		UTC (Universal Time Coordinated) is the same as GMT (Greenwich Mean Time).
+		Omitting T or Z in a date-time string can give different result in different browser.
+		var d = new Date("2015-03-25T12:00:00Z");
+
+</pre>
+<p id="demo"></p>
+<pre>
+Separate date and time with a capital T.
+Indicate UTC time with a capital Z.
+</pre>
+<p id="demo1"></p>
+<hr/>
+
+<h2>Time Zones</h2>
+<pre>
+When setting a date, without specifying the time zone, JavaScript will use the browser's time zone.
+When getting a date, without specifying the time zone, the result is converted to the browser's time zone.
+In other words: If a date/time is created in GMT (Greenwich Mean Time), the date/time will be converted to CDT (Central US Daylight Time) if a user browses from central US.
+</pre>
+<hr/>
+
+<h2>JavaScript Short Dates.</h2>
+<pre>
+Short dates are written with an "MM/DD/YYYY" syntax like this:
+	var d = new Date("03/25/2015");
+
+<b>WARNINGS !</b>
+	In some browsers, months or days with no leading zeroes may produce an error:
+		var d = new Date("2015-3-25");
+
+	The behavior of "YYYY/MM/DD" is undefined.
+	Some browsers will try to guess the format. Some will return NaN.
+		var d = new Date("2015/03/25");
+
+	The behavior of  "DD-MM-YYYY" is also undefined.
+	Some browsers will try to guess the format. Some will return NaN.
+		var d = new Date("25-03-2015");
+</pre>
+<p id="demo2"></p>
+<hr/>
+
+<h2>JavaScript Long Dates.</h2>
+<pre>
+Long dates are most often written with a "MMM DD YYYY" syntax like this:
+	var d = new Date("Mar 25 2015");
+	Month and day can be in any order:
+	var d = new Date("25 Mar 2015");
+	And, month can be written in full (January), or abbreviated (Jan):
+	var d = new Date("January 25 2015");
+	Commas are ignored. Names are case insensitive:
+	var d = new Date("JANUARY, 25, 2015");
+</pre>
+<hr/>
+
+<h2>Date Input - Parsing Dates</h2>
+<pre>
+If you have a valid date string, you can use the Date.parse() method to convert it to milliseconds.
+Date.parse() returns the number of milliseconds between the date and January 1, 1970:
+You can then use the number of milliseconds to convert it to a date object
+</pre>
+<p id="demo3"></p>
+<hr/>
+
+
+<script>
+var d = new Date("2015-03-25");
+document.getElementById("demo").innerHTML = d;
+
+var d = new Date("2015-03-25T12:00:00Z");
+document.getElementById("demo1").innerHTML = d;
+
+var d = new Date("03/25/2015");
+document.getElementById("demo2").innerHTML = d;
+
+var msec = Date.parse("March 21, 2012");
+var d = new Date(msec);
+document.getElementById("demo3").innerHTML = d;
+</script>
+
+</body>
+</html>

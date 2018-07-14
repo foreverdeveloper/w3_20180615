@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Comparison and Logical Operators</h2>
+<pre>
+Comparison and Logical operators are used to test for true or false.
+</pre>
+<hr/>
+
+<h2>Comparison Operators</h2>
+<pre>
+Comparison operators are used in logical statements to determine equality or difference between variables or values.
+Given that x = 5, the table below explains the comparison operators:
+
+Operator 	Description			Comparing	Returns
+==		equal to			x == 8		false
+						x == 5		true
+						x == "5"	true
+===		equal value and equal type	x === 5		true
+						x === "5"	false
+!=		not equal			x != 8		true
+!==		not equal value or not equal type	x !== 5	false
+						x !== "5"	true
+						x !== 8		true
+>		greater than			x > 8		false
+<		less than			x < 8		true
+>=		greater than or equal to	x >= 8		false
+<=		less than or equal to		x <= 8		true
+</pre>
+<hr/>
+
+<h2>Logical Operators</h2>
+<pre>
+Logical operators are used to determine the logic between variables or values.
+Given that x = 6 and y = 3, the table below explains the logical operators:
+	Operator	Description	Example	Try it
+	&&		and		(x < 10 && y > 1) is true
+	||		or		(x == 5 || y == 5) is false
+	!		not		!(x == y) is true
+</pre>
+<hr/>
+
+<h2>Conditional (Ternary) Operator</h2>
+<pre>
+JavaScript also contains a conditional operator that assigns a value to a variable based on some condition.
+Syntax
+	variablename = (condition) ? value1:value2
+	var voteable = (age < 18) ? "Too young":"Old enough";
+		If the variable age is a value below 18, the value of the variable voteable will be "Too young", otherwise the value of voteable will be "Old enough".
+</pre>
+<hr/>
+
+<h2>Comparing Different Types</h2>
+<pre>
+When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison. An empty string converts to 0. A non-numeric string converts to NaN which is always false.
+	Case		Value
+	2 < 12		true
+	2 < "12"	true
+	2 < "John"	false
+	2 > "John"	false
+	2 == "John"	false
+	"2" < "12"	false
+	"2" > "12"	true
+	"2" == "12"	false
+To secure a proper result, variables should be converted to the proper type before comparison:
+	age = Number(age);
+	if (isNaN(age)) {
+	    voteable = "Input is not a number";
+	} else {
+	    voteable = (age < 18) ? "Too young" : "Old enough";
+	}
+</pre>
+<p>Input your age and click the button:</p>
+<input id="age" value="18" />
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<hr/>
+
+<script>
+function myFunction() {
+    var age, voteable;
+    age = Number(document.getElementById("age").value);
+    if (isNaN(age)) {
+        voteable = "Input is not a number";
+    } else {
+        voteable = (age < 18) ? "Too young" : "Old enough";
+    }
+    document.getElementById("demo").innerHTML = voteable;
+}
+</script>
+
+</body>
+</html>

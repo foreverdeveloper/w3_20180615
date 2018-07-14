@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+<!--
+/*  이곳에 스타일을 정의 */
+/*
+CSS3 추가
+	box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
+	가로오프셋, 세로오프셋, 그림자번지는 정도, 그림자색
+	최소 3개 이상의 값을 유지
+
+*/
+#example1 {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+#example2 {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+#example3 {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 18px red;
+}
+
+#example4 {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 8px 10px #888888;
+}
+
+#example5 {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
+}
+
+#example6 {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+}
+
+#example7 {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px inset;
+}
+
+#example8 {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 20px red inset;
+}
+
+//-->
+</style>
+</head>
+
+<body>
+<h2>box-shadow: 5px 10px 8px #888888:</h2>
+<div id="example1">
+<p>The optional third value adds a blur effect to the shadow.</p>
+</div>
+
+<h2>box-shadow: 5px 10px 18px #888888:</h2>
+<div id="example2">
+<p>More blurred.</p>
+</div>
+
+<h2>box-shadow: 5px 10px 18px red:</h2>
+<div id="example3">
+<p>More blurred and red.</p>
+</div>
+
+<h2>box-shadow: 5px 10px 8px 10px #888888:</h2>
+<div id="example4">
+<p>The optional fourth value defines the spread of the shadow.</p>
+</div>
+
+<h2>box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green:</h2>
+<div id="example5">
+<p>Define multiple shadows.</p>
+</div>
+
+<h2>box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green:</h2>
+<div id="example6">
+<p>Define multiple shadows with blur effect.</p>
+</div>
+
+<h2>box-shadow: 5px 10px inset:</h2>
+<div id="example7">
+<p>The inset keyword changes the shadow to one inside the frame.</p>
+</div>
+
+<h2>box-shadow: 5px 10px 20px red inset:</h2>
+<div id="example8">
+<p>Inset, red and blur.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+웹 사이트의 구조
+	상단/하단/왼쪽 메뉴/오른쪽 콘텐츠 - 일반적인 블로그
+	상단/하단/가운데 콘텐츠	-	 기업 사이트
+		<header>
+			<nav></nav>
+		</header>
+		<article></article>
+			<div id="news"></div>
+			<div id="social"></div>
+		<footer></footer>
+
+	상단/하단/왼쪽 콘텐츠/오른쪽 메뉴 - 블로그
+	왼쪽 메뉴/오른쪽 콘텐츠 - 설명서나 e-book
+
+XHTML과 HTML의 차이점
+	코딩 				비효율적임 			효율적임
+	코드의 	양 	많음 						줄어듦
+	구동 시간 		느림 						빨라짐
+	머리말 			<div id=“header”> 	<header>
+
+CSS를 이용한 HTML 문서
+	CSS의 사용 방법 :
+		외부 스타일시트, 내부 스타일시트, HTML 태그 스타일시트
+		<외부 스타일시트>
+			<head>
+			<link rel=”stylesheet” type=“text/css” href=“파일명.css”>
+			</head>
+		<내부 스타일시트>
+			<style type=“text/css”>
+			Body {속성:값;}
+			</style>
+		<HTML 태그 스타일시트>
+			<div style=“속성:값;”>
+			내용
+			</div>
+
+HTML5 + CSS3 + jQuery 웹 페이지 구축 순서
+	 HTML 문서 구조 잡기 실습 예제
+		<!doctype html>
+		<html>
+		<head>
+		<meta charset="utf-8">
+		<title>Ex01</title>
+			<style type="text/css">
+				body{
+				font-size:1em;
+				color:Black;
+				}
+				header, article, footer{
+				border:1px solid gray;
+				margin:5px;
+				}
+				header{
+				background-color:orange;
+				height:100px;
+				}
+				article{
+				height:150px;
+				}
+				footer{
+				height:100px;
+				background-color:skyblue;
+				}
+			</style>
+		</head>
+		<body>
+			<header> 머리말 </header>
+			<article> 본문 </article>
+			<footer> 꼬리말 </footer>
+		</body>
+		</html>
+
+ jQuery의 사용
+	www.jquerymobile.com 접속
+	다운로드 탭을 클릭
+	HTML5코드에 삽입할 수 있는 jQuery 소스를 복사하여 head(헤드)영역 내부에 붙여 넣기
+
+ HTML5 - HTML 문서의 구조
+	 <body>
+		<div class="container" data-role="page">
+		<div data-role="header" data-theme="a">
+		</div>
+		<div data-role="content" data-theme="c" id="content">
+		</div>
+		<div data-role="footer" data-theme="a" id="foot">
+		</div>
+	</dody>
+	</html>
+
+<Default 테마(a~e) 특징> data-theme
+	a 	비주얼(Visual)을 중시한 최고 레벨의 색상을 표현
+	b 	모바일에 친숙한 두 번째 레벨의 색상을 표현
+	c 	가장 보편적으로 기본 레벨의 색상을 표현
+	d 	atternate(번갈아 가면서 생기는) 표현을 위한 테마
+	e 	강조 표현을 위한 테마
+
+<사용자 정의 테마 적용 방법>
+	다운받은 css 파일에서 a에서 e에 해당하는 Swatches 구현부를 찾음
+		/* A --/ , /* B--/
+	구현부를 복사하여 변형하여 사용함
+		.ui-bar-z {
+		.....
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

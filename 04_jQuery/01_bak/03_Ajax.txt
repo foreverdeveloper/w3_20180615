@@ -1,0 +1,63 @@
+ Ajax란?
+	Ajax(Asynchronous JavaScript and XML)의 약어
+	XML을 이용하여 비 동기 통신을 처리하기 위한 기술
+	HTTP방식으로 요청을 했을 때, XML파일 형식의 응답으로 결과를 보내줌
+
+자바 스크립트 Ajax(XHR의 속성)
+	readyState
+		Ajax 개체의 상태를 나타내는 숫자
+			처음 Ajax 개체를 생성할 경우 : 0
+			get() 메소드로 요청할 페이지 정보를 설정할 경우 : 1
+			send() 메소드로 요청을 보낼 경우 : 2
+			서버에서 응답이 오기 시작할 경우 : 3
+			서버 응답이 완료될 경우 : 4
+		읽기 전용
+
+	status
+		서버로부터 받은 응답의 상태를 나타내는 숫자
+			정상적으로 응답을 받은 경우 : 200
+			페이지를 찾지 못한 경우 : 404
+		읽기 전용
+
+	statusText
+		서버로부터 받은 응답의 상태를 나타내는 문자열
+			정상적으로 응답을 받을 경우 : ‘OK’
+			파일을 찾지 못할 경우 : ‘Not Found’
+		읽기 전용
+
+XHR의 메소드
+	open() : Ajax 요청을 초기화하면서 요청 방식, 주소, 동기화 여부를 지정함
+		open(method, url[, async]);
+			method: http 요청 방식을 나타내며 ‘get’ 또는 ‘post’ 방식을 사용함
+			url : 요청할 페이지의 주소를 지정함
+			async : 비동기 통신 여부를 나타내며 true 또는 false로 지정함
+				aysnc인자를 지정하지 않으면 true를 기본값으로 사용함
+
+	send() : Ajax 요청을 보냄
+		send(body);
+			body : 요청과 함께 서버로 보낼 내용을 지정함
+			abort() : send 메소드로 보낸 요청을 취소함
+
+	getAllResponseHeaders() :
+		응답을 받은 경우, 응답의 모든 헤더 정보를 문자열로 돌려줌
+		→ 헤더 전체 내용을 가져옴
+
+	getResponseHeader(header) :
+		응답을 받은 경우 header 인자로 지정한 이름의 헤더 정보 값을 문자열로 돌려줌
+		→ 특정한 헤더를 가져옴
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

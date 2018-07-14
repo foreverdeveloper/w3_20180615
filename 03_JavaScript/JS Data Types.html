@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Types are Dynamic.</h2>
+<pre>
+JavaScript has dynamic types.
+This means that the same variable can be used to hold different data types:
+JavaScript has dynamic types. This means that the same variable can be used to hold different data types
+</pre>
+<p id="demo11"></p>
+
+<hr/>
+<h2>JavaScript Strings</h2>
+<pre>
+A string (or a text string) is a series of characters like "John Doe".
+Strings are written with quotes. You can use single or double quotes:
+You can use quotes inside a string, as long as they don't match the quotes surrounding the string
+</pre>
+<p id="demo10"></p>
+
+
+<hr/>
+<h2>JavaScript Numbers</h2>
+<pre>
+JavaScript has only one type of numbers.
+Numbers can be written with, or without decimals:
+Extra large or extra small numbers can be written with scientific (exponential) notation:
+</pre>
+<p id="demo9"></p>
+
+<hr/>
+<h2>JavaScript Booleans</h2>
+<pre>
+Booleans can only have two values: true or false.
+</pre>
+<p id="demo8"></p>
+
+<hr/>
+<h2>JavaScript Arrays</h2>
+<pre>
+JavaScript arrays are written with square brackets.
+Array items are separated by commas.
+</pre>
+<p id="demo7"></p>
+
+<hr/>
+<h2>JavaScript Objects</h2>
+<pre>
+JavaScript objects are written with curly braces.
+Object properties are written as name:value pairs, separated by commas.
+</pre>
+<p id="demo6"></p>
+
+<hr/>
+<h2>JavaScript typeof</h2>
+<p>The typeof operator returns the type of a variable or an expression.</p>
+<p id="demo5"></p>
+<p id="demo4"></p>
+<hr/>
+<h1>Null</h1>
+<pre>
+In JavaScript null is "nothing". It is supposed to be something that doesn't exist.
+Unfortunately, in JavaScript, the data type of null is an object.
+</pre>
+
+<hr/>
+<h1>Difference Between Undefined and Null</h1>
+<p>Undefined and null are equal in value but different in type:</p>
+<p id="demo3"></p>
+<hr/>
+<h1>Primitive Data</h1>
+A primitive data value is a single simple data value with no additional properties and methods.
+
+<h2>JavaScript typeof</h2>
+<p>The typeof operator returns the type of a variable or an expression.</p>
+<p id="demo2"></p>
+
+<hr/>
+<h1>Complex Data</h1>
+<h2>JavaScript typeof</h2>
+<p>The typeof operator returns object for both objects, arrays, and null.</p>
+<p>The typeof operator does not return object for functions.</p>
+<p id="demo1"></p>
+
+
+<script>
+// JavaScript Data Types
+var x;               // Now x is undefined
+x = 5;               // Now x is a Number
+x = "John";          // Now x is a String
+
+document.getElementById("demo11").innerHTML = x;
+
+//String
+var carName1 = "Volvo XC60";
+var carName2 = 'Volvo XC60';
+var answer1 = "It's alright";
+var answer2 = "He is called 'Johnny'";
+var answer3 = 'He is called "Johnny"';
+
+document.getElementById("demo10").innerHTML =
+carName1 + "<br>" +
+carName2 + "<br>" +
+answer1 + "<br>" +
+answer2 + "<br>" +
+answer3;
+
+//Number
+var x1 = 34.00;
+var x2 = 34;
+var x3 = 3.14;
+var y = 123e5;
+var z = 123e-5;
+
+document.getElementById("demo9").innerHTML =
+x1 + "<br>" + x2 + "<br>" + x3  + "<br>" +
+y + "<br>" + z;
+
+
+//Booleans
+var x = 5;
+var y = 5;
+var z = 6;
+document.getElementById("demo8").innerHTML =
+(x == y) + "<br>" + (x == z);
+
+// Arrays
+var cars = ["Saab","Volvo","BMW"];
+document.getElementById("demo7").innerHTML = cars[0];
+
+// JavaScript Objects
+// The object (person) in the example above has 4 properties: firstName, lastName, age, and eyeColor.
+var person = {
+    firstName : "John",
+    lastName  : "Doe",
+    age       : 50,
+    eyeColor  : "blue"
+};
+
+document.getElementById("demo6").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+
+document.getElementById("demo5").innerHTML =
+typeof "" + "<br>" +			// string
+typeof "John" + "<br>" +
+typeof "John Doe";
+
+document.getElementById("demo4").innerHTML =
+typeof 0 + "<br>" +		// number
+typeof 314 + "<br>" +
+typeof 3.14 + "<br>" +
+typeof (3) + "<br>" +
+typeof (3 + 4);
+
+document.getElementById("demo3").innerHTML =
+typeof undefined + "<br>" +			// undefined
+typeof null + "<br><br>" +			// object
+(null === undefined) + "<br>" +		// false
+(null == undefined);						// true
+
+document.getElementById("demo2").innerHTML =
+typeof "john" + "<br>" +
+typeof 3.14 + "<br>" +
+typeof true + "<br>" +
+typeof false + "<br>" +
+typeof x;
+
+document.getElementById("demo1").innerHTML =
+typeof {name:'john', age:34} + "<br>" +
+typeof [1,2,3,4] + "<br>" +
+typeof null + "<br>" +
+typeof function myFunc(){};
+</script>
+
+</body>
+</html>

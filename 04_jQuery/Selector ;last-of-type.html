@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery :last-of-type Selector</h2>
+<pre>
+<h3>Definition and Usage</h3>
+The :last-of-type selector selects all elements that are the last child, of a particular type, of their parent.
+Tip: This is the same as :nth-last-of-type(1).
+Tip: Use the :first-of-type selector to select all elements that are the first child, of a particular type, of their parent.
+Syntax
+	$(":last-of-type")
+</pre>
+<hr/>
+
+<script>
+$(document).ready(function(){
+    $("p:last-of-type").css("background-color", "yellow");
+});
+</script>
+
+<p>The first paragraph in body.</p>
+
+<div style="border:1px solid;">
+  <p>The first paragraph in div.</p>
+  <p>The last paragraph in div.</p>
+</div><br>
+
+<div style="border:1px solid;">
+  <p>The first paragraph in another div.</p>
+  <p>The last paragraph in another div.</p>
+  <span>This is a span element.</span>
+</div>
+
+<p>The last paragraph in body.</p>
+
+
+
+
+
+
+
+</body>
+</html>

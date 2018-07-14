@@ -1,0 +1,274 @@
+반응형 웹(Responsive Web)
+	디스플레이 종류에 따라 화면의 크기가 자동으로 최적화되도록 조절되는
+	웹 페이지
+
+뷰 포트(View Port)
+	디스플레이의 화면상의 화상 표시
+
+메타데이터
+	데이터에 관한 구조화된 데이터로, 다른 데이터를 설명해 주는 데이터
+
+
+반응형 웹 디자인
+	다양해지는 사용자 브라우저 환경에 따라 웹사이트를 제작하는 데는 한계가 있음
+	화면 크기에 맞게 화면 요소들을 재배치하고 각 요소의 표시 방법만
+	다르게 해서 사이트를 구현함
+
+미디어 쿼리
+	디바이스 사이즈에  따라 화면을 다르게 표현하는 방식
+	사이트에 접속하는 장치에 따라 특정한 CSS 스타일을 사용하도록 함
+	뷰 포트(View Port) 너비 같은 여러 장치들의 조건에 맞춰
+	특정한 CSS 스타일을 지정함
+	스타일 시트에 정밀하게 라벨을 붙여서 미디어 유형을 더욱 넓게 확장
+	http://www.w3.org/TR/css3-mediaqueries/
+		HTML4와 CSS2는 미디어 유형마다 각각의 스타일 시트를 지원함
+			ex) 화면(Screen)에 표시할 때는 산세리프(Sans-serif) 글꼴을 사용하고,
+				인쇄(Print)할 때는 세리프(Serif) 글꼴을 사용하도록 2개의
+				미디어 유형이 정의된 문서를 만듦
+
+
+		<!doctype html>
+		<html>
+		<head>
+		<meta charset="utf-8">
+		<title>무제 문서</title>
+			<style>
+				@media screen{
+					h1{
+						font-family: "나눔고딕";
+					}
+				}
+				@media print{
+					h1{
+						font-family: "나눔명조";
+					}
+				}
+			</style>
+		</head>
+		<body>
+			<h1> 반응형 웹 디자인 </h1>
+		</body>
+		</html>
+
+	미디어 쿼리
+		미디어 쿼리 구문 : 대소문자를 구별하지 않음
+		디바이스
+			all : 모든 디바이스를 대상으로 함
+				media=“all”
+			screen : 컴퓨터 화면을 대상으로 함
+				media=“screen”
+			print : 인쇄 미리 보기, 또는 실제 인쇄매체를 대상으로 함
+				media=“print”
+			orientation
+				디바이스의 방향을 나타냄
+				portrait’(세로로 길게),
+				landscape’(가로로 길게) 값을
+				사용해서 방향을 지정함
+				media=“orientation:landscape”
+
+		연산자
+			and
+				And 연산자 역할을 수행함 media=“screen and (orientation: landscape)”
+			,
+				Or 연산자 역할을 수행함 media=“screen, print”
+
+		속성 값
+			width
+				대상 매체의 해상도 너비 값을 지정해서 미디어 쿼리가 만족하는
+				조건을 설정함
+				‘min-(최소값)’, ‘max-(최대값)’의 접두어를 함께 적어서 범위를 지정할
+				수 있음
+						media=“screen and (minwidth: 320px)”
+			height
+				대상 매체의 해상도 높이 값을 지정해서 미디어 쿼리가 만족하는
+				조건을 설정함
+				접두어 ‘min-’,’max-’를 함께 적어서 범위를 지정할 수 있음
+						media=“screen and (maxheight:480px)”
+
+	내부 스타일 시트로 반응형 웹 만들기
+		화면에 나타나는 브라우저의 너비를 이용하여 스타일을 다르게 주는 방식이
+		‘반응형 웹‘ 개념으로 발전함
+		‘min-width’, ‘max-width’, ‘orientation’, ‘and’와 같은 속성값과 연산자를 조합하여
+		브라우저의 너비와 디바이스의 방향을 구분함
+			<style>
+				@media (max-width:799px) {/*스마트 폰 용 스타일 */}
+				@media only screen and (min-width:800px) and (max-width:1023px){
+					/*태블리 PC용 스타일*/}
+				@media only screen and (min-width:1024px){/*데스크탑 PC*/}
+			</style>
+
+	외부 스타일 시트로 반응형 웹 만들기
+		HTML 문서에서 <link> 태그를 이용하여 여러 미디어에 해당되는 CSS 파일을
+		포함시켜 사용함
+
+		데스크톱 PC용 CSS 파일
+		<link href=“desktop.css” rel=“stylesheet” type=“text/css”
+			media=“screen and (minwidth:800px)“>
+		스마트 폰 용 CSS 파일
+		<link href=“mobile.css” rel=“stylesheet” type=“text/css”
+			media=“screen and (maxwidth:799px)”>
+
+미디어 쿼리 이용 맞춤형 스타일 구현
+	 모바일과 데스크톱 PC 차이점 인식
+		3G 사용이 제한된 무선 인터넷
+			되도록이면 이미지를 적게 사용해서 빠른 접속 속도가 나올 수 있도록 해주어야 함
+		다양한 모바일 디바이스의 화면 크기
+			데스크톱 PC처럼 가로 크기가 고정되어 있는 상태에서 CSS 작업을 하는 것은
+			바람직하지 않음
+		중요한 스마트 폰으로 한정해 놓고 초점을 맞출 것
+		끊임없이 새로운 스마트 폰 디바이스, 브라우저, OS가 출시되고 있음
+		모든 브라우저에서 모두 동일한 화면을 제공해 줄 필요는 없음
+
+	HTML 작업
+		심플한 시맨틱 마크업
+			웹 표준에 입각해서 심플하면서도 분명하게 작업해 주어야 함
+			시맨틱 마크업을 위한 HTML5 지침
+				header, article, section, footer 같은 엘리먼트들을 사용함.
+
+		뷰 포트 메타데이터
+			한 화면에 모든 내용을 다 보여주기 위해서 자동으로 화면을
+			줌 아웃해 글자가 작게 보이는 것
+			<meta name=“viewport” content=“user-scalable=no, width=device-width”/>
+
+		 모바일 스타일링
+			미디어 쿼리
+				모바일 디바이스와 데스크톱 PC를 모두 지원하기 위해서는
+				각 경우에 맞는 CSS 스타일을 포함시켜 사용해야 함
+
+				<link href=“mobile.css” rel=“stylesheet” type=“text/css”
+				media=“screen and (max-width:799px)”>
+
+			공통 스타일 시트 제작
+				동일한 스타일이 모바일과 데스크톱 PC에 중복해서 사용되는 경우에는
+				공통분모만 모아서 별도의 파일로 분리함
+				<link href=“common.css” rel=“stylesheet” type=“text/css”>
+
+			하이퍼링크
+				상속 기능을 사용하면 상위 엘리먼트의 스타일을 그대로 전해 받아
+				처리할 수 있으므로 편리함
+					a:link, a:visited{
+						color: inherit; /* 상위 엘리먼트의 색상 상속받음 */
+					}
+
+		데스크톱 PC 스타일링
+			타이틀 배경 이미지 활용
+				배경 이미지를 넣기에 좋은 부분 : header 엘리먼트
+					<head> <title>My Site</title>
+						<link rel="shortcut icon" href="favicon.ico" /> </head>
+
+			메뉴를 오른쪽에 배치하기
+				메뉴를 배치하기 위해서 float를 사용할 수 있음
+
+					.entries{
+					float: right;
+					}
+
+
+반응형 웹 디자인
+	유연한 그리드 레이아웃, 유연한 이미지, 미디어와 미디어 쿼리를
+	하나의 접근 방식으로 통합함
+
+	반응형 웹 디자인의 핵심 요소 : CSS3 미디어 쿼리
+
+	<sestion> 요소: 문서나 애플리케이션의 일반적인 섹션을 정의하는데 사용함
+	<nav> 요소: 페이지 내에서 다른 페이지나 페이지의 다른 부분으로 이동하기
+				위한 블록을 정의하는데 사용함
+	제이쿼리(jQuery) : 일반 자바스크립트에서 볼 수 없는 다양한 애니메이션 효과의
+				구현을 위한 기능적인 함수들이 많이 추가됨.
+
+	반응형 웹 디자인을 대치할 수 있는 요소
+		CSS3 모듈로 유연성을 강화할 수 있음
+		간결한 CSS3의 그레디언트와 섀도, 타이포그래피, 애니메이션, 트랜스폼으로
+		복잡한 자바스크립트와 그래픽을 대치할 수 있음
+
+	반응형 웹 사이트 디자인의 완벽한 테스트 방법
+		모든 디바이스와 스크린 크기를 설정할 수 있는 별도의 시스템을 갖추는 편이 좋음
+		대부분의 경우 브라우저 창의 크기를 조절하는 것만으로도 가능함
+
+
+반응형 웹 제작을 위한 CSS3
+	경계선
+		모서리를 둥글게 함
+		네 모서리 중 원하는 부분만 둥글게 표현 : 원, 반원, 4분의 1조각 짜리 원
+			border-radius : 30px;
+			네 모서리가 30px만큼 둥근 박스를 만들어 줌
+			둥근 모서리를 동그란 원의 테두리로 생각했을 대 그 원의 반지름을
+			radius 값으로 표현함
+
+	Box-shadow
+
+		box-shadow: inset 0px 0px 20px 15px rgba(18, 52, 86, 0.8);
+			inset: 박스의 그림자가 안쪽으로 퍼지게 됨
+			가로로 밀리는 폭
+			세로로 밀리는 폭
+			그림자가 퍼지는 정도
+			그림자와 박스의 거리
+			(괄호 안은 Red, Green, Blue, 투명도 순으로 입력)
+
+	문자 효과 : Text-shadow, Word-wrap, Font-face
+		Text-shadow :
+			그래픽 프로그램의 도움 없이 글자에 그림자를 줄 수 있음
+		Word-wrap :
+			영문으로 입력한 글자가 박스 밖으로 튀어 나오지 못하게 하는 줄 바꿈 기능
+		Font-face :
+			사용자들도 같은 글꼴로 볼 수 있도록 웹 폰트를 설정하는 방법
+
+
+HTML5의 새로운 시맨틱 요소
+	<section> :
+		문서나 애플리케이션의 일반적인 섹션을 정의하는 데 사용됨
+		한 섹션은 연락처 정보, 다른 섹션은 뉴스 피드와 같은 식으로 콘텐츠를
+		몇 개의 섹션으로 나누어 구성할 수 있음
+	<nav> :
+		페이지 내에서 다른 페이지나 페이지의 다른 부분으로 이동하기 위한
+		주요 내비게이션 블록을 정의하는 데 사용됨
+	<article> :
+		콘텐츠의 독립적인 부분을 나타내는 데 사용됨
+		<article> 요소를 중첩해서 사용할 경우, 중첩된 <article> 요소는 바깥쪽의
+		기사와 연관되어 있다고 여겨짐
+	<header> :
+		HTML5의 개요 알고리즘과 무관하기 때문에 섹션 콘텐츠에
+		사용할 수 없으며 대신 콘텐츠를 소개할 때 사용함
+	<footer> :
+		개요 알고리즘과 무관하기 때문에 섹션 콘텐츠에 사용할 수 없고,
+		대신 섹션에 대한 정보를 포함하는 데 사용함
+	<address>:
+		<article>이나 <body> 요소의 연락처 정보를 표시하기 위해 명시적으로 사용됨
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

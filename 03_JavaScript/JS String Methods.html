@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript String Methods</h2>
+<p>The indexOf() method returns the position of the first occurrence of a specified text:</p>
+<pre>
+JavaScript counts positions from zero.
+0 is the first position in a string, 1 is the second, 2 is the third ...
+
+Both indexOf(), and lastIndexOf() return -1 if the text is not found.
+Both methods accept a second parameter as the starting position for the search:
+</pre>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<hr/>
+
+<h2>Searching for a String in a String</h2>
+<p>The search() method returns the position of the first occurrence of a specified text in a string:</p>
+<pre>
+	The search() method cannot take a second start position argument.
+	The indexOf() method cannot take powerful search values (regular expressions).
+</pre>
+<p id="demo3"></p>
+<hr/>
+
+<h2>Extracting String Parts</h2>
+<pre>
+There are 3 methods for extracting a part of a string:
+	slice(start, end)
+		start 인덱스 포함, end 인덱스 미포함
+		음수인 경우, 뒤에서 부터 1로 카운터, start 인덱스 포함, end 인덱스 미포함
+		the starting index (position), and the ending index (position).
+		If a parameter is negative, the position is counted from the end of the string.
+		If you omit the second parameter, the method will slice out the rest of the string:
+
+	substring(start, end)
+		substring() is similar to slice().
+		The difference is that substring() <b>cannot accept negative indexes.</b>
+		If you omit the second parameter, substring() will slice out the rest of the string.
+
+	substr(start, length)
+		substr() is similar to slice().
+		The difference is that the second parameter specifies the length of the extracted part.
+		If you omit the second parameter, substr() will slice out the rest of the string.
+		If the first parameter is negative, the position counts from the end of the string.
+
+</pre>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<hr/>
+
+<h2>Replacing String Content</h2>
+<pre>
+The replace() method replaces a specified value with another value in a string.
+The replace() method does not change the string it is called on. It returns a new string.
+To replace case insensitive, use a regular expression with an /i flag (insensitive):
+<b>Note that regular expressions are written without quotes.</b>
+To replace all matches, use a regular expression with a /g flag (global match)
+
+</pre>
+<p id="demo8">Please visit Microsoft!</p>
+<p id="demo9">Please visit Microsoft!</p>
+<p id="demo10">Please visit Microsoft!</p>
+<p id="demo11">Please visit Microsoft and Microsoft!</p>
+<hr/>
+
+<h2>Converting to Upper and Lower Case</h2>
+<pre>
+A string is converted to upper case with toUpperCase():
+A string is converted to lower case with toLowerCase():
+</pre>
+<p id="demo12">Hello World!</p>
+<hr/>
+
+<h2>The concat() Method</h2>
+<pre>
+concat() joins two or more strings
+	var text = "Hello" + " " + "World!";
+	var text = "Hello".concat(" ", "World!");
+
+All string methods return a new string. They don't modify the original string.
+Formally said: Strings are immutable: Strings cannot be changed, only replaced.
+</pre>
+<p id="demo13">Hello World!</p>
+<hr/>
+
+<h2>Extracting String Characters</h2>
+<pre>
+There are 2 safe methods for extracting string characters:
+	charAt(position)
+		The charAt() method returns the character at a specified index (position) in a string:
+			var str = "HELLO WORLD";
+			str.charAt(0);            // returns H
+	charCodeAt(position)
+		The charCodeAt() method returns the unicode of the character at a specified index in a string:
+			var str = "HELLO WORLD";
+			str.charCodeAt(0);         // returns 72
+
+<b>Accessing a String as an Array is Unsafe</b>
+	var str = "HELLO WORLD";
+	str[0];                   // returns H
+
+	This is unsafe and unpredictable:
+		It does not work in all browsers (not in IE5, IE6, IE7)
+		It makes strings look like arrays (but they are not)
+		str[0] = "H" does not give an error (but does not work)
+		If you want to read a string as an array, convert it to an array first.
+</pre>
+<hr/>
+<h2>Converting a String to an Array</h2>
+<pre>
+A string can be converted to an array with the split() method:
+	var txt = "Hello";       // String
+	txt.split("");           // Split in characters
+</pre>
+<p id="demo14"></p>
+<p id="demo15"></p>
+
+<script>
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+document.getElementById("demo").innerHTML = pos;
+
+var pos = str.lastIndexOf("John");
+document.getElementById("demo1").innerHTML = pos;
+
+var pos = str.indexOf("locate",15);
+document.getElementById("demo2").innerHTML = pos;
+
+var str = "Please locate where 'locate' occurs!";
+var pos = str.search("locate");
+document.getElementById("demo3").innerHTML = pos;
+
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(-12,-6);
+document.getElementById("demo4").innerHTML = res;
+var res = str.substring(7,13);
+document.getElementById("demo5").innerHTML = res;
+var res = str.substr(7,6);
+document.getElementById("demo6").innerHTML = res;
+var res = str.substr(-4);
+document.getElementById("demo7").innerHTML = res;
+
+var str = document.getElementById("demo8").innerHTML;
+var txt = str.replace("Microsoft","W3Schools");
+document.getElementById("demo8").innerHTML = txt;
+document.getElementById("demo9").innerHTML = str;
+var txt = str.replace(/MICROSOFT/i,"W3Schools");
+document.getElementById("demo10").innerHTML = txt;
+
+var str = document.getElementById("demo11").innerHTML;
+var txt = str.replace(/Microsoft/g,"W3Schools");
+document.getElementById("demo11").innerHTML = txt;
+
+var text = "Hello World!";
+document.getElementById("demo12").innerHTML = text.toLowerCase();
+
+var text1 = "Hello";
+var text2 = "World!";
+var text3 = text1.concat(" ",text2);
+document.getElementById("demo13").innerHTML = text3;
+
+var str = "a,b,c,d,e,f";
+var arr = str.split(",");
+document.getElementById("demo14").innerHTML = arr[0];
+
+var str = "Hello";
+var arr = str.split("");
+var text = "";
+var i;
+for (i = 0; i < arr.length; i++) {
+    text += arr[i] + "<br>"
+}
+document.getElementById("demo15").innerHTML = text;
+
+</script>
+
+</body>
+</html>
+

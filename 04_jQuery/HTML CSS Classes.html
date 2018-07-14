@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+.important {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.blue {
+    color: blue;
+}
+</style>
+</head>
+<body>
+
+<h2>jQuery - Get and Set CSS Classes</h2>
+<pre>
+With jQuery, it is easy to manipulate the CSS of elements.
+</pre>
+<hr/>
+
+<h2>jQuery addClass() Method</h2>
+<pre>
+The following example shows how to add class attributes to different elements. Of course you can select multiple elements, when adding classes:
+You can also specify multiple classes within the addClass() method:
+	$("button").click(function(){
+	    $("#div1").addClass("important blue");
+	});
+</pre>
+
+<script>
+$(document).ready(function(){
+    $("button.btn1").click(function(){
+        $("h1.cls1, h2.cls1, p.cls1").addClass("blue");
+        $("div.cls1").addClass("important");
+    });
+});
+</script>
+<h1 class='cls1'>Heading 1</h1>
+<h2 class='cls1'>Heading 2</h2>
+<p class='cls1'>This is a paragraph.</p>
+<p class='cls1'>This is another paragraph.</p>
+<div class='cls1'>This is some important text!</div><br>
+<button class='btn1'>Add classes to elements</button>
+<hr/>
+
+<h2>jQuery removeClass() Method</h2>
+<pre>
+The following example shows how to remove a specific class attribute from different elements:
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls2").click(function(){
+        $("h1, h2, p").removeClass("blue");
+    });
+});
+</script>
+<h1 class="blue">Heading 1</h1>
+<h2 class="blue">Heading 2</h2>
+<p class="blue">This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<button class='cls2'>Remove class from elements</button>
+<hr/>
+
+<h2>jQuery toggleClass() Method</h2>
+<pre>
+The following example will show how to use the jQuery toggleClass() method. This method toggles between adding/removing classes from the selected elements:
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls3").click(function(){
+        $("h1, h2, p").toggleClass("blue");
+    });
+});
+</script>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<button class='cls3'>Toggle class</button>
+<hr/>
+
+</body>
+</html>

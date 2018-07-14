@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h2>jQuery - Remove Elements</h2>
+<pre>
+With jQuery, it is easy to remove existing HTML elements
+<h3>Remove Elements/Content</h3>
+To remove elements and content, there are mainly two jQuery methods:
+	remove() - Removes the selected element (and its child elements)
+	empty() - Removes the child elements from the selected element
+
+</pre>
+<hr/>
+
+<h2>jQuery remove() Method</h2>
+<pre>
+The jQuery remove() method removes the selected element(s) and its child elements.
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.btn1").click(function(){
+        $("#div1").remove();
+    });
+});
+</script>
+
+<div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+This is some text in the div.
+<p>This is a paragraph in the div.</p>
+<p>This is another paragraph in the div.</p>
+</div>
+<br>
+<button class='btn1'>Remove div element</button>
+<hr/>
+
+<h2>jQuery empty() Method</h2>
+<pre>
+The jQuery empty() method removes the child elements of the selected element(s).
+
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.btn2").click(function(){
+        $("#div2").empty();
+    });
+});
+</script>
+<div id="div2" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+This is some text in the div.
+<p>This is a paragraph in the div.</p>
+<p>This is another paragraph in the div.</p>
+</div>
+<br>
+<button class='btn2'>Empty the div element</button>
+<hr/>
+
+<h2>Filter the Elements to be Removed</h2>
+<pre>
+The jQuery remove() method also accepts one parameter, which allows you to filter the elements to be removed.
+The parameter can be any of the jQuery selector syntaxes.
+The following example removes all &lt;p&gt; elements with class="test":
+	ex) This example removes all &lt;p&gt; elements with class="test" and class="demo":
+		$("p").remove(".test, .demo");
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.btn3").click(function(){
+        $("p").remove(".test");
+    });
+});
+</script>
+<style>
+.test {
+    color: red;
+    font-size: 20px;
+}
+</style>
+<p>This is a paragraph.</p>
+<p class="test">This is another paragraph.</p>
+<p class="test">This is another paragraph.</p>
+
+<button class='btn3'>Remove all p elements with class="test"</button>
+<hr/>
+
+</body>
+</html>

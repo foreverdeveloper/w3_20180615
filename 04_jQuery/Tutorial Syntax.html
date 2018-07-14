@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+    });
+});
+</script>
+</head>
+<body>
+<h2>jQuery Syntax</h2>
+<pre>
+With jQuery you select (query) HTML elements and perform "actions" on them.
+The jQuery syntax is tailor-made for <b>selecting</b> HTML elements and performing some <b>action</b> on the element(s).
+Basic syntax is: <b>$(selector).action()</b>
+	A $ sign to define/access jQuery
+	A (selector) to "query (or find)" HTML elements
+	A jQuery action() to be performed on the element(s)
+Examples:
+	$(this).hide() - hides the current element.
+	$("p").hide() - hides all &lt;p&gt; elements.
+	$(".test").hide() - hides all elements with class="test".
+	$("#test").hide() - hides the element with id="test".
+
+Are you familiar with CSS selectors?
+	jQuery uses CSS syntax to select elements.
+	You will learn more about the selector syntax in the next chapter of this tutorial.
+</pre>
+<hr/>
+
+<h2>The Document Ready Event</h2>
+<pre>
+You might have noticed that all jQuery methods in our examples, are inside a document ready event
+	$(document).ready(function(){
+
+	   // jQuery methods go here...
+
+	});
+
+This is to prevent any jQuery code from running before the document is finished loading (is ready).
+It is good practice to wait for the document to be fully loaded and ready before working with it. This also allows you to have your JavaScript code before the body of your document, in the head section.
+<br/>
+Here are some examples of actions that can fail if methods are run before the document is fully loaded:
+	Trying to hide an element that is not created yet
+	Trying to get the size of an image that is not loaded yet
+Tip: The jQuery team has also created an even shorter method for the document ready event:
+	$(function(){
+
+	   // jQuery methods go here...
+
+	});
+Use the syntax you prefer. We think that the document ready event is easier to understand when reading the code.
+</pre>
+
+
+</body>
+</html>

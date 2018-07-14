@@ -1,0 +1,81 @@
+<!doctype html>
+<html> 
+	<head>
+		<meta charset=utf-8>
+		<title> 표 작성하기 </title>
+		<style>
+			table {
+				/* border-collapse은 테두리가 겹칠 경우, 테두리를 겹칠때 어떻게 그릴 것인지를 설정하는 속성
+				   기본값은 테두리를 따로 그리는 separate이며, collapse는 테두리를 하나로 합쳐 그리도록 설정함 */
+				border-collapse: collapse;
+				
+				/* 글꼴이 없을 경우를 대비하여, 두 번째, 세 번째 글꼴 지정 */
+				font-family: "Times New Roman", Times, serif;
+				
+				/* 가로의 길이가 화면의 80%를 차지하도록 설정 */ 
+				width : 80%; 
+			}
+						
+		    tr,td,th {
+				border: 1px solid black;
+				padding : 10px; 
+			}
+
+			th{
+				font-size : 20px; 
+				background-color: SlateBlue;
+				
+			}
+
+			tr:hover {
+				 background-color: LightGray;     
+			}
+			
+			caption p{
+				font-family : "맑은 고딕", 돋움, 굴림;
+				font-size : 25px; 
+				text-decoration : underline; 
+				color : rgb(255, 99, 71);
+			}
+			
+			p{ text-align : center; }
+		</style>
+	</head>
+	<body>
+		<table>	   
+			<caption>				
+				<p>웹 브라우저의 종류<p>
+			</caption>
+			<thead>
+				<tr>
+					<th>웹 브라워저</th>
+					<th>제조업체</th>
+					<th>다운로드 사이트</th>
+				</tr>
+			</thead>			
+			<tbody>
+				<tr> 
+					<td> IE(Internet Explorer) </td> 
+					<td>Microsoft</td> 
+					<td>https://support.microsoft.com/ko-kr/help/17621/internet-explorer-downloads</td> 
+				</tr> 
+				<tr>
+					<td> Chrome </td> 
+					<td>Google</td> 
+					<td>https://www.google.co.kr/chrome/index.html</td> 
+				</tr> 
+				<tr>
+					<td> Firefox </td>
+					<td>Mozilla</td>
+					<td>https://www.mozilla.org/ko/firefox</td>
+				</tr>	
+				<tr>
+					<td> Safari </td>
+					<td>Apple</td>
+					<td>https://support.apple.com/ko-kr/safari</td>
+				</tr>
+			</tbody>
+		</table>
+		<p> 홍길동 </p>
+	</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h2>jQuery Traversing - Filtering</h2>
+<pre>
+<h3>The first(), last(), eq(), filter() and not() Methods</h3>
+The most basic filtering methods are first(), last() and eq(), which allow you to select a specific element based on its position in a group of elements.
+Other filtering methods, like filter() and not() allow you to select elements that match, or do not match, a certain criteria.
+</pre>
+<hr/>
+
+<h2>jQuery first() Method</h2>
+<pre>
+The first() method returns the first element of the specified elements.
+The following example selects the first &lt;div&gt; element:
+</pre>
+<script>
+$(document).ready(function(){
+    $("div.cls1").first().css("background-color", "yellow");
+});
+</script>
+<div class='cls1' style="border: 1px solid black;">
+  <p>A paragraph in a div.</p>
+  <p>Another paragraph in a div.</p>
+</div>
+<br>
+
+<div class='cls1' style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p>Another paragraph in another div.</p>
+</div>
+<br>
+
+<div class='cls1' style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p>Another paragraph in another div.</p>
+</div>
+<hr/>
+
+<h2>jQuery last() Method</h2>
+<pre>
+The last() method returns the last element of the specified elements.
+The following example selects the last <div> element:
+	$(document).ready(function(){
+	    $("div").last();
+	});
+</pre>
+<hr/>
+
+<h2>jQuery eq() method</h2>
+<pre>
+The eq() method returns an element with a specific index number of the selected elements.
+<b>The index numbers start at 0</b>, so the first element will have the index number 0 and not 1. The following example selects the second &lt;p&gt; element (index number 1):
+	$(document).ready(function(){
+	    $("p").eq(1);
+	});
+</pre>
+<script>
+$(document).ready(function(){
+    $("p.cls3").eq(1).css("background-color", "yellow");
+});
+</script>
+<p class='cls3'>My name is Donald (index 0).</p>
+<p class='cls3'>Donald Duck (index 1).</p>
+<p class='cls3'>I live in Duckburg (index 2).</p>
+<p class='cls3'>My best friend is Mickey (index 3).</p>
+<hr/>
+
+<h2>jQuery filter() Method</h2>
+<pre>
+The filter() method lets you specify a criteria. Elements that do not match the criteria are removed from the selection, and those that match will be returned.
+The following example returns all &lt;p&gt; elements with class name "intro":
+</pre>
+<script>
+$(document).ready(function(){
+    $(".cls4 p").filter(".intro").css("background-color", "yellow");
+});
+</script>
+<div class='cls4'>
+	<p>My name is Donald.</p>
+	<p class="intro">I live in Duckburg.</p>
+	<p class="intro">I love Duckburg.</p>
+	<p>My best friend is Mickey.</p>
+</div>
+<hr/>
+
+<h2>jQuery not() Method</h2>
+<pre>
+The not() method returns all elements that do not match the criteria.
+Tip: The not() method is the opposite of filter().
+The following example returns all &lt;p&gt; elements that do not have class name "intro":
+	$(document).ready(function(){
+	    $("p").not(".intro");
+	});
+</pre>
+<script>
+$(document).ready(function(){
+    $(".cls5 p").not(".intro").css("background-color", "yellow");
+});
+</script>
+<div class='cls5'>
+	<p>My name is Donald.</p>
+	<p class="intro">I live in Duckburg.</p>
+	<p class="intro">I love Duckburg.</p>
+	<p>My best friend is Mickey.</p>
+</div>
+<hr/>
+
+
+
+
+
+
+</body>
+</html>

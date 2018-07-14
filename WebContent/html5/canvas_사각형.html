@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ex02</title>
+	<script>     
+		window.onload = function () {
+			var canvas = document.getElementById("myCanvas");
+			var context = canvas.getContext("2d");			 
+			//1번(사각형)			 
+			context.rect(10, 30, 80, 100);
+			context.stroke();			 
+			//2번(선이있는사각형)
+			context.strokeRect(100, 20, 150, 100);			 
+			//3번(채워진사각형)
+			context.fillRect(270,40,100,80);		 
+		};     
+    </script>
+</head>
+<body>
+        <canvas id="myCanvas" width="700" height="400">
+        </canvas>
+</body>
+</html>

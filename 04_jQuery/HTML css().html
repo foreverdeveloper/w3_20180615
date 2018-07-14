@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h2>jQuery - css() Method</h2>
+<pre>
+The css() method sets or returns one or more style properties for the selected elements.
+</pre>
+<hr/>
+
+<h2>Return a CSS Property</h2>
+<pre>
+To return the value of a specified CSS property, use the following syntax:
+	<b>css("propertyname");</b>
+The following example will return the background-color value of the FIRST matched element:
+	$("p").css("background-color");
+</pre>
+<hr/>
+<script>
+$(document).ready(function(){
+    $("button.cls1").click(function(){
+        alert("Background color = " + $("p.cls1").css("background-color"));
+    });
+});
+</script>
+<p style="background-color:#ff0000">This is a paragraph.</p>
+<p style="background-color:#00ff00">This is a paragraph.</p>
+<p class='cls1' style="background-color:#0000ff">This is a paragraph.</p>
+
+<button class='cls1'>Return background-color of p</button>
+<hr/>
+
+<h2>Set a CSS Property</h2>
+<pre>
+To set a specified CSS property, use the following syntax:
+	<b>css("propertyname","value");</b>
+The following example will set the background-color value for ALL matched elements:
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls2").click(function(){
+        $("p.cls2").css("background-color", "yellow");
+    });
+});
+</script>
+<p class='cls2' style="background-color:#ff0000">This is a paragraph.</p>
+<p class='cls2' style="background-color:#00ff00">This is a paragraph.</p>
+<p class='cls2' style="background-color:#0000ff">This is a paragraph.</p>
+<button class='cls2'>Set background-color of p</button>
+<hr/>
+
+<h2>Set Multiple CSS Properties</h2>
+<pre>
+To set multiple CSS properties, use the following syntax:
+<b>css({"propertyname":"value","propertyname":"value",...});</b>
+The following example will set a background-color and a font-size for ALL matched elements:
+	ex) $("p").css({"background-color": "yellow", "font-size": "200%"});
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls3").click(function(){
+        $("p.cls3").css({"background-color": "yellow", "font-size": "200%"});
+    });
+});
+</script>
+<p class='cls3' style="background-color:#ff0000">This is a paragraph.</p>
+<p class='cls3' style="background-color:#00ff00">This is a paragraph.</p>
+<p class='cls3' style="background-color:#0000ff">This is a paragraph.</p>
+<button class='cls3' >Set multiple styles for p</button>
+
+</body>
+</html>

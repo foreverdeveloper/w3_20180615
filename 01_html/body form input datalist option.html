@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<fieldset>
+			<legend>GET</legend>
+			<!--
+
+			-->
+			<form action="./example2.php" method="POST"
+				enctype="multipart/form-data">
+				<p>
+					input태그:
+					type='text' name='전달이름' value='값' <br/>
+					disabled='disabled' (값전송안함) <br/>
+					readonly='readonly' (값전송, 텍스트필드 입력불가)<br/>
+					<input type="text" name="nickname" />
+					<input type="password" name="nickname" />
+					<input type="hidden" name="nickname" />
+				</p>
+				<p>radio : (name값은 같아야 동일 그룹이 됨)<br/>
+					<input type="radio" name="rdo_name" value="1" checked="checked ">
+					<input type="radio" name="rdo_name" value="2" >
+					<input type="radio" name="rdo_name" value="3" >
+				</p>
+				<p>checkbox : (name값은 같아야 동일 그룹이 됨)<br/>
+					name의 이름 끝에 '[]'를 붙이면, 서버 쪽에서 이 값을 배열로 인식<br/>
+					<input type="checkbox" name="ckb_name[]" value="1" checked="checked ">
+					<input type="checkbox" name="ckb_name[]" value="2" >
+					<input type="checkbox" name="ckb_name[]" value="3" >
+				</p>
+				<p>
+					<input type="file" name="서버쪽에서 파일 식별 이름" />
+				</p>
+
+				<input type="button" name="" value="자바스크립트 호출용" />
+				<input type="reset" value="입력내용 초기상태로" />
+				<input type="submit" value="전송" />
+
+			</form>
+		</fieldset>
+
+			<form>
+			<!--
+				추가된 속성들 : 익스플로러 실행 안됨.
+					autocomplete: 자동완성 기능 제어, on , off
+					min : 범위의 최소값 설정
+					max : 범위의 최대값 설정
+					step :
+					autofocus : 자동 포커스 설정
+					placeholder : 텍스트입력창에 마우스를 클릭하면
+							내용이 클리어된다.
+					required : 필수 입력 필드 체크
+					step : 입력값의 변화범위
+					list : datalist 태그와 함께 입력 가능한 내용을 보여줌
+						list의 id를 datalist에 알려주어 설정함.
+					keygen : form이 submit되면, 개인 키는 저장,
+						공개 키는 서버로 전송
+						양식에 사용되는 키 쌍 생성기 필드
+					output : 계산결과를 보여주는 태그
+			-->
+				email <input type="email" placeholder="123@abc.com" required/><br/>
+				url <input type="url" placeholder="http://www.abc.com" required /><br/>
+				date<input type="date" /><br/>
+				time<input type="time" /><br/>
+				datetime<input type="datetime" />오페라에서 작동함<br/>
+				month<input type="month" /><br/>
+				week<input type="week" /><br/>
+				number<input type="number" autofocus
+					max="10" min="1" step="2" value="1"/><br/>
+				range<input type="range"
+					max="10" min="1" step="2" value="1"/><br/>
+				search<input type="search" />입력 시, x버튼이 생겨 쉽게 지울수 있음<br/>
+				tel<input type="tel" />
+					스마트폰에서 전화번호 입력 자판 보여줌
+					일반 브라우저는 안됨.
+					<br/>
+				color<input type="color" />RBG입력<br/>
+				list <input type="text" list="sublist" ><br/>
+				<datalist id="sublist">
+					<option value="sublist1" label="전산학개론" />
+					<option value="sublist2" label="사복학개론" />
+					<option value="sublist3" label="생태학개론" />
+				</datalist>
+
+				Encryption <keygen name="security"><br/>
+				<input type="submit" value="전송" />
+			</form>
+
+	</body>
+</html>

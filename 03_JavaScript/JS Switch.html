@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Switch Statement</h2>
+<pre>
+The switch statement is used to perform different actions based on different conditions.
+Syntax
+	switch(expression) {
+	    case n:
+	        code block
+	        break;
+	    case n:
+	        code block
+	        break;
+	    default:
+	        code block
+	}
+
+</pre>
+<hr/>
+
+<pre>
+Example
+	The getDay() method returns the weekday as a number between 0 and 6.
+	(Sunday=0, Monday=1, Tuesday=2 ..)
+	This example uses the weekday number to calculate the weekday name:
+</pre>
+<p id="demo"></p>
+<hr/>
+
+<h2>The break Keyword</h2>
+<pre>
+	A break can save a lot of execution time because it "ignores" the execution of all the rest of the code in the switch block.
+</pre>
+<hr/>
+
+<h2>The default Keyword</h2>
+<pre>
+The default keyword specifies the code to run if there is no case match:
+The default case does not have to be the last case in a switch block:
+</pre>
+<hr/>
+
+<h2>Common Code Blocks</h2>
+<pre>
+Sometimes you will want different switch cases to use the same code.
+	switch (new Date().getDay()) {
+	    case 4:
+	    case 5:
+	        text = "Soon it is Weekend";
+	        break;
+	    case 0:
+	    case 6:
+	        text = "It is Weekend";
+	        break;
+	    default:
+	        text = "Looking forward to the Weekend";
+	}
+</pre>
+<hr/>
+
+<h2>Strict Comparison</h2>
+<pre>
+Switch cases use strict comparison (===).
+The values must be of the same type to match.
+A strict comparison can only be true if the operands are of the same type.
+	var x = "0";
+	switch (x) {		// 결과: No value found
+	    case 0:
+	        text = "Off";
+	        break;
+	    case 1:
+	        text = "On";
+	        break;
+	    default:
+	        text = "No value found";
+	}
+</pre>
+
+<script>
+var day;
+switch (new Date().getDay()) {
+    default:
+        text = "Looking forward to the Weekend";
+        break;
+    case 0:
+        day = "Sunday";
+        break;
+    case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case  6:
+        day = "Saturday";
+}
+document.getElementById("demo").innerHTML = "Today is " + day;
+</script>
+
+</body>
+</html>

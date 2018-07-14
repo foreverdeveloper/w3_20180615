@@ -1,0 +1,60 @@
+HTML5+CSS3+jQuery로 만든 게임
+	앵그리버드
+	캔버스 핀볼
+	Pirates Love Daisies
+		http://www.pirateslovedaisies.com/
+
+테트리스 게임 개발
+	자바스크립트 파일
+		사용자 입력에 따른 블록의 움직임을 제어
+		테트리스 블록 움직임에 따른 블록의 모양을 지정
+		테트리스 게임의 전체적인 기능인 블록을 쌓고 지우는 기능을 담당
+
+style.css
+---------------------------------------------
+canvas{
+	display: block;
+	margin: auto;	 /* 바깥쪽 여백:  상하여백은 0, 좌우여백은 동일하게 적용 */
+	border: 1px solid black; /* 테두리 디자인 선언 : 두께, 모양, 컬러 */
+}
+---------------------------------------------
+
+
+controller.js
+------------------------------------------------
+	document.body.onkeydown = function( e ) {
+		var keys = {
+			37: 'left',
+			39: 'right',
+			40: 'down',
+			38: 'rotate'
+		};
+		if ( typeof keys[ e.keyCode ] != 'undefined' ) {
+			keyPress( keys[ e.keyCode ] );
+			render();
+		}
+	};
+------------------------------------------------//
+
+render.js :
+	테트리스 블록 움직임에 따른 블록의 모양을 지정
+
+tetris.js :
+	테트리스 게임의 전체적인 기능인 블록을 쌓고 지우는 기능을 담당
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

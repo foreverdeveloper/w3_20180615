@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<!--
+		table: 표를 행과 열로 만들어 준다.
+		-->
+		<table border="1">
+			<!--
+				th : 테이블 안의 제목을 지정
+					기본: 볼드체, 중앙정렬
+			-->
+			<!--
+				tr : 각 행을 기술
+			-->
+			<tr>
+				<!--
+					td : 각 칸을 기술
+				-->
+				<td>이름</td><td>성별</td><td>나이</td>
+			</tr>
+			<tr>
+				<td>둘리</td><td>중성</td><td>100</td>
+			</tr>
+			<tr>
+				<td>포켓몬고</td><td>남성</td><td>10</td>
+			</tr>
+		</table>
+
+		<table border="1">
+			<tr>
+				<td>이름</td><td>성별</td><td>나이</td>
+			</tr>
+			<tr>
+				<td>둘리</td><td>중성</td><td rowspan="2">비공개</td>
+			</tr>
+			<tr>
+				<td>포켓몬고</td><td>남성</td>
+			</tr>
+		</table>
+
+		<table border="1">
+			<tr>
+				<td>이름</td><td>성별</td><td>나이</td>
+			</tr>
+			<tr>
+				<td>둘리</td><td colspan="2">중성</td>
+			</tr>
+			<tr>
+				<td>포켓몬고</td><td>남성</td><td>10</td>
+			</tr>
+		</table>
+
+		<table border="2"
+			bordercolor="blue" width=600 height=300
+			align="left"
+			bgcolor="yellow">
+			<tr align="center" bgcolor="orange">
+				<td align="right" bgcolor="skyblue">이름</td><td>성별</td><td>나이</td>
+			</tr>
+			<tr>
+				<td>둘리</td><td colspan="2">중성</td>
+			</tr>
+			<tr>
+				<td>포켓몬고</td><td>남성</td><td>10</td>
+			</tr>
+		</table>
+
+		<!--
+			cellspacing=n : 셀과 셀 사이의 간격,
+			cellpadding=n : 문자와 셀 사이의 간격
+				n 픽셀 단위로 지정
+		-->
+		<table border="1" cellspacing="10">
+			<tr>
+				<td>이름</td><td>성별</td><td>나이</td>
+			</tr>
+		</table>
+		<table border="1" cellspacing="30">
+			<tr>
+				<td>이름</td><td>성별</td><td>나이</td>
+			</tr>
+		</table>
+		<table border="1" cellpadding="10">
+			<tr>
+				<td>이름</td><td>성별</td><td>나이</td>
+			</tr>
+		</table>
+		<table border="1" cellpadding="20">
+			<tr>
+				<td>이름</td><td>성별</td><td>나이</td>
+			</tr>
+		</table>
+		<table border="1" cellpadding="40">
+			<tr>
+				<td>이름</td><td>성별</td><td>나이</td>
+			</tr>
+		</table>
+	</body>
+</html>

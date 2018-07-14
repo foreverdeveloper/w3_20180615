@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h2>jQuery Traversing</h2>
+<pre>
+An ancestor is a parent, grandparent, great-grandparent, and so on.
+With jQuery you can traverse up the DOM tree to find ancestors of an element.
+<h3>Traversing Up the DOM Tree</h3>
+Three useful jQuery methods for traversing up the DOM tree are:
+	parent()
+	parents()
+	parentsUntil()
+</pre>
+<hr/>
+
+<h2>jQuery parent() Method</h2>
+<pre>
+The parent() method returns the direct parent element of the selected element.
+This method only traverse a single level up the DOM tree.
+The following example returns the direct parent element of each <span> elements:
+</pre>
+<style>
+.ancestors * {
+    display: block;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+    padding: 5px;
+    margin: 15px;
+}
+</style>
+<script>
+$(document).ready(function(){
+    $("span.cls1").parent().css({"color": "red", "border": "2px solid red"});
+});
+</script>
+<div class="ancestors">
+  <div style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)
+      <li>li (direct parent)
+        <span class='cls1'>span</span>
+      </li>
+    </ul>
+  </div>
+
+  <div style="width:500px;">div (grandparent)
+    <p>p (direct parent)
+        <span class='cls1'>span</span>
+      </p>
+  </div>
+</div>
+
+<hr/>
+
+<h2>jQuery parents() Method</h2>
+<pre>
+The parents() method returns all ancestor elements of the selected element, all the way up to the document's root element (&lt;html&gt;).
+The following example returns all ancestors of all &lt;span&gt; elements:
+</pre>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("span.cls2").parents().css({"color": "red", "border": "2px solid red"});
+});
+</script>
+
+ <!--
+ <body class="ancestors">body (great-great-grandparent)
+  <div style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)
+      <li>li (direct parent)
+        <span class='cls2'>span</span>
+      </li>
+    </ul>
+  </div>
+<body>  -->
+
+<hr/>
+
+<h2>jQuery parentsUntil() Method</h2>
+<pre>
+The parentsUntil() method returns all ancestor elements between two given arguments.
+The following example returns all ancestor elements between a <span> and a <div> element:
+</pre>
+<script>
+$(document).ready(function(){
+    $("span.cls3").parentsUntil("div").css({"color": "red", "border": "2px solid red"});
+});
+</script>
+
+<div class="ancestors"> div (great-great-grandparent)
+  <div style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)
+      <li>li (direct parent)
+        <span class='cls3'>span</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<hr/>
+
+
+</body>
+</html>

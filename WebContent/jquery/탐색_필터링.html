@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+		.full{border: 1px solid red;}
+		</style>
+        <script src = "http://code.jquery.com/jquery-latest.js"></script>
+        </head>
+        <body>
+        
+        <ul><li>Do you have a phone?</li></ul>
+        <script>
+		$("ul").append("<li>"+($("ul").has("li").length ? "Yes" : "No" ) + "</li>");
+		$("ul").has("li").addClass("full");
+		</script>
+        </body>
+</html>
+

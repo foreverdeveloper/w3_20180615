@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script language="javascript">
+			if (! window.HTMLCanvasElement){
+				alert('Canvas를 지원하지 않는 브라우저')
+			}
+		</script>
+	</head>
+	<body>
+		<!--
+		html5에 추가
+			canvas : 그래픽 컨테이너일 뿐
+				실제로 그래픽을 그릴 스크립트(자바스크립트)를
+				사용해야 함.
+			좌상단 좌표가 0, 0
+		 -->
+		 <canvas id="canvas_tag" width="700" height="350"
+		 	style="border:1px solid #d3d3d3;">
+		 	Your browser does not support the HTML canvas tag.
+		 </canvas>
+
+		 <script>
+		 	var canvas1=document.getElementById("canvas_tag");
+		 	var ctx=canvas1.getContext("2d");
+		 	// 사각형
+
+		 	ctx.fillStyle = "#FF0000";  //영역면의 색을 설정
+		 	ctx.fillStyle = "rgb(255, 0, 0)" ; //영역면의 색을 설정
+		 	ctx.fillStyle = "rgba(255, 0, 0, 0.5)" ; //영역면의 색을 설정
+		 	ctx.fillRect(0,0,100,100) ; // (x, y, 너비, 높이) 사각형 영역을 채운다.
+
+			ctx.stokeStyle = "rgb(255, 0 ,255)";
+		 	ctx.strokeRect(50, 50, 100, 100) ; //  (x, y, 너비, 높이)  사각형 테두리만 그린다.
+
+		 	ctx.clearRect(50, 50, 50, 50); // (x, y, width, height) 크기의 사각형 영역을 지운다.
+
+			ctx.strokeStyle = "rgb(0, 0 , 255)";
+		 	ctx.strokeRect(50, 50, 50, 50) ;
+
+
+			// 선(패스) 그리기
+			/*
+				beginPath() 로 패스를 시작
+				closePath() 로 패스를 닫음
+				lineWidth() : 선의 굵기를 조정, 기본값 1
+				strokeStyle : 선의 색깔, #ff0000
+				stroke() : 입력 전에 먼저 굵기를 변경해야함.
+
+				선끝 모양
+					lineCap : butt(기본), round, square
+
+				선의 연결 모양
+					lineJoin : bevel, round, miter
+
+				fille() 로 영역을 채움
+					fill()로 그리는 경우는 자동으로 닫힘.
+					closePath()로 닫아 주지 않아도 됨.
+				moveTo() 로 시작점을 옮기면서 작성.
+				lineTo(x, y) 로 지정한 위치에 라인을 더함.
+
+			*/
+			var offset_y = 200;
+			ctx.beginPath();
+			ctx.lineWidth = "25";
+			ctx.strokeStyle = "green";  // Green path
+			ctx.moveTo(0, 75 + offset_y);
+			ctx.lineTo(250, 75 + offset_y);
+			ctx.lineCap ="round";
+			ctx.stroke();  // Draw it
+
+			ctx.beginPath();
+			ctx.strokeStyle = "purple";  // Purple path
+			ctx.moveTo(50, 0 + offset_y);
+			ctx.lineTo(150, 130 + offset_y);
+			ctx.lineCap = "square";
+			ctx.stroke();  // Draw it
+
+			var offset_x = 200
+			ctx.beginPath();
+			ctx.moveTo(75 + offset_x, 30);
+			ctx.lineTo(140 + offset_x, 120);
+			ctx.lineTo(10 + offset_x, 120);
+			ctx.closePath();
+			ctx.fillStyle ="#f6a1e9";
+			ctx.fill();
+
+			var offset_x = 200
+			ctx.beginPath();
+			ctx.moveTo(75 + offset_x, 30 + offset_y);
+			ctx.lineTo(140 + offset_x, 120 + offset_y);
+			ctx.lineTo(10 + offset_x, 120 + offset_y);
+			ctx.lineWidth = 30;
+			ctx.fillStyle ="#ff0000";
+			ctx.lineJoin = "miter";  //bevel, round, miter
+			ctx.lineJoin = "round";  //bevel, round, miter
+			ctx.stroke();
+
+
+
+		 </script>
+	</body>
+</html>

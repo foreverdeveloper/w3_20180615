@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h2>jQuery - Add Elements</h2>
+<pre>
+With jQuery, it is easy to add new elements/content.
+<h3>Add New HTML Content</h3>
+We will look at four jQuery methods that are used to add new content:
+
+	append() - Inserts content at the end of the selected elements
+	prepend() - Inserts content at the beginning of the selected elements
+	after() - Inserts content after the selected elements
+	before() - Inserts content before the selected elements
+</pre>
+<hr/>
+
+<h2>jQuery append() Method</h2>
+<pre>
+The jQuery append() method inserts content AT THE END of the selected HTML elements.
+</pre>
+<script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("p.cls1").append(" <b>Appended text</b>.");
+    });
+
+    $("#btn2").click(function(){
+        $("ol.cls1").append("<li>Appended item</li>");
+    });
+});
+</script>
+
+<p class='cls1'>This is a paragraph.</p>
+<ol class= 'cls1'>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+</ol>
+
+<button id="btn1">Append text</button>
+<button id="btn2">Append list items</button>
+<hr/>
+
+<h2>jQuery prepend() Method</h2>
+<pre>
+The jQuery prepend() method inserts content AT THE BEGINNING of the selected HTML elements.
+</pre>
+<script>
+$(document).ready(function(){
+    $("#btn11").click(function(){
+        $("p.cls2").prepend("<b>Prepended text</b>. ");
+    });
+    $("#btn12").click(function(){
+        $("ol.cls2").prepend("<li>Prepended item</li>");
+    });
+});
+</script>
+<p class='cls2'>This is a paragraph.</p>
+<ol class='cls2'>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+</ol>
+
+<button id="btn11">Prepend text</button>
+<button id="btn12">Prepend list item</button>
+<hr/>
+
+<h2>Add Several New Elements With append() and prepend()</h2>
+<pre>
+In both examples above, we have only inserted some text/HTML at the beginning/end of the selected HTML elements.
+However, both the append() and prepend() methods can take an infinite number of new elements as parameters. The new elements can be generated with text/HTML (like we have done in the examples above), with jQuery, or with JavaScript code and DOM elements.
+</pre>
+<script>
+function appendText() {
+    var txt1 = "<p>Text.</p>";              // Create text with HTML
+    var txt2 = $("<p></p>").text("Text.");  // Create text with jQuery
+    var txt3 = document.createElement("p");
+    txt3.innerHTML = "Text.";               // Create text with DOM
+    //$("body").append(txt1, txt2, txt3);     // Append new elements
+    $(".cls3").append(txt1, txt2, txt3);     // Append new elements
+}
+</script>
+<button onclick="appendText()">Append text</button>
+<ul class='cls3'></ul>
+
+<hr/>
+
+<h2>jQuery after() and before() Methods</h2>
+<pre>
+The jQuery after() method inserts content AFTER the selected HTML elements.
+The jQuery before() method inserts content BEFORE the selected HTML elements.
+</pre>
+<script>
+$(document).ready(function(){
+    $("#btn21").click(function(){
+        $("img").before("<b>Before</b>");
+    });
+
+    $("#btn22").click(function(){
+        $(".img1").after("<i>After</i>");
+    });
+});
+</script>
+<img class='img1' src="../res/images/w3jquery.gif" alt="jQuery" width="100" height="140"><br><br>
+<button id="btn21">Insert before</button>
+<button id="btn22">Insert after</button>
+<hr/>
+
+<h2>Add Several New Elements With after() and before()</h2>
+<pre>
+Also, both the after() and before() methods can take an infinite number of new elements as parameters. The new elements can be generated with text/HTML (like we have done in the example above), with jQuery, or with JavaScript code and DOM elements.
+In the following example, we create several new elements. The elements are created with text/HTML, jQuery, and JavaScript/DOM. Then we insert the new elements to the text with the after() method (this would have worked for before() too) :
+</pre>
+<script>
+function afterText() {
+    var txt1 = "<b>I </b>";                   // Create element with HTML
+    var txt2 = $("<i></i>").text("love ");    // Create with jQuery
+    var txt3 = document.createElement("b");   // Create with DOM
+    txt3.innerHTML = "jQuery!";
+    $(".img2").after(txt1, txt2, txt3);      // Insert new elements after img
+}
+</script>
+<img class='img2' src="../res/images/w3jquery.gif" alt="jQuery" width="100" height="140">
+<button onclick="afterText()">Insert after</button>
+<hr/>
+
+
+
+
+</body>
+</html>

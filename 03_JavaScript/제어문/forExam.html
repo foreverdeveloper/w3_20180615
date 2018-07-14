@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title> for 반복문  </title>		
+	</head>
+	<body>		
+		<select id="day">
+		</select>	
+		<button type="button" onclick="addDay()"> 숫자 추가</button>
+		<script>
+			function addDay() {
+				//select 요소를 변수 selectList에 저장 
+				var selectList = document.getElementById("day");	
+				//for문을 이용하여 select 요소의 선택 리스트를 추가
+				//1부터 시작하여 1씩 증가하면서 50부터 작거나 같을 때 까지 {} 내의 문장 반복 
+				for (var i = 1; i <= 50; i++) {
+					//option 요소를 생성
+					var option = document.createElement("option");
+					//option 요소의 value, text 속성의 i값 저장(i값은 1~50까지 변화함)
+					option.value = i;
+					option.text = i;
+					//select 요소에 option 요소 추가 
+					selectList.add(option)
+				}				
+			}
+		</script>
+	</body>
+</html>

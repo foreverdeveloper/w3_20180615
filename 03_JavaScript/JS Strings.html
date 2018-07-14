@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript String Properties</h2>
+
+<h2>String .length</h2>
+<p>The length property returns the length of a string:</p>
+<p id="demo"></p>
+
+<hr/>
+<h2>Special Characters</h2>
+<pre>
+The backslash (\) escape character turns special characters into string characters:
+	\'	'	Single quote
+	\"	"	Double quote
+	\\	\	Backslash
+	\b		Backspace
+	\f		Form Feed
+	\n		New Line
+	\r		Carriage Return
+	\t		Horizontal Tabulator
+	\v		Vertical Tabulator
+</pre>
+
+<hr/>
+<h2>Breaking Long Code Lines</h2>
+<pre>
+For best readability, programmers often like to avoid code lines longer than 80 characters.
+If a JavaScript statement does not fit on one line, the best place to break it is after an operator
+
+	document.getElementById("demo").innerHTML = "Hello \
+	Dolly!";
+
+The \ method is not the preferred method. It might not have universal support.
+Some browsers do not allow spaces behind the \ character.
+</pre>
+
+<hr/>
+<h2>Strings Can be Objects</h2>
+<pre>
+Normally, JavaScript strings are primitive values, created from literals:
+	var firstName = "John";
+But strings can also be defined as objects with the keyword new:
+	var firstName = new String("John");
+</pre>
+
+<hr/>
+<h2>Never Create Strings as objects.</h2>
+<p>Strings and objects cannot be safely compared.</p>
+<pre>
+	<b>Don't create strings as objects.</b> It slows down execution speed.
+	The new keyword complicates the code. This can produce some unexpected results:
+
+	When using the == operator, equal strings are equal:
+	When using the === operator, equal strings are not equal,
+	because the === operator expects equality in <b>both type and value.</b>
+
+	Note the difference between (x==y) and (x===y).
+	Comparing two JavaScript objects will always return false.
+</pre>
+<p id="demo1">== (값 비교)</p>
+<p id="demo2">=== (값 타입 비교)</p>
+<p id="demo3">== (객체간 비교는 값이 같아도 다른 것)</p>
+<p id="demo4">=== (객체간 비교는 값이 같아도 다른 것)</p>
+
+<hr/>
+
+
+<script>
+var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+document.getElementById("demo").innerHTML = txt.length;
+
+var x = "John";              // x is a string
+var y = new String("John");  // y is an object
+document.getElementById("demo1").innerHTML = (x==y);	//true,  ==는 값 비교
+document.getElementById("demo2").innerHTML = (x===y);	//false,  ==는 값, 타입 둘다 비교
+
+//(x == y) is false because x and y are different objects
+var x = new String("John");  // x is an object
+var y = new String("John");  // y is an object
+document.getElementById("demo3").innerHTML = (x==y);	//false
+document.getElementById("demo4").innerHTML = (x===y);	//false
+
+
+</script>
+
+
+
+</body>
+</html>
+

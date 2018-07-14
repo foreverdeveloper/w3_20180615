@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.shadowBlur = 20;		// 그림자의 번짐 정도, 기본값 : 0
+ctx.fillStyle = "red";
+
+/*
+	context.shadowColor=color;
+		color	: The CSS color value to use for shadows. Default value is #000000
+*/
+ctx.shadowColor = "black";
+ctx.fillRect(20, 20, 100, 80);
+
+ctx.shadowColor = "blue";
+ctx.fillRect(140, 20, 100, 80);
+
+</script>
+
+<p><strong>Note:</strong> The canvas tag is not supported in Internet
+Explorer 8 and earlier versions.</p>
+
+</body>
+</html>

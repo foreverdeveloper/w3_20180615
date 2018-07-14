@@ -1,0 +1,315 @@
+https://kldp.net/apmsetup/release/
+	APMSETUP 7
+	CS 6 - Dreamweaver
+
+
+HTML (웹 문서) : 1989~  HTML 2.0, 3.2, 4.0, 4.01
+	종료태그가 없는 것 허용
+	잘못된 중첩 - 이상없음
+	대소문자 구분 안함
+	속성값 따옴표 사용하지 않아도 됨
+	속성값 단축 표기 허용
+
+	HTML4.01 : 1999
+		국제화
+			전 세계 언어를 모두 수용, 문서 검색 엔진, 고급 인쇄술 등의
+			발달로 효과적인 문서의 색인이 가능
+		접속성
+			개선 된 문서의 구조와 표현의 구분
+			개선 된 form 기능
+			새로운 사용자측 이미지맵 기능 : 제작자는 이미지와 텍스트를 결합
+			이미지에 포함 된 대체 문장 표시 기능
+			모든 Element에 title과 lang 애트리뷰트 지원 기능
+			스타일시트에서 사용하는 폭 넓은 목표 미디어
+			개선 된 표(table) 기능 : 켑션(caption), 컬러그룹, hidden 기능
+		스타일시트
+			문서 전체의 일관성을 유지할 수 있게 된 건 물론 일일이 스타일을 지정할 필요가 없어짐
+			HTML 작성을 간단히 하고 표현의 신빙성을 향상
+			제작자와 사용자에게 폰트, 정렬, 색상 등 문서의 표현을 제어할 수 있음
+			스타일 정보는 개별 Element나 그룹을 구체적으로 정의 가능
+			스타일 정보는 HTML문서 안에서 또는 외부 스타일시트에서 정의 가능
+		스크립트
+			웹 페이지를 제작하고 HTML 문서를 네트워크 상에서 동작하는 기능
+		기타
+			표의 구조와 배치에 있어 다양한 제어
+			이미지, 비디오, 사운드, 수학계산 등의 기능 구현
+			다양한 포맷의 인쇄 기능
+
+	HTML4.01에서 권장하지 않는 기능
+		스타일 시트 사용으로 인하여 권장되지 않는 요소
+			• basefont : 기본 폰트 변경
+			• center : 가운데 정렬
+			• font : 폰트 변경
+			• strike 또는 s : 텍스트에 가운데 선 긋기
+			• u : 텍스트에 밑줄 긋기
+		대체 요소의 등장으로 권장되지 않는 요소
+			• applet : 자바 애플릿(object의 사용)
+			• dir : 디렉토리 리스트(ul의 사용)
+			• isindex : 입력 프롬프트(input의 사용)
+			• menu : 메뉴 리스트(ul의 사용)
+
+	HTML4.01 문서 작성의 3가지 원칙
+		- 구조와 표현의 분리 : 문서의 구조와 표현 Element들의 분리
+		- 범용 웹 접속성의 고려 :
+			모든 사람들이 제한 없이 접근이 가능하도록 하기 위한 작업
+		- 점진적 표현으로 사용도구 돕기 :
+			사용도구가 문서를 더 빨리 볼 수 있게 하기 위한 표현의 방법(주석 등)
+
+	HTML4.01 문서타입의 규칙
+		- <html> 엘리먼트
+			• 모든 웹 페이지는 DOCTYPE으로 시작하고, 바로 그 다음에 오는 <html> 엘리먼트 웹
+				페이지의 가장 상위 혹은 루트 엘리먼트가 되어야 함
+			• <html>태그로 페이지를 시작해서 </html>태그로 페이지를 끝내야 함
+		- <head>와 <body>는 반드시 사용
+			• 오직 <head>와 <body>만 <html>엘리먼트 안으로 곧바로 들어갈 수 있음
+		- <head> 엘리먼트
+			• 항상 <head> 엘리먼트에는 <title> 엘리먼트를 넣어야 함
+			• <head>엘리먼트는 <title>, <meta>, <style> 엘리먼트를 넣을 수 있는 유일한 장소
+		- <body> 엘리먼트
+			• 곧바로 <body> 엘리먼트로 넣을 수 있는 것은 오직 블록 엘리먼트들
+				(<h1> ~ <h6>, <p>)등 뿐임
+		- 블록엘리먼트는 인라인 엘리먼트 밖에 배치
+			• 인라인 엘리먼트 안에는 반드시 인라인 엘리먼트 및 텍스트만 들어올 수 있음
+			• 인라인 엘리먼트안에 블록 엘리먼트는 들어올 수 없음
+		- 리스트는 리스트 항목만 자식으로 포함
+			• <ol>과 <ul>의 자식으로 오직 <li> 엘리먼트만 사용될 수 있음
+		- <li> 엘리먼트에는 무엇이든 넣을 수 있음
+			• 텍스트, 인라인, 블록 엘리먼트 등 타입의 구분없이 삽입 가능
+
+	DTD (Document Type Definition)
+		작성된 내용이 HTML 표준에 의거하여 작성되었음을 웹 브라우저에게
+		알려주는 것을 의미
+		<!DOCTYPE
+		모든 문서에 필수적으로 사용해야 하는 것은 아님
+		선언하지 않아도 대부분 웹브라우저는 알아서 태그를 해석하여 보여줌
+		W3C에서 제공하는 HTML 표준에 따라 보여주도록 사용 권장
+
+
+XHTML (웹서비스) : 2000~
+	문서의 루트요소는 html 이고 반드시 네임 스페이스를 지정해야 함
+	<html xmlns = "http://www.w3.org/1999/xhtml"> 로 문서를 시작함
+	종료태그 반드시 사용, 모든 요소는 반드시 닫아야 함.
+	잘못된 중첩 - 영향미침
+	대소문자 구분
+	속성값 따옴표("") 반드시 사용
+	속성값 단축 표기 허용 안함(모든 속성값은 속성이 함께 선언)
+	모든 script 및 style 요소에는 type 속성이 포함됨
+		- HTML 4 이후로는 script 요소의 type 속성을 반드시 지정해야 함.
+	모든 img 및 area 요소에는 alt 속성이 포함
+		- 코드를 생성하거나 XHTML을 정리할 때 코드에서 이들 속성을 설정
+
+
+Web 2.0 : Open Web, 2005~
+	웹 2.0, 웹플랫폼 시대
+
+
+HTML5 : 모바일 인터넷 확장, 2010~
+	Web API, 통합 응용 플랫폼
+	 = HTML(기본골격)
+		+ CSS(디자인 표현 및 관리적인 요소)
+		+ JavaScript (프로그래밍적 요소)
+
+	임베디드 오디오 및 비디오 지원
+		- 여러 종류의 디바이스에서 오디오 및 비디오를 실행할 수 있는 환경을 마련
+		<video height="205" width="300">
+			<source src="video.mp4" type="video/mp4">
+			<source src="video.ogg" type="video/ogg">
+			<source src="video.webm" type="video/webm">
+			Video 태그가 지원되지 않는 브라우저입니다.
+		</video>
+
+	미디어 쿼리(Media queries)
+		스크린 사이즈(뷰포인트), 방향 또는 해상도를 기반으로 페이지에
+		특정 Style Sheet를 적용하기 위한 사용하는 명세
+		스크린 사이즈, 해상도 등에 따라 CSS 코드를 분기하여
+		최적화된 UX(User Experience) 제공
+		// 뷰포인트 너비가 768px 이상이고 1024px 이하이면 실행
+		@media all and (min-width:768px) and (max-width:1024px){...}
+		// 뷰포인트 너비가 678px 이거나 1024px 이하이면 실행
+		@media all and (width:768px), (width:1024px){...}
+		// 뷰포인트 너비가 768px 이상이고 1024px 이하가 아니면 실행
+		@media not all and (min-width:768px) and (max-width:1024px){...}
+
+	CSS3
+		모듈 기반으로 개발되고 있으며 구현이 쉬움
+		그래픽 효과를 가지는 모듈이 추가되어 있음
+		각종 효과를 제공해주어 포토샵과 자바스크립트 및
+		서버측 기술에 일부를 대체
+			http://www.westciv.com/tools/3Dtransforms/index.html
+
+	위치정보(Embedded geolocation)
+		HTML5에서는 별도의 IP위치정보 서비스를 이용하지 않고도
+		위치 정보를 파악할 수 있음
+		브라우저가 IP 주소 또는 주위의 무선 공유기 정보 등을 파악하여
+		제공하기 때문
+
+		<script>
+		var x=document.getElementById("demo");
+		function getLocation()
+		{
+			if (navigator.geolocation)
+			{
+				navigator.geolocation.getCurrentPosition(showPosition);
+			}
+			else {
+				x.innerHTML = 'Geolocation is not supported by this browser.";
+			}
+		}
+		function showPosition(position)
+		{
+			x.innerHTML = "Latitude: " + position.coords.latitude +
+				"<br>Longitude: " + position.coords.longitude;
+		}
+		</script>
+
+	캔버스(Canvas drawing)
+		브라우저에서 2D 그래픽을 지원하는 기능으로 SVF와는 다르게
+		픽셀 단위로 2D 그래픽을 그릴 수 있는 기능
+
+
+HTML5와 HTML4.01 차이점
+	Contents Model
+		HTML 문서작성의 큰 구조
+		어떤 요소가 어떤 콘텐츠 또는 요소를 포함할 수 있는지에 관한 정의
+		기존보다 더 Sementic한 웹 구성이 가능
+			Contents Model
+				<Header> ..</Header>
+				<article> ...</article>
+				<Footer> ... </Footer>
+
+		Metadata Content
+			나머지 Contents의 Presentation 이나 behavior를 설정하거나
+			현재문서와 다른 문서와의 관계를 설정
+			base, command, link, meta, script, style, title
+
+		Flow Content
+			문서와 Application의 Body에서 사용
+			a, addr, address, area, article, aside, audio, b, button, canvas, div, dl, em,figure
+			,footer, form, h1, h2, h3, h4, h5, h6, header, hr, i, iframe, img, input
+
+		Sectioning Content
+			Headings와 Footers의 범위를 정의
+
+		Heading Content
+			Section의 Header를 정의
+
+		Phrasing Content
+			문서의 Text 및 Text를 intra-paragraph Level로 Markup
+
+			a canvas, cite, code, command, datalist, del dfn, em, embed,
+			i, iframe, img, input, span, strong, sub, sup, svg, textarea, time,
+			var, video, wbr, Text  (Sectioning, Heading, Phrasing Content 위의 3곳)
+
+		Embedded Content
+			문서의 다른 Resource를 삽입
+
+		Interactive Content
+			사용자의 상호작용을 위해 특별하게 의도
+
+			audio, canvas, embed, iframe, img, math, object, svg, video a,
+			audio, button, details, embed, iframe, img, object, select, textarea,
+			video (Embedded, Interactive Content 위의 2곳)
+
+	Syntax(구문)
+		DOCTYPE : HTML문서라면 최상단에 반드시 넣어야 함
+			(Enter-개행문자도 들어가면 안됨)
+			HTML5 문법을 따르도록 작성 된 문서임을 확인
+				<!DOCTYPE html>
+				<html>
+				<head>
+				<meta charset=“UTF-8”>
+				<title>HTML5 Basic</title>
+				</head>
+				<body>
+				<h1>HELLO HTML!!!!!!</h1>
+				</body>
+				</html>
+
+	Language(언어)
+		새롭게 추가된 Element(Semantic적인 요소 중심의 Element)
+		Element 				설명
+			Header 	문서의 Header를 나타낼 때 사용
+			Footer 	문서의 Footer 를 나타낼 때 사용
+			Nav 		문서 내에 Navigation 요소가 있을 때 사용
+			Article 	뉴스기사나 블로그 article 과 같은 독립된 Contents 를 표시할 때 사용
+			Section 	문서의 영역을 구성하며, 문서 구조를 구성하는 H1~H6 와 함께 사용
+			Aside 	주요 컨텐츠 이외의 참고가 될 수 있는 컨텐츠를 구성할 때 사용
+			Hgroup 	각 Section 의 Header 를 나타낼 때 사용
+			Figure 	그림, 비디오와 같은 포함된 컨텐츠의 Caption 을 표시할 때 사용
+			Figcaption 	캡션에 사용
+
+		새롭게 추가된 Element(Sementic적인 요소 이외의 Element)
+		Element 					설명
+			Audio, Video
+					HTML 5 Element 중 관심이 집중되는 Element 중 하나,
+					멀티미디어 컨텐츠를 표시하는 데 사용
+			Embed 			Plugin 컨텐츠를 표시할 때 사용
+			Mark 				별도로 표시한 문자를 표시하는데 사용
+			Progress 		작업 진행 상황을 나타낼 때 사용
+			Meter 			Meter  측정 값을 표시할 때 사용
+			Time 				Time 날짜, 시간을 표시할 때 사용
+			Ruby, rt, rp 		Ruby, rt, rp Ruby 언어를 나타낼 때 사용
+			Canvas 			Bitmap Graphic 을 표시할 때 사용
+			Command 		사용자가 호출할 수 있는 명령어를 표시하는데 사용
+			Details 			사용자 요청에 따라 얻은 콘트롤이나 추가적인 정보를 표시하는데 사용
+			Datalist 			List Attribute 와 함께 사용하여 ComboBox를 만들 때 사용
+			Keygen 			키쌍(Key pair)을 생성할 때 사용
+			Output 			스크립트 계산 결과 같은 실행결과를 표시하는데 사용
+
+		새롭게 추가된 Attribute
+		Attribute 					설명
+			contenteditable 		편집 가능한 구역 임을 나타냄
+			contextmenu 			작성자가 제작한 Context Menu 지정하는데 사용
+			data-*
+					접두사 "data-" 를 가진 속성으로 추후 HTML 버전 충돌 없이 사용자
+					태그로 이용하거나 추후 브라우저가 지원하게 되었을 때 사용
+			draggable 				새로운 Drag & Drop API 에서 사용
+			hidden 					element 가 아직 없거나 없을 때 사용
+			role, aria-* 				보조기능에 가리키는데 사용
+			spellcheck 				맞춤법 검사기능을 제공할지 여부를 지정
+
+		변경된 Element
+		Element 						설명
+			A 					href 속성이 없이 사용하면 "placeholder link" 를 나타냄
+			address 			sectioning의 새로운 개념으로 범위를 나타냄
+			B 					문자열 강조 뿐 만 아니라 제품소개 중 제품명 키워드 같이
+							특별히 중요하지는 않으나 일반적으로 강조하기 위해 사용
+			Hr 					단락 수준의 주제 바꿈에 사용
+			I 					기존 기능처럼 문자의 기울임 뿐 만 아니라 음성, 분류명,
+								기술용어, 다른 언어의 숙어구, 생각, 등을 표현
+			label 				기본 플랫폼 User interface 표준이 아닐 경우
+							Label 에서 Control 로 Focus 를 이동시키면 안됨
+			Menu 			툴바와 Context Menu 용으로 사용
+			Small 				세부 주석과 법적 인쇄물 같은 작은 인쇄를 나타낼 때 사용
+			strong 			기존 Strong 의 기능보다 더 중요한 것을 표시할 때 사용
+			img 의 border 		border 값은 0 일 때만 사용하고 CSS 사용 가능
+			a 의 name 			name 속성을 id 속성으로 바꾸어 사용 가능
+			table 의 	summary			다른 대안을 정의하는 중
+			script 의 language 		language 값은 JavaScript 에만 사용하고
+									type 속성과 함께 쓰지 않고 생략 가능
+
+	API
+		API의 정의
+			Application Programing Interface
+			운영체제와 응용프로그램 사이의 통신에 사용되는 언어나 메시지 형식
+
+		HTML5에서 추가된 API 기능
+			Video & Audio API : Video, Audio Element와 함께 Video, Audio를 재생하는데 사용
+			Offline Web Application : Offline을 지원하는 API
+			Web Application이 특정 프로토콜 또는 Media Type을 등록할 수 있는 API
+			편집 API
+			Drag & Drop API
+			History 정보를 노출하는 API
+
+
+
+
+
+
+
+
+
+
+
+
+

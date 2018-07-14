@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arithmetic Operators</h2>
+<pre>
+Arithmetic operators are used to perform arithmetic on numbers:
+Arithmetic operators are fully described in the JS Arithmetic chapter.
+	Operator	Description
+	+		Addition
+	-		Subtraction
+	*		Multiplication
+	/		Division
+	%		Modulus (Division Remainder)
+	++		Increment
+	--		Decrement
+
+</pre>
+<p id="demo"></p>
+<hr/>
+
+<h2>JavaScript Assignment Operators</h2>
+<pre>
+Assignment operators assign values to JavaScript variables.
+	Operator	Example	Same As
+	=		x = y	x = y
+	+=		x += y	x = x + y
+	-=		x -= y	x = x - y
+	*=		x *= y	x = x * y
+	/=		x /= y	x = x / y
+	%=		x %= y	x = x % y
+
+</pre>
+<p id="demo1"></p>
+<hr/>
+
+<h2>JavaScript String Operators</h2>
+<pre>
+The + operator can also be used to add (concatenate) strings.
+The += assignment operator can also be used to add (concatenate) strings:
+	txt1 = "What a very ";
+	txt1 += "nice day";	// What a very nice day
+</pre>
+<hr/>
+
+<h2>Adding Strings and Numbers</h2>
+<pre>
+If you add a number and a string, the result will be a string!
+	x = 5 + 5;		// 10
+	y = "5" + 5;		// 55
+	z = "Hello" + 5;	// Hello5
+</pre>
+<hr/>
+
+<h2>JavaScript Comparison Operators</h2>
+<pre>
+	Operator	Description
+	==		equal to
+	===		equal value and equal type
+	!=		not equal
+	!==		not equal value or not equal type
+	>		greater than
+	<		less than
+	>=		greater than or equal to
+	<=		less than or equal to
+	?		ternary operator
+</pre>
+<hr/>
+
+<h2>JavaScript Logical Operators</h2>
+<pre>
+Logical operators are fully described in the JS Comparisons chapter.
+	Operator		Description
+	&&			logical and
+	||			logical or
+	!			logical not
+</pre>
+<hr/>
+
+<h2>JavaScript Type Operators</h2>
+<pre>
+Type operators are fully described in the JS Type Conversion chapter.
+	Operator		Description
+	typeof			Returns the type of a variable
+	instanceof		Returns true if an object is an instance of an object type
+
+</pre>
+<hr/>
+
+<h2>JavaScript Bitwise Operators</h2>
+<pre>
+Bit operators work on 32 bits numbers.
+Any numeric operand in the operation is converted into a 32 bit number.
+The result is converted back to a JavaScript number.
+<p>
+The examples above uses 4 bits unsigned examples. But JavaScript uses 32-bit signed numbers.
+Because of this, in JavaScript, ~ 5 will not return 10. It will return -6.
+~00000000000000000000000000000101 will return 11111111111111111111111111111010
+
+Bitwise operators are fully described in the JS Bitwise chapter.
+</p>
+Operator	Description		Example	Same as		Result	Decimal
+&		AND			5 & 1	0101 & 0001	0001	 1
+|		OR			5 | 1	0101 | 0001	0101	 5
+~		NOT			~ 	~0101		1010	 10
+^		XOR			5 ^ 1	0101 ^ 0001	0100	 4
+<<		Zero fill left shift	5 << 1	0101 << 1	1010	 10
+>>		Signed right shift	5 >> 1	0101 >> 1	0010	  2
+>>>		Zero fill right shift	5 >>> 1	0101 >>> 1	0010	  2
+
+
+</pre>
+
+
+<script>
+var x = 5;
+var y = 2;
+var z = x * y;
+document.getElementById("demo").innerHTML = z;
+
+var x = 10;
+x += 5;
+document.getElementById("demo1").innerHTML = x;
+
+</script>
+
+</body>
+</html>

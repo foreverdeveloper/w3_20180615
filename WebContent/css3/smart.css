@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	color:#F00; /* 글자 색상을 빨간색 */
+}
+#pc_view{
+	display:none; /* pc 영역은 화면에서 생략 */	
+}
+

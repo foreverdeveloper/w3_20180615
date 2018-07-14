@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Use Strict</h2>
+<pre>
+<b>"use strict";</b> Defines that JavaScript code should be executed in "strict mode".
+
+<h3>The "use strict" Directive</h3>
+The "use strict" directive is new in JavaScript 1.8.5 (ECMAScript version 5).
+It is not a statement, but a literal expression, ignored by earlier versions of JavaScript.
+The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+Strict mode is supported in:
+	IE from version 10. Firefox from version 4.
+	Chrome from version 13. Safari from version 5.1.
+	Opera from version 12.
+</pre>
+<hr/>
+
+<h2>Declaring Strict Mode</h2>
+<pre>
+Strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+Declared at the beginning of a script, it has global scope (all code in the script will execute in strict mode)
+	"use strict";
+	x = 3.14;       // This will cause an error because x is not declared
+<br/>
+	// Declared inside a function, it has local scope (only the code inside the function is in strict mode)
+	function myFunction() {
+	   "use strict";
+	    y = 3.14;   // This will cause an error
+	}
+</pre>
+<hr/>
+
+<h2>The "use strict"; Syntax</h2>
+<pre>
+The syntax, for declaring strict mode, was designed to be compatible with older versions of JavaScript.
+Compiling a numeric literal (4 + 5;) or a string literal ("John Doe";) in a JavaScript program has no side effects. It simply compiles to a non existing variable and dies.
+So "use strict"; only matters to new compilers that "understand" the meaning of it.
+</pre>
+<hr/>
+
+<h2>Why Strict Mode?</h2>
+<pre>
+Strict mode makes it easier to write "secure" JavaScript.
+Strict mode changes previously accepted "bad syntax" into real errors.
+As an example, in normal JavaScript, mistyping a variable name creates a new global variable. In strict mode, this will throw an error, making it impossible to accidentally create a global variable.
+In normal JavaScript, a developer will not receive any error feedback assigning values to non-writable properties.
+In strict mode, any assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object, will throw an error.
+</pre>
+<hr/>
+
+<h2>Not Allowed in Strict Mode</h2>
+<pre>
+Using a variable, without declaring it, is not allowed:
+	"use strict";
+	x = 3.14;                // This will cause an error
+Objects are variables too.  Using an object, without declaring it, is not allowed:
+	x = {p1:10, p2:20};      // This will cause an error
+Deleting a variable (or object) is not allowed.
+	var x = 3.14;
+	delete x;                // This will cause an error
+Deleting a function is not allowed.
+	function x(p1, p2) {};
+	delete x;                // This will cause an error
+Duplicating a parameter name is not allowed:
+	function x(p1, p1) {};   // This will cause an error
+Octal numeric literals are not allowed:
+	var x = 010;             // This will cause an error
+Octal escape characters are not allowed:
+	var x = "\010";            // This will cause an error
+Writing to a read-only property is not allowed:
+	var obj = {};
+	Object.defineProperty(obj, "x", {value:0, writable:false});
+	obj.x = 3.14;            // This will cause an error
+Writing to a get-only property is not allowed:
+	var obj = {get x() {return 0} };
+	obj.x = 3.14;            // This will cause an error
+Deleting an undeletable property is not allowed:
+	delete Object.prototype; // This will cause an error
+The string "eval" cannot be used as a variable:
+	var eval = 3.14;         // This will cause an error
+The string "arguments" cannot be used as a variable:
+	var arguments = 3.14;    // This will cause an error
+The with statement is not allowed:
+	with (Math){x = cos(2)}; // This will cause an error
+For security reasons, eval() is not allowed to create variables in the scope from which it was called:
+In function calls like f(), the this value was the global object. In strict mode, it is now undefined.
+	eval ("var x = 2");
+	alert (x);               // This will cause an error
+
+</pre>
+<hr/>
+
+<h2>Future Proof!</h2>
+<pre>
+Keywords reserved for future JavaScript versions can NOT be used as variable names in strict mode.
+These are:
+	implements
+	interface
+	let
+	package
+	private
+	protected
+	public
+	static
+	yield
+	ex) var public = 1500;      // This will cause an error
+</pre>
+
+
+
+
+
+<script>
+"use strict";
+x = 3.14;    // This will cause an error (x is not defined).
+</script>
+
+</body>
+</html>

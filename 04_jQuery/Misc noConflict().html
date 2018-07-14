@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>jQuery - The noConflict() Method</h2>
+<pre>
+What if you wish to use other frameworks on your pages, while still using jQuery?
+</pre>
+<hr/>
+
+<h2>jQuery and Other JavaScript Frameworks</h2>
+<pre>
+As you already know; jQuery uses the $ sign as a shortcut for jQuery.
+There are many other popular JavaScript frameworks like: Angular, Backbone, Ember, Knockout, and more.
+<b>What if other JavaScript frameworks also use the $ sign as a shortcut?</b>
+If two different frameworks are using the same shortcut, one of them might stop working.
+The jQuery team have already thought about this, and implemented the noConflict() method.
+</pre>
+<hr/>
+
+<h2>The jQuery noConflict() Method</h2>
+<pre>
+The noConflict() method releases the hold on the $ shortcut identifier, so that other scripts can use it.
+You can of course still use jQuery, simply by writing the full name instead of the shortcut:
+	ex)
+	$.noConflict();
+	jQuery(document).ready(function(){
+	    jQuery("button").click(function(){
+	        jQuery("p").text("jQuery is still working!");
+	    });
+	});
+</pre>
+<script>
+//$.noConflict();
+var jq = $.noConflict();	// jq를 식별자 처럼 쓰기 위함
+jQuery(document).ready(function(){
+    jQuery("button.cls1").click(function(){
+        jQuery("p.cls1").text("jQuery is still working!");
+    });
+});
+</script>
+<p class='cls1'>This is a paragraph.</p>
+<button class='cls1'>Test jQuery</button>
+<hr/>
+
+
+<pre>
+You can also create your own shortcut very easily. The noConflict() method returns a reference to jQuery, that you can save in a variable, for later use. Here is an example:
+	ex)
+	var jq = $.noConflict();
+	jq(document).ready(function(){
+	    jq("button").click(function(){
+	        jq("p").text("jQuery is still working!");
+	    });
+	});
+</pre>
+
+<script>
+//$.noConflict(); 를 위에 한번 써 먹었으므로, 최초 한 번만 먹힘.
+//var jq = $.noConflict();
+jq(document).ready(function(){
+    jq("button.cls2").click(function(){
+        jq("p.cls2").text("jQuery is still working!");
+    });
+});
+</script>
+<p class='cls2'>This is a paragraph.</p>
+<button class='cls2'>Test jQuery</button>
+<hr/>
+
+<pre>
+If you have a block of jQuery code which uses the $ shortcut and you do not want to change it all, you can pass the $ sign in as a parameter to the ready method. This allows you to access jQuery using $, inside this function - outside of it, you will have to use "jQuery":
+	$.noConflict();
+	jQuery(document).ready(function($){
+	    $("button").click(function(){
+	        $("p").text("jQuery is still working!");
+	    });
+	});
+</pre>
+<script>
+//$.noConflict();			// 위에 썼으면 밑에 써선 에러남. $ 때문임.
+jQuery(document).ready(function($){
+    $("button.cls3").click(function(){
+        $("p.cls3").text("jQuery is still working!");
+    });
+});
+</script>
+<p class='cls3'>This is a paragraph.</p>
+<button class='cls3'>Test jQuery</button>
+<hr/>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery element ~ siblings Selector</h2>
+<pre>
+<h3>Definition and Usage</h3>
+The ("element ~ siblings") selector selects all elements that are siblings of the specified "element".
+For example:
+	$("div ~ p") - selects all &lt;p&gt; elements that are siblings of the &lt;div&gt; element.
+Note: Both of the specified elements must share the same parent.
+
+Syntax
+	("element ~ siblings")
+
+Parameter	Description
+element		Required. Any valid jQuery selector
+siblings	Required. Specifies the siblings of the element parameter
+</pre>
+<hr/>
+
+<pre>
+Example
+Select all &lt;p&gt; elements that are siblings of the &lt;div&gt; element:
+	$("div ~ p")
+</pre>
+
+<script>
+$(document).ready(function(){
+    $("div ~ p").css("background-color", "yellow");
+});
+</script>
+
+<h2>What will $("div ~ p") select?</h2>
+
+<p>This is a p element (will not be selected).</p>
+<div style="border:1px solid black;padding:10px;">This is a div element.</div>
+<p>This is a p element.</p>
+<p>This is another p element.</p>
+
+<div style="border:1px solid black;padding:10px;">
+<p>This is a p element inside a div element (will not be selected).</p></div>
+
+<h2>This is a heading</h2>
+<p>This is a p element.</p>
+<hr/>
+
+
+
+
+</body>
+</html>

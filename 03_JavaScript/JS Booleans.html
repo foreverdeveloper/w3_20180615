@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Booleans</h2>
+<pre>
+A JavaScript Boolean represents one of two values: true or false.
+</pre>
+<hr/>
+
+<h2>The Boolean() Function</h2>
+<pre>
+You can use the Boolean() function to find out if an expression (or a variable) is true:
+	Boolean(10 > 9)        // returns true
+	(10 > 9)              // also returns true
+	10 > 9                // also returns true
+</pre>
+<p>Display the value of Boolean(10 > 9):</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<hr/>
+
+<h2>Comparisons and Conditions</h2>
+<pre>
+The chapter JS Comparisons gives a full overview of comparison operators.
+	Operator	Description		Example
+	==		equal to		if (day == "Monday")
+	>		greater than	 	if (salary > 9000)
+	<		less than	 	if (age < 18)
+</pre>
+<hr/>
+
+<h2>Everything With a "Value" is True</h2>
+<pre>
+</pre>
+<p id="demo1"></p>
+<hr/>
+
+<h2>Everything Without a "Value" is False</h2>
+<pre>
+The Boolean value of 0 (zero) is false:
+The Boolean value of -0 (minus zero) is false:
+	var x = -0;
+	Boolean(x);       // returns false
+The Boolean value of "" (empty string) is false:
+	var x = "";
+	Boolean(x);       // returns false
+The Boolean value of undefined is false:
+	var x;
+	Boolean(x);       // returns false
+The Boolean value of null is false:
+The Boolean value of false is (you guessed it) false
+The Boolean value of NaN is false:
+	var x = 10 / "H";
+	Boolean(x);       // returns false
+</pre>
+<hr/>
+
+<h2>Booleans Can be Objects</h2>
+<pre>
+Normally JavaScript booleans are primitive values created from literals:
+	var x = false;
+But booleans can also be defined as objects with the keyword new:
+	var y = new Boolean(false);
+
+var x = false;			// typeof x returns boolean
+var y = new Boolean(false);	// typeof y returns object
+
+Do not create Boolean objects. It slows down execution speed.
+The new keyword complicates the code. This can produce some unexpected results:
+
+When using the == operator, equal booleans are equal:
+	var x = false;
+	var y = new Boolean(false);
+	// (x == y) is true because x and y have equal values
+
+When using the === operator, equal booleans are not equal, because the === operator expects equality in both type and value.
+	// (x === y) is false because x and y have different types
+
+Or even worse. Objects cannot be compared:
+Note the difference between (x==y) and (x===y).
+Comparing two JavaScript objects will always return false.
+	var x = new Boolean(false);
+	var y = new Boolean(false);
+	// (x == y) is false because objects cannot be compared
+
+
+
+</pre>
+
+
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = Boolean(10 > 9);
+}
+
+var b1 = Boolean(100);
+var b2 = Boolean(3.14);
+var b3 = Boolean(-15);
+var b4 = Boolean("Hello");
+var b5 = Boolean('false');
+var b6 = Boolean(1 + 7 + 3.14);
+
+document.getElementById("demo1").innerHTML =
+"100 is " + b1 + "<br>" +
+"3.14 is " + b2 + "<br>" +
+"-15 is " + b3 + "<br>" +
+"Any (not empty) string is " + b4 + "<br>" +
+"Even the string 'false' is " + b5 + "<br>" +
+"Any expression (except zero) is " + b6;
+
+</script>
+
+</body>
+</html>

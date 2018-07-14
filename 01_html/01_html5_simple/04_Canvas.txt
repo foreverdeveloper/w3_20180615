@@ -1,0 +1,126 @@
+HTML5 API 종류 :
+	Canvas, Video & Audio, Drag and Drop, Geolocation API
+
+Canvas
+	HTML5가 나오기 전부터 존재함
+	HTML5의 공식 명세로 자리잡음
+	2차원의 비트맵 이미지 프로세싱이 가능함
+	동적인 그래픽 렌더링을 스크립트로 제어할 수 있음
+
+Canvas 사용 방법
+	Canvas는 넓이와 높이가 고정되어 있으므로
+	width와 height 속성을 사용해서 지정함
+	두 속성은 JavaScript를 이용하여 속성값을 변경할 수도 있음
+	속성값이 다시 지정되면 Canvas 내용은 모두 초기화 됨
+
+	<넓이 100px, 높이 50px의 배경이 투명한 캔버스>
+		<canvas id=“ex” width=“100” height=”50”></canvas>
+
+	<지정된 캔버스 위에 JavaScript를 사용하여 그림을 그릴 경우>
+		var canvas = document.getElementById(“ex”);
+		var context = canvas.getContext(“2d”);
+
+	context.fillText 메소드 : 캔버스에 문장을 작성할 때, 속을 채워서 그리는 방식
+		context.fillText("문자열", x, y);
+
+	context.fillRect 메소드 : 사각형을 그리는 메소드
+		context.fillRect(x, y, width, height);
+
+context.beginPath 메소드 : 선 그리기의 시작을 나타내는 메소드
+	context.beginPath();
+
+
+Canvas
+	context.moveTo 메소드 : 붓의 시작위치를 변경하는 메소드
+		context.moveTo(x, y);
+
+	context.lineTo 메소드 : 붓의 끝 위치를 변경하는 메소드
+		context.lineTo(x, y);
+
+	context.closePath 메소드 : 다 그리지 못한 부분을 선으로 이을 때 사용
+		context.closePath();
+
+	삼각형 그리기 실습 예제
+
+		<!doctype html>
+		<html>
+		<head>
+		<meta charset="utf-8">
+		<title>Triangle</title>
+			<style type="text/css">
+				#myCanvas{
+					border:1px solid red;
+				}
+			</style>
+
+			<script type="text/javascript">
+				function start(){
+					var ctx = document.getElementById("myCanvas").getContext("2d");
+
+					ctx.beginPath();
+					ctx.moveTo(50,50);
+					ctx.lineTo(200,50);
+					ctx.lineTo(50,200);
+					//context.fill();
+					ctx.closePath();
+					ctx.stroke();
+				}
+			</script>
+		</head>
+
+		<body onload="start();">
+
+			<canvas id="myCanvas" width="300px" height="400px"></canvas>
+
+		</body>
+		</html>
+
+
+	사각형 그리기 실습 예제
+
+		<!DOCTYPE html>
+		<html>
+		<head>
+		<title>ex02</title>
+			<script>
+				window.onload = function () {
+					var canvas = document.getElementById("myCanvas");
+					var context = canvas.getContext("2d");
+					//1번(사각형)
+					context.rect(10, 30, 80, 100);
+					context.stroke();
+					//2번(선이있는사각형)
+					context.strokeRect(100, 20, 150, 100);
+					//3번(채워진사각형)
+					context.fillRect(270,40,100,80);
+				};
+			</script>
+		</head>
+		<body>
+				<canvas id="myCanvas" width="700" height="400">
+				</canvas>
+		</body>
+		</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

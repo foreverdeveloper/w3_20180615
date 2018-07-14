@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery parent descendant Selector</h2>
+<pre>
+<h3>Definition and Usage</h3>
+The ("parent descendant") selector selects all elements that are descendants of a specified element.
+A descendant of an element could be a child, grandchild, great-grandchild, etc, of that element.
+Syntax
+	("parent descendant")
+
+Parameter	Description
+parent		Required. Specifies the parent element to be selected
+descendant	Required. Specifies the descendant element (of the specified parent element) to be selected
+</pre>
+<hr/>
+
+<pre>
+Example
+Select all &lt;span&gt; elements that are descendants of a &lt;div&gt; element:
+	$("div span")
+</pre>
+
+<script>
+$(document).ready(function(){
+    $("div span").css("background-color", "yellow");
+});
+</script>
+
+<h2>What will $("div span") select?</h2>
+
+<h4>This div element has two descendants, p and span:</h4>
+<div style="border:1px solid black;padding:10px;">
+  <p>This is a paragraph.</p>
+  <span>This is a text inside a span.</span>
+</div>
+
+<h4>This div element has also two descendants, p and span:</h4>
+<div style="border:1px solid black;padding:10px;">
+  <p>This is a paragraph. <span>This is a span element, inside the paragraph.</span></p>
+</div>
+
+<hr/>
+
+
+
+
+</body>
+</html>

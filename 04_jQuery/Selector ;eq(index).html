@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery :eq() Selector</h2>
+<pre>
+<h3>Definition and Usage</h3>
+The :eq() selector selects an element with a specific index number.
+The index numbers start at 0, so the first element will have the index number 0 (not 1).
+This is mostly used together with another selector to select a specifically indexed element in a group (like in the example above).
+
+Syntax
+	$(":eq(index)")
+
+	Parameter	Description
+	index		Required. Specifies the index of the element
+</pre>
+<hr/>
+
+<pre>
+Example
+Select the second &lt;p&gt; element:
+	$("p:eq(1)")
+</pre>
+
+<script>
+$(document).ready(function(){
+  $("p:eq(1)").css("background-color","yellow");
+});
+</script>
+
+<h1>Welcome to My Homepage</h1>
+
+<p class="intro">My name is Donald.</p>
+<p>I live in Duckburg.</p>
+<p>My best friend is Mickey.</p>
+
+<p>Who is your favourite:</p>
+<ul id="choose">
+  <li>Goofy</li>
+  <li>Mickey</li>
+  <li>Pluto</li>
+</ul>
+
+<hr/>
+
+
+
+
+</body>
+</html>

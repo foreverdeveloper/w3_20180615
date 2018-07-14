@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery :nth-of-type() Selector</h2>
+
+<h2>Definition and Usage</h2>
+<pre>
+The :nth-of-type(n) selector selects all elements that are the nth child, of a particular type, of their parent.
+Tip: Use the :nth-child() selector to select all elements that are the nth child, regardless of type, of their parent.
+
+Syntax
+	:nth-of-type(n|even|odd|formula)
+
+Parameter	Description
+n		The index of each child to match.
+		Must be a number. The first element has the index number 1.
+even		Selects each even child element
+odd		Selects each odd child element
+formula		Specifies which child element(s) to be selected with a formula (an + b).
+		Example: p:nth-of-type(3n+2) selects each 3rd paragraph, starting at the 2nd paragraph
+</pre>
+<hr/>
+
+<pre>
+Example
+Select each &lt;p&gt; element that is the third &lt;p&gt; element of its parent:
+	$("p:nth-of-type(3)")
+</pre>
+<script>
+$(document).ready(function(){
+    $("p:nth-of-type(3)").css("background-color", "yellow");
+});
+</script>
+<h1>This is a heading in body</h1>
+<p>The first paragraph in body.</p>
+<p>The second paragraph in body.</p>
+
+<div style="border:1px solid;">
+  <span>This is a span element in div</span>
+  <p>The first paragraph in div.</p>
+  <p>The second paragraph in another div.</p>
+  <p>The last (third) paragraph in div.</p>
+</div><br>
+
+<div style="border:1px solid;">
+  <p>The first paragraph in another div.</p>
+  <p>The second paragraph in another div.</p>
+  <p>The last (third) paragraph in another div.</p>
+</div>
+
+<p>The last (third) paragraph in body.</p>
+<hr/>
+
+
+</body>
+</html>

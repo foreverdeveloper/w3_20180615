@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery :lt() Selector</h2>
+<pre>
+<h3>Definition and Usage</h3>
+The :lt() selector selects elements with an index number less than a specified number.
+The index numbers start at 0.
+This is mostly used together with another selector to select the first elements in a group (like in the example above).
+Tip: Use the :gt selector to select elements index numbers greater than the specified number.
+
+Syntax
+	$(":lt(index)")
+
+Parameter	Description
+index		Required. Specifies which element to select.
+		Elements with an index lesser than the specified number is selected.
+</pre>
+<hr/>
+
+<pre>
+Example
+Select the 4 first &lt;tr&gt; elements:
+	$("tr:lt(4)")
+</pre>
+
+<script>
+$(document).ready(function(){
+    $("tr:lt(4)").css("background-color", "yellow");
+});
+</script>
+
+<h1>Welcome to My Web Page</h1>
+
+<table border="1">
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbköp</td>
+    <td>Christina Berglund</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Königlich Essen</td>
+    <td>Philip Cramer</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+  <tr>
+    <td>North/South</td>
+    <td>Simon Crowther</td>
+    <td>UK</td>
+  </tr>
+</table>
+
+
+
+</body>
+</html>

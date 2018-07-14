@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery :last-child Selector</h2>
+<pre>
+<h3>Definition and Usage</h3>
+The :last-child selector selects all elements that are the last child of their parent.
+Tip: Use the :first-child selector to select elements that are the first child of their parent.
+Syntax
+	$(":last-child")
+</pre>
+<hr/>
+
+<pre>
+Example
+Select every &lt;p&gt; element that is the last child of its parent:
+	$("p:last-child")
+</pre>
+<script>
+$(document).ready(function(){
+    $("p:last-child").css("background-color", "yellow");
+});
+</script>
+
+<p>The first paragraph in body.</p>
+
+<div style="border:1px solid;">
+  <p>The first paragraph in div.</p>
+  <p>The last paragraph in div.</p>
+</div><br>
+
+<div style="border:1px solid;">
+  <p>The first paragraph in another div.</p>
+  <p>The last paragraph in another div.</p>
+  <span>This is a span element.</span>
+</div>
+
+<p>The last paragraph in body.</p>
+<hr/>
+
+
+
+
+
+</body>
+</html>

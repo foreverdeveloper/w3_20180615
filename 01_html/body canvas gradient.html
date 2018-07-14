@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="700" height="400" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+/*
+	context.createLinearGradient(x0,y0,x1,y1);
+
+	x0		The x-coordinate of the start point of the gradient
+	y0		The y-coordinate of the start point of the gradient
+	x1		The x-coordinate of the end point of the gradient
+	y1		The y-coordinate of the end point of the gradient
+
+	gradient.addColorStop(stop,color);
+		stop	: A value between 0.0 and 1.0 that represents the position between start and end in a gradient
+*/
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var grd = ctx.createLinearGradient(0, 0, 170, 0);
+grd.addColorStop(0, "black");
+grd.addColorStop(0.5, "red");
+grd.addColorStop(1, "white");
+ctx.fillStyle = grd;
+ctx.fillRect(20, 20, 150, 100);
+
+
+/*
+context.createRadialGradient(x0,y0,r0,x1,y1,r1);
+	x0, y0는 그라디언트 중심점의 위치, r0는 반지름
+	x1, y1은 그라디언트의 끝 위치,  반지름 r1
+
+	x0		The x-coordinate of the starting circle of the gradient
+	y0		The y-coordinate of the starting circle of the gradient
+	r0		The radius of the starting circle
+	x1		The x-coordinate of the ending circle of the gradient
+	y1		The y-coordinate of the ending circle of the gradient
+	r1		The radius of the ending circle
+
+*/
+var x_offset = 200;
+var grd=ctx.createRadialGradient(75 + x_offset, 50, 5, 90 + x_offset, 60, 100);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle=grd;
+ctx.fillRect(10 + x_offset, 10, 150 + x_offset, 100);
+
+</script>
+
+<p><strong>Note:</strong> The canvas tag is not supported in Internet
+Explorer 8 and earlier versions.</p>
+
+</body>
+</html>

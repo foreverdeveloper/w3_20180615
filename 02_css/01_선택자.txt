@@ -1,0 +1,84 @@
+https://www.w3schools.com
+
+CSS (Cascading Style Sheet)
+	table이나 frame에 의존 하던 문서 레이아웃을 효과적으로 함.
+	글자 크기나 글자체, 줄간격, 배경 색상 등 자유롭게 선택
+	통일감, 일관성
+
+HTML과 비교 (공백, 콤마)
+	<h3><i><font color="blue">파란색 이탤릭체</font></i></h3>
+	<p><i><font color="blue">동등한 레벨</font></i></p>
+
+	h3 i{
+		color: blue
+	}
+	h3, p{
+		font-style: italic;
+		color: blue
+	}
+	공백은 내포관계, h3 다음에 나오는 p에 정의
+	콤마는 동일한 레벨, 각각에 정의
+
+클래스 - 동일한 태그라도 상황에 따라 다른 태그 스타일 정의
+	(태그이름).클래스이름{ }
+	* 태그이름 생략 가능
+
+[]를 이용해 속성과 속성값을 입력(CSS3.0)
+	input[type=text]{ background: pink }
+	input[type=password] { background: yellow }
+
+문자열에 대한 속성 선택
+	[속성 ~= 값] : 속성값이 특정값을 포함
+	[속성 != 값]: 속성값이 특정값을 포함하지 않음
+	[속성 ^= 값]: 특정값으로 시작하는 태그를 선택
+	[속성 $= 값]: 특정값으로 끝나는 태그를 선택
+	[속성 *= 값]: 특정값을 포함하는 태그 선택
+
+반응선택자
+	:active	마우스로 클릭한 태그를 선택
+	:hover 	마우스를 가져다 댄 태그를 선택
+	:link{ color: green; text-decoration: none}  /* 링크 색깔 */
+	:active{ color: yellow; text-decoration: none} /* 누르는 동안 */
+	:visited{ color: visited; text-decoration: none} /* 누른 적 있는 경우 */
+	:hover{ color: red; text-decoration: underline} /* 마우스 올라간 경우 */
+
+상태 선택자
+	checked		체크된 곳의 input태그 선택
+	focus			초점이 선택이 된 input 태그 선택
+	enabled		사용 가능한 input 태그 선택
+	disabled		사용이 불가능한 input 태그 선택
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

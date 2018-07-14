@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ex02</title>
+</head>
+
+<body>
+
+	<p> Count number: <output id="result"></output></p>
+    <button onClick="startWorker()">Start Worker </button>
+    <button onClick="stopWorker()">Stop Worker</button>
+	
+    <script>
+		var w;
+		
+		function startWorker(){
+			if(typeof(Worker) != "undefined"){
+				if(typeof(w) == "undefined") {
+					w = new Worker("myscript.js");	
+				}
+				w.onmessage = function(event){
+					document.getElementById("result").innerHTML = event.data;	
+				};
+			}
+			else{
+				document.getElementById("result").innerHTML = "브라우저가 웹워커를 지원하지 않음";	
+			}
+		}
+		
+		function stopWorker(){
+			w.terminate();
+			w = undefined;	
+		}
+	</script>
+</body>
+</html>

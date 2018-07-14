@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML &lt;hr&gt; Tag</h2>
+<pre>
+<h3>Definition and Usage</h3>
+The &lt;hr&gt; tag defines a thematic break in an HTML page (e.g. a shift of topic).
+The &lt;hr&gt; element is used to separate content (or define a change) in an HTML page.
+
+</pre>
+<hr/>
+
+<h2>Differences Between HTML 4.01 and HTML5</h2>
+<pre>
+In HTML5, the &lt;hr&gt; tag defines a thematic break.
+In HTML 4.01, the &lt;hr&gt; tag represents a horizontal rule.
+However, the &lt;hr&gt; tag may still be displayed as a horizontal rule in visual browsers, but is now defined in semantic terms, rather than presentational terms.
+<b>All the layout attributes are removed in HTML5. Use CSS instead.</b>
+</pre>
+<hr/>
+
+<h2>Differences Between HTML and XHTML</h2>
+<pre>
+In HTML, the &lt;hr&gt; tag has no end tag.
+In XHTML, the &lt;hr&gt; tag must be properly closed, like this: &lt;hr /&gt;.
+</pre>
+<hr/>
+
+<h2>Attributes</h2>
+<pre>
+Attribute		Value			Description
+align 		left | center | right 		Not supported in HTML5. Specifies the alignment of a &lt;hr&gt; element
+noshade 	noshade 			Not supported in HTML5. Specifies that a &lt;hr&gt; element should render in one solid color (noshaded), instead of a shaded color
+size 		pixels  			Not supported in HTML5. Specifies the height of a &lt;hr&gt; element
+width 		pixels | % 			Not supported in HTML5. Specifies the width of a &lt;hr&gt; element
+</pre>
+<hr/>
+
+<h2>Default CSS Settings</h2>
+<pre>
+Most browsers will display the <hr> element with the following default values:
+	hr {
+	    display: block;
+	    margin-top: 0.5em;
+	    margin-bottom: 0.5em;
+	    margin-left: auto;
+	    margin-right: auto;
+	    border-style: inset;
+	    border-width: 1px;
+	}
+</pre>
+
+<style>
+hr.cls1 {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    /* border-width: 1px; */
+    border-width: 5px;
+}
+</style>
+
+<p>A hr element is displayed like this:</p>
+<hr class='cls1'>
+<p>Change the default CSS settings to see the effect.</p>
+
+
+</body>
+</html>

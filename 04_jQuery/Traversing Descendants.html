@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+.descendants * {
+    display: block;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+    padding: 5px;
+    margin: 15px;
+}
+</style>
+
+</head>
+<body>
+
+<h2>jQuery Traversing - Descendants</h2>
+<pre>
+A descendant is a child, grandchild, great-grandchild, and so on.
+With jQuery you can traverse down the DOM tree to find descendants of an element.
+</pre>
+<hr/>
+
+<h2>Traversing Down the DOM Tree</h2>
+<pre>
+Two useful jQuery methods for traversing down the DOM tree are:
+	children()
+	find()
+</pre>
+<hr/>
+
+<h2>jQuery children() Method</h2>
+<pre>
+The children() method returns <b>all direct children</b> of the selected element.
+This method only traverse a single level down the DOM tree.
+The following example returns all elements that are direct children of each &lt;div&gt; elements:
+</pre>
+<script>
+$(document).ready(function(){
+    $("#id1").children().css({"color": "red", "border": "2px solid red"});
+});
+</script>
+<div id='id1' class="descendants" style="width:500px;">div (current element)
+  <p>p (child)
+    <span>span (grandchild)</span>
+  </p>
+  <p>p (child)
+    <span>span (grandchild)</span>
+  </p>
+</div>
+
+<pre>
+You can also use an optional parameter to filter the search for children.
+The following example returns all &lt;p&gt; elements with the class name "first", that are direct children of &lt;div&gt;
+</pre>
+<script>
+$(document).ready(function(){
+    $("#id2").children("p.first").css({"color": "red", "border": "2px solid red"});
+});
+</script>
+<div id='id2' class="descendants" style="width:500px;">div (current element)
+  <p class="first">p (child)
+    <span>span (grandchild)</span>
+  </p>
+  <p class="second">p (child)
+    <span>span (grandchild)</span>
+  </p>
+</div>
+<hr/>
+
+<h2>jQuery find() Method</h2>
+<pre>
+The find() method returns descendant elements of the selected element, all the way down to the last descendant.
+The following example returns all &lt;span&gt; elements that are descendants of &lt;div&gt;
+</pre>
+<script>
+$(document).ready(function(){
+    $("#id3").find("span").css({"color": "red", "border": "2px solid red"});
+});
+</script>
+<div id = 'id3' class="descendants" style="width:500px;">div (current element)
+  <p>p (child)
+    <span>span (grandchild)</span>
+  </p>
+  <p>p (child)
+    <span>span (grandchild)</span>
+  </p>
+</div>
+The following example returns all descendants of &lt;div&gt;
+
+<script>
+$(document).ready(function(){
+    $("#id4").find("*").css({"color": "red", "border": "2px solid red"});
+});
+</script>
+
+<div id='id4' class="descendants" style="width:500px;">div (current element)
+  <p>p (child)
+    <span>span (grandchild)</span>
+  </p>
+  <p>p (child)
+    <span>span (grandchild)</span>
+  </p>
+</div>
+<hr/>
+
+
+</body>
+</html>

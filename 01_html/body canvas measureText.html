@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+var txt = "Hello World"
+/*
+	context.measureText(text).width;
+		text : The text to be measured
+
+*/
+ctx.fillText("width:" + ctx.measureText(txt).width, 10, 50);
+ctx.fillText(txt, 10, 100);
+
+</script>
+
+<p><strong>Note:</strong> The canvas tag is not supported in Internet
+Explorer 8 and earlier versions.</p>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+Web Storage : 일종의 클라이언트 사이드 데이터베이스
+	데이터는 서버가 아닌 각 사용자의 브라우저에 보관
+	일반 데이터베이스와의 차이점 :
+		 Key-value 형식으로 보관ㆍ갱신ㆍ호출
+
+Web Storage의 종류 : Local Storage, Session Storage
+
+Web Storage와 Cookie
+	<Web>
+		비연결 지향성 → 정보들은 쿠키(Cookie)에 저장됨
+		쿠키
+			4KB만 저장 가능
+			매번 HTTP 요청 헤더에 붙여 전송(트래픽 낭비)
+			보안에 취약
+			20개 정도로 개수 제한
+
+	<HTML5>
+		쿠키의 역할을 하면서 단점을 보완하는 Web Storage 기술을 제공
+		- Web Storage는 키/값(key/value)의 쌍으로 저장됨
+			약 5MB까지 저장 가능
+			서버로 전송할 필요 없음
+			상대적으로 보안에 안전
+			개수 제한 없음
+
+
+Local Storage
+	만료 날짜가 없는 데이터를 저장함
+	브라우저를 껐다가 켜도 값이 유지됨
+	도메인이 다르면 서로의 Local Storage에 접근할 수 없음
+
+Local Storage 사용 메소드
+	length 					저장된 변수의 개수
+	setItem(key, value) 	Key/value를 Local Storage에 저장
+		localStorage.setItem(“name”, “Park”);
+		localStorage.name=“Park”;
+		localStorage[“name”]=“Park”;
+	getItem(key) 			Key와 연관된 값을 반환
+		var name=localStorage.getItem(“name”);
+		var name=localStorage.name;
+		var name=localStorage[“name”];
+	removeItem(key) 		Key/value를 Local Storage에서 삭제
+		localStorage.removeItem(“name”);
+		delete localStorage.name;
+		delete localStorage[“name”];
+	clear() 					모든 key/value를 삭제
+
+
+Session Storage
+	데이터가 별도로 저장됨. 세션을 종료하면 데이터가 사라짐
+	윈도우가 다를 경우, 다른 영역을 사용함
+	Session Storage 문법
+		localStorage → Session Storage
+
+
+ App Cache
+	오프라인 환경을 고려한 API : Storage, Database
+	API들이 오프라인에서 정상적으로 작동하기 위해 필요한 리소스 :
+		CSS, 이미지 자바스크립트
+	오프라인 상태에서도 웹 애플리케이션으로의 접근을 가능케 하는 기능 :
+		Application Cache API
+	Manifest : CACHE해야 할 리소스를 줄 바꿈으로 구분하여 나열하기만 한
+		단순 텍스트 파일 - 파일로 저장 시, 확장명 .manifest
+		------------------------------------------
+			CACHE MANIFEST
+			# 아래가 캐시 해야 할 리소스
+			index.html
+			app.js
+			cache.css
+		------------------------------------------//
+
+			‘CACHE MANIFEST’ 문자열은 항상 첫 번째 라인에 위치해야 함
+			사이트당 최대 5MB까지 캐시 할 수 있음
+			manifest 파일이나 manifest에 명시된 파일의 다운로드가 실패할 경우
+			브라우저는 가장 최근에 성공적으로 다운로드 한 파일을 그대로 사용하며,
+			실패 이벤트가 발생함
+
+	Cache Status
+		Application Cache의 동작을 세세하게 제어 할 수 있음
+		JavaScript로 Application Cache에 액세스
+		- 글로벌 객체가 가진 applicationCache 속성 참고
+		- ‘window.applicationCache’, 혹은 ‘applicationCache’라 쓰면 됨
+
+		<Status 속성이 가질 수 있는 값>
+			UNCACHED 		0 		캐시하지 않음
+			IDLE 					1 		최신 캐시를 이용 중
+			CHECKING 			2 		업데이트 체크 중
+			DOWNLOADING 	3 		업데이트 다운로드 중
+			UPDATEREADY 	4 		최신 캐시를 이용할 수 있음
+			OBSOLETE 		5 		에러에 의해 캐시 무효화
+
+	Cache Status 예제 소스
+		var sCacheStatus = "Not supported";
+		if (window.applicationCache)
+		{
+			var oAppCache = window.applicationCache;
+			switch ( oAppCache.status )
+			{
+				case oAppCache.UNCACHED :	//캐시하지 않음
+				sCacheStatus = “Not cached”;
+				break;
+				case oAppCache.IDLE :	// 최신 캐시를 이용
+				sCacheStatus = “Idle”;
+				break;
+				case oAppCache.CHECKING :	// 업데이트 체크
+				sCacheStatus = “Checking”;
+				break;
+				case oAppCache.DOWNLOADING :	// 업데이트 다운로드
+				sCacheStatus = “Downloading”;
+				break;
+				case oAppCache.UPDATEREADY :	// 최신 캐시 이용 가능
+				sCacheStatus = "Update ready";
+				break;
+				case oAppCache.OBSOLETE :	// 에러에 의해 캐시 무효화
+				sCacheStatus = "Obsolete";
+				break;
+			}
+		}
+		return sCacheStatus;
+
+	Cache Event
+		이벤트를 처리하려면 addEventListener()를 이용하여 이벤트 핸들러를 등록함
+			applicationCache.addEventListener(“updateready”, function(){
+				//updateready 이벤트
+			}, false);
+		<캐시 이벤트에서 사용되는 상수>
+			checking 		업데이트 체크 중
+			error 				업데이트가 에러로 종료
+			noupdate 		메니페스트가 업데이트되지 않음
+			downloading 	업데이트 다운로드 중
+			progress 		업데이트 다운로드 중
+			updateready 	최신 캐시 얻기 완료. swapCache()를 호출할 수 있음
+			cached 			캐시 완료
+			obsolete 		매니페스트 얻기에 실패하여 캐시를 무효로 함
+
+		Cache(캐시) 이벤트 상수를 활용한 소스코드
+			if (window.applicationCache) {
+				var appCache = window.applicationCache;
+				appCache.addEventListener('error', appCacheError, false);
+				appCache.addEventListener('checking', checkingEvent, false);
+				appCache.addEventListener('noupdate', noUpdateEvent, false);
+				appCache.addEventListener('downloading', downloadingEvent, false);
+				appCache.addEventListener('progress', progressEvent, false);
+				appCache.addEventListener('updateready', updateReadyEvent, false);
+				appCache.addEventListener('cached', cachedEvent, false);
+			}
+
+
+
+

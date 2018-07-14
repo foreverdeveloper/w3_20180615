@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>제목</title>
+		<style>스타일시트</style>
+		<script>자바스크립트</script>
+	</head>
+	<body>
+		<!--  HTML 본문 -->
+		<!--
+			section : 웹컨텐츠들을 그룹으로 묶어주는 역할
+				article 태그와는 달리 묶은 컨텐츠는 재배포 할 수 없다.
+				section 태그로 내용을 묶은 후, 그 안에서
+				article 태그를 사용할 수는 있다.
+				section 태그롤 내용을 묶은 후, 그 안에서 또 다른
+				section 태그를 사용할 수 있다.
+		-->
+		<section id=content>
+			<!--  header는 여러 번 사용 가능,
+					본문 body 에서 사용 가능
+					페이지를 구성하기 위한 구분 단위
+					내용에 따른 페이지 구성 분류 단위
+					hgroup 태그는 제목과 부제목을 묶어,
+					페이지 전체 구조에 대한 개념.
+					쉽게 눈에 들어오게 하는 역할을 담당
+			-->
+			<header>
+				<h1>제목 부분</h1>
+			</header>
+
+			<!--  nav : 네비게이션 표현을 위한 태그
+						본문 위치에 영향을 받지 않는다.
+						<header><footer><aside> 중 어디라도 가능
+						<body>태그 안에 어디서든 사용 가능.
+			-->
+			<nav id=mainList>
+				<ul>
+					<li><a href=#>메뉴1</a></li>
+					<li><a href=#>메뉴1</a></li>
+					<li><a href=#>메뉴1</a></li>
+					<li><a href=#>메뉴1</a></li>
+				</ul>
+			</nav>
+
+			<!--
+				article : 웹페이지 상에서의 실제 내용을 의미
+					다른 곳에 배포하거나 재사용할 수 있는 컨텐츠
+					로 검색로봇이 인식
+			-->
+			<article>
+				<p>메뉴1: .......</p>
+				<p>메뉴2: .......</p>
+				<p>메뉴3: .......</p>
+				<p>메뉴4: .......</p>
+			</article>
+		</section>
+
+	</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Arrays</h2>
+<pre>
+JavaScript arrays are used to store multiple values in a single variable.
+</pre>
+<hr/>
+
+<h2>Creating an Array</h2>
+<pre>
+Syntax: var array_name = [item1, item2, ... ,"BMW"];
+	Putting a comma after the last element (like "BMW",)  is inconsistent across browsers.
+	IE 8 and earlier will fail.
+
+</pre>
+<hr/>
+
+<h2>JavaScript Arrays</h2>
+<pre>
+	var cars = [
+	    "Saab",
+	    "Volvo",
+	    "BMW"
+	];
+</pre>
+<p id="demo"></p>
+<hr/>
+
+<h2>Using the JavaScript Keyword new</h2>
+<pre>
+The two examples above do exactly the same. There is no need to use new Array().
+For simplicity, readability and execution speed, use the first one (the array literal method).
+	var cars = new Array("Saab", "Volvo", "BMW");
+</pre>
+<hr/>
+
+<h2>Access the Elements of an Array</h2>
+<pre>
+[0] is the first element in an array. [1] is the second. Array indexes start with 0.
+	var name = cars[0];
+	cars[0] = "Opel";
+</pre>
+<hr/>
+
+<h2>Access the Full Array</h2>
+<pre>
+With JavaScript, the full array can be accessed by referring to the array name:
+</pre>
+<p id="demo1"></p>
+<hr/>
+
+<h2>Arrays are Objects</h2>
+<pre>
+Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+But, JavaScript arrays are best described as arrays.
+Arrays use numbers to access its "elements". In this example, person[0] returns John:
+<h3>Array</h3>
+var person = ["John", "Doe", 46];
+person[0]; //John
+<h3>Object</h3>
+var person = {firstName:"John", lastName:"Doe", age:46};
+person["firstName"]	// John
+</pre>
+<hr/>
+
+<h2>Array Elements Can Be Objects</h2>
+<pre>
+avaScript variables can be objects. Arrays are special kinds of objects.
+Because of this, you can have variables of different types in the same Array.
+You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:
+	myArray[0] = Date.now;
+	myArray[1] = myFunction;
+	myArray[2] = myCars;
+</pre>
+<hr/>
+
+<h2>Array Properties and Methods</h2>
+<pre>
+The real strength of JavaScript arrays are the built-in array properties and methods:
+	var x = cars.length;   // The length property returns the number of elements
+	var y = cars.sort();   // The sort() method sorts arrays
+</pre>
+<hr/>
+
+<h2>The length Property</h2>
+<pre>
+The length property of an array returns the length of an array (the number of array elements).
+The length property is always one more than the highest array index.
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.length;                       // the length of fruits is 4
+</pre>
+<hr/>
+
+<h2>Looping Array Elements</h2>
+<pre>
+The best way to loop through an array, is using a "for" loop:
+</pre>
+<p id="demo2"></p>
+<hr/>
+
+<h2>Adding Array Elements</h2>
+<pre>
+The easiest way to add a new element to an array is using the push method:
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.push("Lemon");                // adds a new element (Lemon) to fruits
+New element can also be added to an array using the length property:
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits[fruits.length] = "Lemon";     // adds a new element (Lemon) to fruits
+
+<b>Adding elements with high indexes can create undefined "holes" in an array:</b>
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits[6] = "Lemon";                 // adds a new element (Lemon) to fruits
+
+</pre>
+<hr/>
+
+<h2>Associative Arrays</h2>
+<pre>
+Many programming languages support arrays with named indexes.
+Arrays with named indexes are called associative arrays (or hashes).
+JavaScript does not support arrays with named indexes.
+In JavaScript, arrays always use numbered indexes.
+
+WARNING !!
+If you use named indexes, JavaScript will redefine the array to a standard object.
+After that, some array methods and properties will produce incorrect results.
+
+	var person = [];
+	person["firstName"] = "John";
+	person["lastName"] = "Doe";
+	person["age"] = 46;
+	var x = person.length;         // person.length will return 0
+	var y = person[0];             // person[0] will return undefined
+
+</pre>
+<hr/>
+
+<h2>The Difference Between Arrays and Objects</h2>
+<pre>
+In JavaScript, arrays use numbered indexes.
+In JavaScript, objects use named indexes.
+Arrays are a special kind of objects, with numbered indexes.
+</pre>
+<hr/>
+
+<h2>Avoid new Array()</h2>
+<pre>
+There is no need to use the JavaScript's built-in array constructor new Array().
+Use [] instead.
+These two different statements both create a new empty array named points:
+	var points = new Array();         // Bad
+	var points = [];                  // Good
+These two different statements both create a new array containing 6 numbers:
+	var points = new Array(40, 100, 1, 5, 25, 10); // Bad
+	var points = [40, 100, 1, 5, 25, 10];          // Good
+The new keyword only complicates the code. It can also produce some unexpected results:
+</pre>
+<p id="demo3"></p>
+<hr/>
+
+<h2>How to Recognize an Array</h2>
+<pre>
+A common question is: How do I know if a variable is an array?
+The problem is that the JavaScript operator typeof returns "object":
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	typeof fruits;             // returns object
+<h3>Solution 1:</h3>
+To solve this problem ECMAScript 5 defines a new method Array.isArray():
+The problem with this solution is that ECMAScript 5 is not supported in older browsers.
+	Array.isArray(fruits);     // returns true
+<h3>Solution 2:</h3>
+it returns true if the object prototype contains the word "Array".
+	function isArray(x) {
+	    return x.constructor.toString().indexOf("Array") > -1;
+	}
+
+<h3>Solution 3:</h3>
+The instanceof operator returns true if an object is created by a given constructor:
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits instanceof Array     // returns true
+</pre>
+<hr/>
+
+<script>
+var cars = [
+    "Saab",
+    "Volvo",
+    "BMW"
+];
+document.getElementById("demo").innerHTML = cars;
+
+var cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("demo1").innerHTML = cars;
+
+var fruits, text, fLen, i;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fLen = fruits.length;
+text = "<ul>";
+for (i = 0; i < fLen; i++) {
+    text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+document.getElementById("demo2").innerHTML = text;
+
+var points = new Array(40);
+document.getElementById("demo3").innerHTML = points[0];
+
+</script>
+
+</body>
+</html>
+

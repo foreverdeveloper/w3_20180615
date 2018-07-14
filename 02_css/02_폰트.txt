@@ -1,0 +1,74 @@
+폰트 글꼴 : font-family
+	궁서체,
+	'Comic Sans MS'
+
+폰트 스타일 : font-style: italics, oblique, normal
+	italics, oblique 기울임 꼴
+	normal
+	inherit : 부모의 스타일 상속받고자 할 때 사용
+
+폰트 굵기 : font-weight
+	normal : 숫자 400
+	bold : 숫자 700
+	border : 숫자 900 (글꼴에 의존 700)
+	lighter : 숫자 100 ( 글꼴에 의존 400)
+	숫자 : 길이
+
+폰트 크기 : font-size
+	절대 크기(absolute)
+		xx-small, x-small, small, medium
+		large, x-large, xx-large
+	상대 크기(relative)
+		larger, smaller
+	길이(숫자)
+	백분율
+		%로 지정
+	기본 값 : medium
+
+폰트 복합 명령 : font
+	지정하는 순서는 바뀌면 안됨
+	각 속성은 빈칸으로 구분, 각 값은 생략 가능
+	선택자 {font:
+		font-style font-variant font-weight font-size/line-height
+		font-family; }
+	예)
+		P{font: italic normal bold 12pt/14pt 궁서, 'Courier New'; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

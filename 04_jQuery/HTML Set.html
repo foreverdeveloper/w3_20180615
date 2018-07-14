@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h2>jQuery - Set Content and Attributes</h2>
+<pre>
+<h3>Set Content - text(), html(), and val()</h3>
+We will use the same three methods from the previous page to set content:
+	text() - Sets or returns the text content of selected elements
+	html() - Sets or returns the content of selected elements (including HTML markup)
+	val() - Sets or returns the value of form fields
+
+</pre>
+
+<script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("#test1").text("Hello world!");
+    });
+    $("#btn2").click(function(){
+        $("#test2").html("<b>Hello world!</b>");
+    });
+    $("#btn3").click(function(){
+        $("#test3").val("Dolly Duck");
+    });
+});
+</script>
+<p id="test1">This is a paragraph.</p>
+<p id="test2">This is another paragraph.</p>
+<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+<button id="btn1">Set Text</button>
+<button id="btn2">Set HTML</button>
+<button id="btn3">Set Value</button>
+<hr/>
+
+<h2>A Callback Function for text(), html(), and val()</h2>
+<pre>
+All of the three jQuery methods above: text(), html(), and val(), also come with a callback function.
+The callback function has two parameters: the index of the current element in the list of elements selected and the original (old) value. You then return the string you wish to use as the new value from the function.
+</pre>
+
+<script>
+$(document).ready(function(){
+    $("#btn11").click(function(){
+        $("#test11").text(function(i, origText){
+            return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+        });
+    });
+
+    $("#btn12").click(function(){
+        $("#test12").html(function(i, origText){
+            return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")";
+        });
+    });
+});
+</script>
+<p id="test11">This is a <b>bold</b> paragraph.</p>
+<p id="test12">This is another <b>bold</b> paragraph.</p>
+
+<button id="btn11">Show Old/New Text</button>
+<button id="btn12">Show Old/New HTML</button>
+<br/>
+
+<h2>Set Attributes - attr()</h2>
+<pre>
+The jQuery attr() method is also used to set/change attribute values.
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls1").click(function(){
+        $("#w3s").attr("href", "https://www.w3schools.com/jquery/");
+    });
+});
+</script>
+<p><a href="https://www.w3schools.com" id="w3s">W3Schools.com</a></p>
+<button class='cls1'>Change href Value</button>
+<p>Mouse over the link (or click on it) to see that the value of the href attribute has changed.</p>
+<hr/>
+
+<pre>
+The attr() method also allows you to set multiple attributes at the same time.
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls2").click(function(){
+        $("#w3s2").attr({
+            "href" : "https://www.w3schools.com/jquery/",
+            "title" : "W3Schools jQuery Tutorial"
+        });
+    });
+});
+</script>
+<p><a href="https://www.w3schools.com" title="some title" id="w3s2">W3Schools.com</a></p>
+<button class='cls2'>Change href and title</button>
+<p>Mouse over the link to see that the href attribute has changed and a title attribute is set.</p>
+<hr/>
+
+<h2>A Callback Function for attr()</h2>
+<pre>
+The jQuery method attr(), also come with a callback function. The callback function has two parameters: the index of the current element in the list of elements selected and the original (old) attribute value. You then return the string you wish to use as the new attribute value from the function.
+
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls3").click(function(){
+        $("#w3s2").attr("href", function(i, origValue){
+            return origValue + "/jquery/";
+        });
+    });
+});
+</script>
+
+<p><a href="https://www.w3schools.com" id="w3s2">W3Schools.com</a></p>
+<button class='cls3'>Change href Value</button>
+<hr/>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

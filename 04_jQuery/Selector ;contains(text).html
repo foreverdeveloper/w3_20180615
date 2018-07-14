@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery :contains() Selector</h2>
+<pre>
+
+</pre>
+
+<h2>Definition and Usage</h2>
+<pre>
+The :contains() selector selects elements containing the specified string.
+The string can be contained directly in the element as text, or in a child element.
+This is mostly used together with another selector to select the elements containing the text in a group (like in the example above).
+Note: The text is case sensitive.
+
+Syntax
+	$(":contains(text)")
+
+Parameter	Description
+text		Required. Specifies the text to find
+</pre>
+<hr/>
+
+<pre>
+Example
+Select all &lt;p&gt; elements containing "is":
+	$("p:contains(is)")
+</pre>
+
+<script>
+$(document).ready(function(){
+    $("p:contains(is)").css("background-color", "yellow");
+});
+</script>
+
+<h1>Welcome to My Homepage</h1>
+
+<p class="intro">My name is Donald.</p>
+<p>I live in Duckburg.</p>
+<p>My best friend is Mickey.</p>
+
+Who is your favourite:
+<ul id="choose">
+  <li>Goofy</li>
+  <li>Mickey</li>
+  <li>Pluto</li>
+</ul>
+
+
+
+</body>
+</html>

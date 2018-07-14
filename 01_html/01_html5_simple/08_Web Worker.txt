@@ -1,0 +1,15 @@
+Web Workers의 장점 :
+	브라우저가 OS-레벨의 스레드를 생성
+	빠른 속도
+	브라우저에 부담을 주지 않고 백그라운드에서 스크립트 연산을 수행함
+
+Workers 생성
+	Var myWorker = new Worker(‘my_worer.js’);
+	myWorker.onmessage = function(event){
+		alert(“Worker에 의해 실행될 콜백!\n”);
+	};
+	백그라운드에서 작업할 스크립트를 별도의 파일에 작성하고
+	새로운 인스턴스에 URI를 기입하여 Workers 생성
+	onmessage 속성에 함수를 대입하여 작업결과를 돌려 받음
+	myWorker.terminate()
+	Worker는 남은 작업을 마무리하거나 메모리를 정리한 후 자발적으로 사라짐

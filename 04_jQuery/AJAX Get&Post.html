@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h2>jQuery - AJAX get() and post() Methods</h2>
+<pre>
+The jQuery get() and post() methods are used to request data from the server with an HTTP GET or POST request.
+<h3>HTTP Request: GET vs. POST</h3>
+Two commonly used methods for a request-response between a client and server are: GET and POST.
+	<b>GET</b> - Requests data from a specified resource
+	<b>POST</b> - Submits data to be processed to a specified resource
+<b>GET</b> is basically used for just getting (retrieving) some data from the server. Note: The GET method may return cached data.
+<b>POST</b> can also be used to get some data from the server. However, the POST method NEVER caches data, and is often used to send data along with the request.
+</pre>
+<hr/>
+
+<h2>jQuery $.get() Method</h2>
+<pre>
+The $.get() method requests data from the server with an HTTP GET request.
+Syntax:
+	$.get(URL,callback);
+
+The required URL parameter specifies the URL you wish to request.
+The optional callback parameter is the name of a function to be executed if the request succeeds.
+The following example uses the $.get() method to retrieve data from a file on the server:
+	ex)
+	$("button").click(function(){
+	    $.get("demo_test.asp", function(data, status){
+	        alert("Data: " + data + "\nStatus: " + status);
+	    });
+	});
+	Tip: Here is how the ASP file looks like ("demo_test.asp"):
+
+	<%
+	response.write("This is some text from an external ASP file.")
+	%>
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls1").click(function(){
+        //$.get("demo_test.asp", function(data, status){
+        $.get("https://www.w3schools.com/jquery/demo_test.asp", function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
+});
+</script>
+<button class='cls1'>Send an HTTP GET request to a page and get the result back</button>
+<hr/>
+
+<h2>jQuery $.post() Method</h2>
+<pre>
+The $.post() method requests data from the server using an HTTP POST request.
+Syntax:
+	$.post(URL,data,callback);
+
+The required URL parameter specifies the URL you wish to request.
+The optional data parameter specifies some data to send along with the request.
+The optional callback parameter is the name of a function to be executed if the request succeeds.
+The following example uses the $.post() method to send some data along with the request:
+	ex)
+	$("button").click(function(){
+	    $.post("demo_test_post.asp",
+	    {
+	        name: "Donald Duck",
+	        city: "Duckburg"
+	    },
+	    function(data, status){
+	        alert("Data: " + data + "\nStatus: " + status);
+	    });
+	});
+	Tip: Here is how the ASP file looks like ("demo_test_post.asp"):
+		<%
+		dim fname,city
+		fname=Request.Form("name")
+		city=Request.Form("city")
+		Response.Write("Dear " & fname & ". ")
+		Response.Write("Hope you live well in " & city & ".")
+		%>
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls2").click(function(){
+        //$.post("demo_test_post.asp",
+        $.post("https://www.w3schools.com/jquery/demo_test_post.asp",
+        {
+          name: "Donald Duck",
+          city: "Duckburg"
+        },
+        function(data,status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
+});
+</script>
+<button class='cls2'>Send an HTTP POST request to a page and get the result back</button>
+<hr/>
+
+
+</body>
+</html>

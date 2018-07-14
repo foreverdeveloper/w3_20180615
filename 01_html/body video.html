@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<!--
+			video :
+				src
+				controls
+				autoplay
+				loop
+				width, height
+				poster
+				preload
+					auto: 자동다운로드, none: 컨트롤 조작전 다운금지
+					metadata : 메타데이터를 가져오며,
+							사용자가 조작시 비디오 가져옴
+		-->
+		<video controls src="../res/video/THE-GREATEST-SHOWMAN-Trailer-2017.mp4"
+			type='video/mp4;codec="avc.1.42e01e, mp4a.40.2"'
+			width=300>
+		</video>
+
+		<video controls autoplay loop width=400>
+			<source src="../res/video/THE-GREATEST-SHOWMAN-Trailer-2017.mp4"
+				type='video/mp4;codec="avc.1.42e01e, mp4a.40.2"'>
+		</video>
+	</body>
+</html>

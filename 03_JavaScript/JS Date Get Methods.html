@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Get Date Methods</h2>
+<pre>
+getFullYear()	Get the year as a four digit number (yyyy)
+getMonth()	Get the month as a number (0-11)
+getDate()	Get the day as a number (1-31)
+getHours()	Get the hour (0-23)
+getMinutes()	Get the minute (0-59)
+getSeconds()	Get the second (0-59)
+getMilliseconds()	Get the millisecond (0-999)
+getTime()	Get the time (milliseconds since January 1, 1970)
+getDay()	Get the weekday as a number (0-6), 0: Sunday
+
+</pre>
+<hr/>
+
+<h2>JavaScript getMonth()</h2>
+<pre>
+The getMonth() method returns the month as a number
+You can use an array to display the name of the month
+</pre>
+<p id="demo"></p>
+<hr/>
+
+<h2>JavaScript getMilliseconds()</h2>
+<pre>
+The getMilliseconds() method returns the milliseconds of a date as a number (0-999):
+</pre>
+<p id="demo1"></p>
+<hr/>
+
+<h2>JavaScript getDay()</h2>
+<pre>
+The getDay() method returns the weekday as a number:
+You can use an array to display the name of the weekday:
+</pre>
+<p id="demo2"></p>
+<hr/>
+
+<h2>UTC Date Methods</h2>
+<pre>
+UTC date methods are used for working with UTC dates (Universal Time Zone dates):
+
+Method			Description
+getUTCDate()		Same as getDate(), but returns the UTC date
+getUTCDay()		Same as getDay(), but returns the UTC day
+getUTCFullYear()	Same as getFullYear(), but returns the UTC year
+getUTCHours()		Same as getHours(), but returns the UTC hour
+getUTCMilliseconds()	Same as getMilliseconds(), but returns the UTC milliseconds
+getUTCMinutes()		Same as getMinutes(), but returns the UTC minutes
+getUTCMonth()	 	Same as getMonth(), but returns the UTC month
+getUTCSeconds()		Same as getSeconds(), but returns the UTC seconds
+</pre>
+<hr/>
+
+<script>
+var d = new Date();
+var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+document.getElementById("demo").innerHTML = months[d.getMonth()];
+
+var d = new Date();
+document.getElementById("demo1").innerHTML = d.getMilliseconds();
+
+var d = new Date();
+var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+document.getElementById("demo2").innerHTML = days[d.getDay()];
+
+</script>
+
+</body>
+</html>

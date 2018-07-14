@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery :only-of-type Selector</h2>
+<pre>
+The :only-of-type selector selects every element that is the only child of its type, of its parent.
+Syntax
+	$(":only-of-type")
+</pre>
+<hr/>
+
+<pre>
+Example
+Select each &lt;p&gt; element that is the only &lt;p&gt; element of its parent:
+	$("p:only-of-type")
+</pre>
+
+<script>
+$(document).ready(function(){
+    $("p:only-of-type").css("background-color", "yellow");
+});
+</script>
+
+<div style="border:1px solid;">
+  <p>The first paragraph.</p>
+  <p>The last paragraph.</p>
+</div><br>
+
+<div style="border:1px solid;">
+  <p>The only paragraph.</p>
+</div><br>
+
+<div style="border:1px solid;">
+  <span>This is a span element.</span>
+  <p>The only paragraph.</p>
+</div><br>
+
+<hr/>
+
+</body>
+</html>

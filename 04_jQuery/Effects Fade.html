@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h2>jQuery Effects - Fading</h2>
+<pre>
+With jQuery you can fade elements in and out of visibility.
+<h3>jQuery Fading Methods</h3>
+	fadeIn()
+	fadeOut()
+	fadeToggle()
+	fadeTo()
+</pre>
+<hr/>
+
+<h2>jQuery fadeIn() Method</h2>
+<pre>
+* fade in : 차차 또렷하게 되다.
+The jQuery fadeIn() method is used to fade in a hidden element.
+Syntax:
+	$(selector).fadeIn(speed,callback);
+The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+The optional callback parameter is a function to be executed after the fading completes.
+</pre>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn(3000);
+    });
+});
+</script>
+<p>Demonstrate fadeIn() with different parameters.</p>
+<button>Click to fade in boxes</button><br><br>
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+<hr/>
+
+<h2>jQuery fadeOut() Method</h2>
+<pre>
+* fade out : 차차 희미하게 되다.
+The jQuery fadeOut() method is used to fade out a visible element.
+Syntax:
+	$(selector).fadeOut(speed,callback);
+The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+The optional callback parameter is a function to be executed after the fading completes.
+</pre>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div11").fadeOut();
+        $("#div12").fadeOut("slow");
+        $("#div13").fadeOut(3000);
+    });
+});
+</script>
+<button>Click to fade out boxes</button><br><br>
+<div id="div11" style="width:80px;height:80px;background-color:red;"></div><br>
+<div id="div12" style="width:80px;height:80px;background-color:green;"></div><br>
+<div id="div13" style="width:80px;height:80px;background-color:blue;"></div>
+<hr/>
+
+<h2>jQuery fadeToggle() Method</h2>
+<pre>
+Syntax: $(selector).fadeToggle(speed,callback);
+The jQuery fadeToggle() method toggles between the fadeIn() and fadeOut() methods.
+If the elements are faded out, fadeToggle() will fade them in.
+If the elements are faded in, fadeToggle() will fade them out.
+</pre>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div21").fadeToggle();
+        $("#div22").fadeToggle("slow");
+        $("#div23").fadeToggle(3000);
+    });
+});
+</script>
+<button>Click to fade in/out boxes</button><br><br>
+<div id="div21" style="width:80px;height:80px;background-color:red;"></div>
+<br>
+<div id="div22" style="width:80px;height:80px;background-color:green;"></div>
+<br>
+<div id="div23" style="width:80px;height:80px;background-color:blue;"></div>
+<hr/>
+
+<h2>jQuery fadeTo() Method</h2>
+<pre>
+The jQuery fadeTo() method allows fading to a given opacity (value between 0 and 1).
+Syntax:
+	$(selector).fadeTo(speed,opacity,callback);
+The required speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+The required opacity parameter in the fadeTo() method specifies fading to a given opacity (value between 0 and 1).
+The optional callback parameter is a function to be executed after the function completes.
+</pre>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div31").fadeTo("slow", 0.15);
+        $("#div32").fadeTo("slow", 0.4);
+        $("#div33").fadeTo("slow", 0.7);
+    });
+});
+</script>
+<button>Click to fade boxes</button><br><br>
+<div id="div31" style="width:80px;height:80px;background-color:red;"></div><br>
+<div id="div32" style="width:80px;height:80px;background-color:green;"></div><br>
+<div id="div33" style="width:80px;height:80px;background-color:blue;"></div>
+<hr/>
+
+
+</body>
+</html>

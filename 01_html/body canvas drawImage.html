@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Image to use:</p>
+<img id="scream" width="220" height="277"
+	src="../res/images/scream.jpg" alt="The Scream">
+
+<p>Canvas:</p>
+<canvas id="myCanvas" width="240" height="297" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<p>Canvas2:</p>
+<canvas id="myCanvas2" width="240" height="297" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<p>Canvas3:</p>
+<canvas id="myCanvas3" width="300" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+window.onload = function() {
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    var img = document.getElementById("scream");
+
+	/*
+    JavaScript syntax:
+    	context.drawImage(img,x,y);
+    		Position the image on the canvas, and specify width and height of the image:
+
+	*/
+	ctx.drawImage(img, 10, 10);
+
+    /*
+    	context.drawImage(img,x,y,width,height);
+    		Clip the image and position the clipped part on the canvas:
+    */
+
+    var c = document.getElementById("myCanvas2");
+    var ctx = c.getContext("2d");
+    ctx.drawImage(img, 10, 10, 150, 180);
+
+    /*
+    	context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
+			img		Specifies the image, canvas, or video element to use
+			sx			Optional. The x coordinate where to start clipping
+			sy			Optional. The y coordinate where to start clipping
+			swidth	Optional. The width of the clipped image
+			sheight	Optional. The height of the clipped image
+			x			The x coordinate where to place the image on the canvas
+			y			The y coordinate where to place the image on the canvas
+			width		Optional. The width of the image to use (stretch or reduce the image)
+			height		Optional. The height of the image to use (stretch or reduce the image)
+
+    */
+    var c = document.getElementById("myCanvas3");
+    var ctx = c.getContext("2d");
+    ctx.drawImage(img, 90, 130, 50, 60, 10, 10, 50, 60);
+
+	//한 캔버스에 여러 이미지를 올릴 수도 있다.
+
+
+}
+</script>
+
+<p><strong>Note:</strong> The canvas tag is not supported in Internet
+Explorer 8 and earlier versions.</p>
+
+</body>
+</html>

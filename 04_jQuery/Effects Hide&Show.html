@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+<h2>jQuery hide() and show()</h2>
+<pre>
+Syntax:
+	$(selector).hide(speed,callback);
+	$(selector).show(speed,callback);
+
+The optional speed parameter specifies the speed of the hiding/showing, and can take the following values: "slow", "fast", or milliseconds.
+The optional callback parameter is a function to be executed after the hide() or show() method completes (you will learn more about callback functions in a later chapter).
+</pre>
+<hr/>
+
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("p.cls1").hide();
+    });
+    $("#show").click(function(){
+        $("p.cls1").show();
+    });
+});
+</script>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<p class='cls1'>If you click on the "Hide" button, I will disappear.</p>
+<hr/>
+
+<script>
+$(document).ready(function(){
+    $("p.cls2").click(function(){
+        $(this).hide();
+    });
+});
+</script>
+<p class='cls2'>If you click on me, I will disappear.</p>
+<hr/>
+
+<script>
+$(document).ready(function(){
+    $(".ex .hide").click(function(){
+        $(this).parents(".ex").hide("slow");
+    });
+});
+</script>
+<style>
+div.ex {
+    background-color: #e5eecc;
+    padding: 7px;
+    border: solid 1px #c3c3c3;
+}
+</style>
+<h3>Island Trading</h3>
+<div class="ex">
+  <button class="hide">Hide me</button>
+  <p>Contact: Helen Bennett<br>
+  Garden House Crowther Way<br>
+  London</p>
+</div>
+<hr/>
+
+<h2>jQuery toggle()</h2>
+<pre>
+With jQuery, you can toggle between the hide() and show() methods with the toggle() method.
+Shown elements are hidden and hidden elements are shown:
+	$("button").click(function(){
+	    $("p").toggle();
+	});
+Syntax:
+	$(selector).toggle(speed,callback);
+The optional speed parameter can take the following values: "slow", "fast", or milliseconds.
+The optional callback parameter is a function to be executed after toggle() completes.
+</pre>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p.cls3").toggle();
+    });
+});
+</script>
+<button>Toggle between hiding and showing the paragraphs</button>
+<p class="cls3">This is a paragraph with little content.</p>
+<hr/>
+
+</body>
+</html>

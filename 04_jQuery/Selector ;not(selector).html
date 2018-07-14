@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery :not() Selector</h2>
+<pre>
+The :not() selector selects all elements except the specified element.
+This is mostly used together with another selector to select everything except the specified element in a group (like in the example above).
+
+Syntax
+	$(":not(selector)")
+
+Parameter	Description
+selector	Required. Specifies the element to not select.
+		This parameter accepts any kind of selector
+</pre>
+<hr/>
+
+<pre>
+Example
+Select all &lt;p&gt; elements except those with class="intro":
+	$("p:not(.intro)")
+</pre>
+
+<script>
+$(document).ready(function(){
+    $("p:not(.intro)").css("background-color", "yellow");
+});
+</script>
+
+<h1>Welcome to My Homepage</h1>
+
+<p class="intro">My name is Donald.</p>
+<p>I live in Duckburg.</p>
+<p>My best friend is Mickey.</p>
+
+<p>Who is your favourite:</p>
+
+<ul id="choose">
+  <li>Goofy</li>
+  <li>Mickey</li>
+  <li>Pluto</li>
+</ul>
+
+<hr/>
+
+</body>
+</html>

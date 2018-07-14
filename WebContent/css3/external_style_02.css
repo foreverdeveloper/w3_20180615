@@ -1,0 +1,19 @@
+@charset "utf-8";
+#logo{
+	text-align:center;
+}
+#content a{
+	font-family:"맑은 고딕";	
+}
+#content h2{
+	position:absolute;
+	top:25%;
+	padding:15px;
+}
+#left{
+	float:left;
+	width:50%;
+}
+#right{
+	width:50%;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery :has() Selector</h2>
+<pre>
+
+</pre>
+
+<h2>Definition and Usage</h2>
+<pre>
+The :has() selector selects all elements that have one or more elements inside of them, that matches the specified selector.
+Tip: To select an element that have multiple elements inside of it, use comma (see example below).
+
+Syntax
+	$(":has(selector)")
+
+Parameter	Description
+selector	Required. Specifies the element to select.
+		This parameter accepts any kind of selector
+</pre>
+<hr/>
+
+<pre>
+Example
+Select all &lt;p&gt; elements that have a &lt;span&gt; element inside of them:
+	$("p:has(span)")
+</pre>
+
+<script>
+$(document).ready(function(){
+    $("p:has(span)").css("border", "solid red");
+});
+</script>
+
+<p><span>This is a span element inside a p element.</span></p>
+<p>This is a p element with no span element.</p>
+
+
+
+
+</body>
+</html>

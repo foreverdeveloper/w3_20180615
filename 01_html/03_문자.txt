@@ -1,0 +1,30 @@
+http://www.cheat-sheets.org/sites/html.su/entities.html
+
+	&nbsp;	띄어쓰기, Non-breaking space
+	&quot;	따옴표("), quotation mark
+	&apos;	홑따옴표('), apostrophe
+	&amp;	Ampersand (&)
+	&lt;		보다 작은 (<), less-than sign
+	&gt;		보다 큰(>), greater-than sign
+
+이스케이핑 도구
+ 	http://www.htmlescape.net/htmlescape_tool.html
+
+
+글자의 스타일
+	<b></b> : bold 체를 만든다
+	<i></i> :   이탤랙체를 만든다
+	<sub></sub> : 아래 첨자
+	<sup></sup> : 위첨자
+	<ins></ins> : 밑줄그은 문자
+	<del></del> : 취소선(다운데 선)
+	<mark></mark> : 글자 강조
+	<bdi></bdi> : 글자 진행방향이 다른(아랍어 등)을 격리시킴.
+	<bdo dir="rtl"></bdo> : 글자 진행방향 재정의 (ltr: 왼쪽->오른쪽, rtl)
+
+
+루비문자(ruby)
+	<ruby></ruby>
+		<rt></rt> 지원하지 않는 브라우저는
+		<rp></rp> 태그를 이용
+

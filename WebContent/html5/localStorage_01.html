@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Local Storage</title>
+	<script>
+		function clickCounter(){
+			if(typeof(Storage) !== "undefined"){
+				if(localStorage.clickcount){
+					localStorage.clickcount = Number(localStorage.clickcount)+1;	
+				} 
+				else{
+					localStorage.clickcount = 1;	
+				}
+				document.getElementById("result").innerHTML = localStorage.clickcount + "번 클릭했습니다.";
+			}
+			else{
+				document.getElementById("result").innerHTML = "웹 스토리지를 지원하지 않습니다.";	
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<p> <button onclick="clickCounter()" type="button">Click me! </button></p>
+    <div id="result"></div>
+
+</body>
+</html>

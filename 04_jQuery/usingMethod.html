@@ -1,0 +1,47 @@
+﻿<!doctype html>
+
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>css() 메서드 사용</title>
+	<style>	
+        .change{
+             background-color:yellow;
+        }
+	</style>
+	<!-- jQuery Core를 CDN을 이용하여 포함 -->
+    <script src="jquery-3.3.1.min.js"></script> 
+    <script>
+        $(document).ready(function () {
+            //요소 이름이 h4인 요소들을 선택하여, color 속성 값을 blue로 설정 
+            $('h4').css('color', 'blue');
+
+            //요소 이름이 h5, h6인 요소들을 선택하여, color 속성 값을 red로 설정  
+            $('h5,h6').css('color', 'red');
+			
+			//type 속성값이 button인 input 요소의 value 속성값을 변수 out에 저장 후, 경고창으로 출력  
+            var out=$('input[type="button"]').val();
+			alert(out);
+			
+			//type 속성값이 button인 input 태그의 value 속성값을 Hello!로 설정 
+            $('input[type="button"]').val('Hello!');
+			
+			// h5 요소들을 선택하여 change 클래스 속성을 추가
+            $('h5').addClass('change');
+			
+			// h6 요소들 위로 마우스 이동하는 mouseover 이벤트가 발생할 경우, 경고창에 [에디슨] 출력 
+			$('h6').mouseover(function(){
+				alert("에디슨");
+			});
+        });
+    </script>
+</head>
+<body>
+	<!-- 웹 브라우저에서 실행 후 "by 에디슨"위로 즉 h6 요소 위로 마우스 이동하여 경고창 출력 확인 -->
+    <h4>변명 중에서도 가장 어리석고 못난 변명은</h4>
+    <h5>"시간이 없어서" 하는 변명입니다.</h5>
+    <h6>by 에디슨</h6>
+	
+	<input type="button" value="button1" />
+</body>
+</html>

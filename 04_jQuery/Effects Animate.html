@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+<h2>jQuery Effects - Animation</h2>
+<pre>
+The jQuery animate() method lets you create custom animations.
+<h3>jQuery Animations - The animate() Method</h3>
+Syntax:
+	$(selector).animate({params},speed,callback);
+The required params parameter defines the CSS properties to be animated.
+The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+The optional callback parameter is a function to be executed after the animation completes.
+</pre>
+<hr/>
+<script>
+$(document).ready(function(){
+    $("button.cls1").click(function(){
+        $("div.cls1").animate({left: '250px'});
+    });
+});
+</script>
+<button class='cls1'>Start Animation</button>
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+<div  class='cls1' style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+<hr/>
+
+<h2>jQuery animate() - Manipulate Multiple Properties</h2>
+<pre>
+Notice that multiple properties can be animated at the same time:
+<b>Is it possible to manipulate ALL CSS properties with the animate() method?</b>
+Yes, almost! However, there is one important thing to remember: all property names must be camel-cased when used with the animate() method: You will need to write paddingLeft instead of padding-left, marginRight instead of margin-right, and so on.
+Also, color animation is not included in the core jQuery library.
+If you want to animate color, you need to download the <a href="http://plugins.jquery.com/">Color Animations plugin</a> from jQuery.com.
+
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls2").click(function(){
+        $("div.cls2").animate({
+            left: '250px',
+            opacity: '0.5',
+            height: '150px',
+            width: '150px'
+        });
+    });
+});
+</script>
+<button class='cls2'>Start Animation</button>
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+<div class='cls2' style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+<hr/>
+
+<h2>jQuery animate() - Using Relative Values</h2>
+<pre>
+It is also possible to define relative values (the value is then relative to the element's current value). This is done by putting += or -= in front of the value:
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls3").click(function(){
+        $("div.cls3").animate({
+            left: '250px',
+            height: '+=50px',
+            width: '+=50px'
+        });
+    });
+});
+</script>
+<button class='cls3'>Start Animation</button>
+<div class='cls3' style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+<hr/>
+
+<h2>jQuery animate() - Using Pre-defined Values</h2>
+<pre>
+You can even specify a property's animation value as "show", "hide", or "toggle":
+</pre>
+<hr/>
+
+<script>
+$(document).ready(function(){
+    $("button.cls4").click(function(){
+        $("div.cls4").animate({
+            height: 'toggle'
+        });
+    });
+});
+</script>
+<button class='cls4'>Start Animation</button>
+<div class='cls4' style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+<hr/>
+
+<h2>jQuery animate() - Uses Queue Functionality</h2>
+<pre>
+By default, jQuery comes with queue functionality for animations.
+This means that if you write multiple animate() calls after each other, jQuery creates an "internal" queue with these method calls. Then it runs the animate calls ONE by ONE.
+So, if you want to perform different animations after each other, we take advantage of the queue functionality:
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls5").click(function(){
+        var div = $("div.cls5");
+        div.animate({height: '300px', opacity: '0.4'}, "slow");
+        div.animate({width: '300px', opacity: '0.8'}, "slow");
+        div.animate({height: '100px', opacity: '0.4'}, "slow");
+        div.animate({width: '100px', opacity: '0.8'}, "slow");
+    });
+});
+</script>
+<button class='cls5'>Start Animation</button>
+<div class='cls5' style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+<hr/>
+
+<pre>
+The example below first moves the <div> element to the right, and then increases the font size of the text:
+</pre>
+<script>
+$(document).ready(function(){
+    $("button.cls6").click(function(){
+        var div = $("div.cls6");
+        div.animate({left: '100px'}, "slow");
+        div.animate({fontSize: '3em'}, "slow");
+    });
+});
+</script>
+<button class='cls6'>Start Animation</button>
+<div class='cls6' style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+<hr/>
+
+</body>
+</html>

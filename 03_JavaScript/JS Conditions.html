@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript If...Else Statements</h2>
+<pre>
+In JavaScript we have the following conditional statements:
+	Use <b>if</b> to specify a block of code to be executed, if a specified condition is true
+	Use <b>else</b> to specify a block of code to be executed, if the same condition is false
+	Use <b>else if</b> to specify a new condition to test, if the first condition is false
+	Use <b>switch</b> to specify many alternative blocks of code to be executed
+Note that if is in lowercase letters. Uppercase letters (If or IF) will generate a JavaScript error.
+</pre>
+<hr/>
+
+<h2>The else if Statement</h2>
+<pre>
+Use the else if statement to specify a new condition if the first condition is false.
+
+Syntax:
+	if (condition1) {
+	    block of code to be executed if condition1 is true
+	} else if (condition2) {
+	    block of code to be executed if the condition1 is false and condition2 is true
+	} else {
+	    block of code to be executed if the condition1 is false and condition2 is false
+	}
+</pre>
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<hr/>
+
+<script>
+function myFunction() {
+    var greeting;
+    var time = new Date().getHours();
+    if (time < 10) {
+        greeting = "Good morning";
+    } else if (time < 20) {
+        greeting = "Good day";
+    } else {
+        greeting = "Good evening";
+    }
+document.getElementById("demo").innerHTML = greeting;
+}
+</script>
+
+</body>
+</html>

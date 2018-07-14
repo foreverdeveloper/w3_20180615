@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!--
+JavaScript Can Change HTML Content
+	document.getElementById("demo").innerHTML = "Hello JavaScript";
+
+JavaScript accepts both double and single quotes:
+JavaScript changes the value of the src (source) attribute of an <img> tag
+
+In HTML, JavaScript code must be inserted between <script> and </script> tags.
+	external JS : <script src="myScript.js"></script>
+
+ -->
+<h2>My First JavaScript</h2>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<button type="button" onclick="myFunction()">Hello!</button>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<button onclick="document.getElementById('myImage').src='../res/images/bulbon.gif'">Turn on the light</button>
+<img id="myImage" src="../res/images/bulboff.gif" style="width:100px">
+<button onclick="document.getElementById('myImage').src='../res/images/bulboff.gif'">Turn off the light</button>
+
+<p>Please input a number: </p>
+<input id="numb" type="text">
+<p id="demo3"></p>
+
+<script>
+var toggle = true;
+function myFunction(){
+	var elem = document.getElementById('demo2');
+	elem.innerHTML = "Hello!";
+	elem.setAttribute("style", "color: red;");
+	elem.style.fontSize ="25px";
+	elem.style.backgroundColor = "blue";
+	elem.style.color = "red";
+	if (toggle){
+		elem.style.display = "block";
+	}else{
+		elem.style.display = "none";
+	}
+	toggle = !toggle;
+
+	var demo3 = document.getElementById("demo3");
+	var val = document.getElementById("numb").value;
+
+	if ((val.trim() == "") || isNaN(val)){
+		demo3.innerHTML = "Not a Number";
+	}else{
+		demo3.innerHTML = "Input OK";
+	}
+}
+</script>
+</body>
+</html>

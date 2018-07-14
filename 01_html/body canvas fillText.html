@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+ctx.font = "20px Georgia";
+/*
+	context.fillText(text,x,y,maxWidth);
+		text			Specifies the text that will be written on the canvas
+		x				The x coordinate where to start painting the text (relative to the canvas)
+		y				The y coordinate where to start painting the text (relative to the canvas)
+		maxWidth	Optional. The maximum allowed width of the text, in pixels
+*/
+ctx.fillText("Hello World!", 10, 50);
+
+ctx.font = "30px Verdana";
+// Create gradient
+var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+gradient.addColorStop("0", "magenta");
+gradient.addColorStop("0.5", "blue");
+gradient.addColorStop("1.0", "red");
+// Fill with gradient
+ctx.fillStyle = gradient;
+ctx.fillText("Big smile!", 10, 90);
+
+</script>
+
+<p><strong>Note:</strong> The canvas tag is not supported in Internet
+Explorer 8 and earlier versions.</p>
+
+</body>
+</html>

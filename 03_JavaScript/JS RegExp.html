@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<h2>JavaScript Regular Expressions</h2>
+<pre>
+A regular expression is a sequence of characters that forms a search pattern.
+The search pattern can be used for text search and text replace operations.
+In JavaScript, regular expressions are often used with the two string methods:
+<b>search() and replace().</b>
+<b>Syntax : /pattern/modifiers;</b>
+</pre>
+<hr/>
+
+<h2>JavaScript String Methods</h2>
+<p>Search a string for "W3Schools", and display the position of the match:</p>
+<pre>
+Use a regular expression to do a case-insensitive search for "w3schools" in a string:
+</pre>
+<p id="demo"></p>
+<hr/>
+
+<h2>Using String replace() With a String</h2>
+<pre>
+The replace() method replaces a specified value with another value in a string
+Use a case insensitive regular expression to replace Microsoft with W3Schools in a string:
+</pre>
+<p id="demo1">Please visit Microsoft!</p>
+<hr/>
+
+<h2>Regular Expression Modifiers</h2>
+<pre>
+Modifiers can be used to perform case-insensitive more global searches:
+	i	Perform case-insensitive matching (ignore case)
+	g	Perform a global match (find all matches rather than stopping after the first match)
+		입력 전체를 한 문장으로 보고 패턴 검색한다. (global)
+	m	Perform multiline matching. 각 라인별로 분석한다. (multiline)
+		예) /\w(?=s)/gm : 문자열을 찾되, 그 담에 s가 오는 것을
+				검색해서 매치되는 것에서 s를 제외
+		예) /test(?!s)/gm : test 다음에 s로 끝나지 않는 것	찾는 것
+</pre>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<hr/>
+
+<h2>Regular Expression Patterns</h2>
+<pre>
+Brackets are used to find a range of characters:
+	[abc]	Find any of the characters between the brackets
+	[0-9]	Find any of the digits between the brackets
+	(x|y)	Find any of the alternatives separated with |
+
+Metacharacters are characters with a special meaning:
+	\d	Find a digit
+	\s	Find a whitespace character
+	\b	Find a match at the beginning or at the end of a word
+	\uxxxx	Find the Unicode character specified by the hexadecimal number xxxx
+
+Quantifiers define quantities:
+	n+	Matches any string that contains at least one n
+	n*	Matches any string that contains zero or more occurrences of n
+	n?	Matches any string that contains zero or one occurrences of n
+</pre>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<p id="demo8"></p>
+<p id="demo9"></p>
+<p id="demo10"></p>
+<p id="demo11"></p>
+<p id="demo12"></p>
+<p id="demo13"></p>
+<p id="demo14"></p>
+<hr/>
+
+<h2>Using the RegExp Object</h2>
+<pre>
+In JavaScript, the RegExp object is a regular expression object with predefined properties and methods.
+</pre>
+<hr/>
+
+<h2>Using test()</h2>
+<pre>
+The test() method is a RegExp expression method.
+It searches a string for a pattern, and returns true or false, depending on the result.
+</pre>
+<p id="demo15"></p>
+<hr/>
+
+<h2>Using exec()</h2>
+<pre>
+The exec() method is a RegExp expression method.
+It searches a string for a specified pattern, and returns the found text.
+If no match is found, it returns null.
+</pre>
+<p id="demo16"></p>
+<hr/>
+
+<script>
+var str = "Visit W3Schools!";
+var n = str.search("W3Schools");
+var n = str.search(/w3schools/i);
+document.getElementById("demo").innerHTML = n;
+
+var str = document.getElementById("demo").innerHTML;
+var txt = str.replace("Microsoft","W3Schools");
+var txt = str.replace(/microsoft/i,"W3Schools");
+document.getElementById("demo1").innerHTML = txt;
+
+var str = "Visit W3Schools";
+var patt1 = /w3schools/i;
+var result = str.match(patt1);
+document.getElementById("demo2").innerHTML = result;
+
+var str = "Is this all there is?";
+var patt1 = /is/g;
+var result = str.match(patt1);
+document.getElementById("demo3").innerHTML = result;
+
+var str = "\nIs th\nis it?";
+var patt1 = /^is/m;
+var result = str.match(patt1);
+document.getElementById("demo4").innerHTML = result;
+
+var str = "Is this all there is?";
+var patt1 = /[h]/g;
+var result = str.match(patt1);
+document.getElementById("demo5").innerHTML = result;
+
+var str = "123456789";
+var patt1 = /[1-4]/g;
+var result = str.match(patt1);
+document.getElementById("demo6").innerHTML = result;
+
+var str = "re, green, red, green, gren, gr, blue, yellow";
+var patt1 = /(red|green)/g;
+var result = str.match(patt1);
+document.getElementById("demo7").innerHTML = result;
+
+var str = "Give 100%!";
+var patt1 = /\d/g;
+var result = str.match(patt1);
+document.getElementById("demo8").innerHTML = result;
+
+var str = "Is this all there is?";
+var patt1 = /\s/g;
+var result = str.match(patt1);
+document.getElementById("demo9").innerHTML = result;
+
+var str = "Visit W3Schools";
+var patt1 = /\bW3/g;
+var result = str.match(patt1);
+document.getElementById("demo10").innerHTML = result;
+
+var str = "Visit W3Schools. Hello World!";
+var patt1 = /\u0057/g;
+var result = str.match(patt1);
+document.getElementById("demo11").innerHTML = result;
+
+var str = "Hellooo World! Hello W3Schools!";
+var patt1 = /o+/g;
+var result = str.match(patt1);
+document.getElementById("demo12").innerHTML = result;
+
+var str = "Hellooo World! Hello W3Schools!";
+var patt1 = /lo*/g;
+var result = str.match(patt1);
+document.getElementById("demo13").innerHTML = result;
+
+var str = "1, 100 or 1000?";
+var patt1 = /10?/g;
+var result = str.match(patt1);
+document.getElementById("demo14").innerHTML = result;
+
+var text = "The best things in life are free!";
+/*
+var patt = /e/;
+patt.test("The best things in life are free!");
+*/
+document.getElementById("demo15").innerHTML = /e/.test(text);
+
+document.getElementById("demo16").innerHTML = /e/.exec(text);
+</script>
+
+</body>
+</html>
+

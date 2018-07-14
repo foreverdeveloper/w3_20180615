@@ -1,0 +1,134 @@
+ jQuery를 이용해 직접 달력 만들어 보기
+	jQuery UI Datepicker → DatePicker에서 사용자 정의 → 스타일
+
+	jQuery UI Datepicker
+		1. http://jqueryui.com/download에 접속
+		2. Widgets에 Datepicker를 체크하고 다운로드
+		3. 반드시 필요한 파일과 선택파일의 구분
+		4. includ폴더 생성 및 파일 추가
+
+	<toString(진수)를 이용하는 방법>
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+Datepicker 사용시 장점
+	날짜를 다룰 때 ui(유아이) 형식으로 쉽게 날짜 선택이 가능
+	스타일이나 이미지 등의 다양한 변경이 가능
+
+ jQuery를 이용한 달력 만들기
+
+ 	옵션이 있는 DatePicker를 구성
+			<script type="text/javascript">
+				$(function(){
+					$('#datepicker').datepicker({
+						inline: true,
+						showOtherMonths: true,
+						dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+					});
+				});
+			</script>
+
+	달력을 형성할 div 태그 추가
+		<div id="datepicker"></div>
+
+	스타일 적용
+		<link href="css/datepicker.css" rel="stylesheet" type="text/css"/>
+		<link href="css/normalize.css"rel="stylesheet" type="text/css"/>
+
+	<datepicker.css>
+		body {
+		 		background: url('../img/darkdenim3.png') repeat 0 0 #555;
+		}
+
+	<datepicker.css>
+			.ui-datepicker {
+					width: 216px;
+					height: auto;
+					margin: 5px auto 0;
+					font: 9pt Arial, sans-serif;
+					-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+					-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+					box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+			}
+
+jQuery를 이용한 갤러리 만들기
+	썸네일 이미지 갤러리
+
+		<body>
+			<div id="wrap">
+				<ul id="nav">
+					<li><a href="imgs/lop0.jpg" class="active"><img src="imgs/thumb0.jpg" alt="" /></a></li>
+					<li><a href="imgs/lop1.jpg"><img src="imgs/thumb1.jpg" alt="" /></a></li>
+					<li><a href="imgs/lop2.jpg"><img src="imgs/thumb2.jpg" alt="" /></a></li>
+					<li><a href="imgs/lop3.jpg"><img src="imgs/thumb3.jpg" alt="" /></a></li>
+					<li><a href="imgs/lop4.jpg"><img src="imgs/thumb4.jpg" alt="" /></a></li>
+					<li><a href="imgs/lop5.jpg"><img src="imgs/thumb5.jpg" alt="" /></a></li>
+					<li><a href="imgs/lop6.jpg"><img src="imgs/thumb6.jpg" alt="" /></a></li>
+					<li><a href="imgs/lop7.jpg"><img src="imgs/thumb7.jpg" alt="" /></a></li>
+				</ul>
+				<div id="window"><img src="imgs/lop0.jpg" alt="" /></div>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#nav a').mouseover(function(e){
+						e.preventDefault();
+						$('#nav a').removeClass('active');
+						$(this).addClass('active');
+						img_url = $(this).attr('href');
+						$('#window img').attr('src',img_url);
+						});
+					})
+			</script>
+		</body>
+		</html>
+
+
+jQuery를 이용한 에디터 만들기
+	위즈윅(WYSIWYG) 에디터
+
+		<html>
+		<head>
+		<meta charset="utf-8">
+		<title></title>
+			<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/jquery.cleditor.css" />
+			<script type="text/javascript" src="js/jquery.min.js"></script>
+			<script type="text/javascript" src="js/jquery.cleditor.min.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function () { $("#input").cleditor(); });
+			</script>
+		</head>
+		<body>
+		<textarea id="input" name="input"></textarea>
+		</body>
+		</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

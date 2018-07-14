@@ -1,0 +1,2 @@
+HTML5 : <html>위, 문서 최초 줄에 선언됨.
+	<!DOCTYPE html>
